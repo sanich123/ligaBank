@@ -1,0 +1,17 @@
+    {
+      "extends": [
+      "react-app",
+      "react-app/jest",
+      "htmlacademy/react-typescript"
+    ],
+"rules": {
+      "no-console":"off",
+      "prefer-const": "error",
+      "quotes": ["error", "single"],
+      "jsx-quotes": ["error", "prefer-double"],
+      "indent": ["warn", 2],
+      "comma-dangle": ["error", "always-multiline"],
+      "semi": ["error", "always"],
+      "no-return-assign": "off"
+    }
+  }
