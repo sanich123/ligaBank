@@ -3,34 +3,32 @@ export default function Main() {
   return (
     <>
       <header>
-        <a href="/">
-          <img alt="Лига Банк лого" src="./img/svg/logo.svg" tabIndex={0} />
-          <span className="header-logo">ЛИГА Банк</span>
-        </a>
-        <nav className="header-nav">
-          <ul>
-            <a href="/">
-              <li>Услуги</li>
-            </a>
-            <a href="/">
-              <li>Рассчитать кредит</li>
-            </a>
-            <a href="/">
-              <li>Конвертер валют</li>
-            </a>
-            <a href="/">
-              <li>Контакты</li>
-            </a>
+        <nav className="header-nav container">
+          <a href="/">
+            <span className="header-nav__logo">ЛИГА Банк</span>
+          </a>
+          <ul className="header-nav__menu">
+            <li className="header-nav__menu-item">
+              <a href="/">Услуги</a>
+            </li>
+            <li className="header-nav__menu-item">
+              <a href="/">Рассчитать кредит</a>
+            </li>
+            <li className="header-nav__menu-item">
+              <a href="/">Конвертер валют</a>
+            </li>
+            <li className="header-nav__menu-item">
+              <a href="/">Контакты</a>
+            </li>
           </ul>
           <a href="/">
-            <img alt="Личный кабинет" src="./img/svg/userCabinet.svg" />
-            <span>Войти в Интернет-банк</span>
+            <span className="header-nav__cabinet">Войти в Интернет-банк</span>
           </a>
         </nav>
       </header>
       <main className="main">
         <h1 className="visually-hidden">Лига Банк, описание продуктов</h1>
-        <section className="main-slider">
+        <section className="main-slider container">
           <ul>
             <li>
               <h2>Лига Банк</h2>
@@ -53,7 +51,7 @@ export default function Main() {
             </li>
           </ul>
         </section>
-        <section className="main-advantages">
+        <section className="main-advantages container">
           <h2 className="visually-hidden">Наши преимущества</h2>
           <ul>
             <li>
@@ -131,7 +129,7 @@ export default function Main() {
             </li>
           </ul>
         </section>
-        <section className="main-calculator">
+        <section className="main-calculator container">
           <h2>Кредитный калькулятор</h2>
           <h3>Шаг 1. Цель кредита</h3>
           <select>
@@ -193,55 +191,71 @@ export default function Main() {
             </dl>
           </div>
         </section>
-        <section className="main-map">
+        <section className="main-map container">
           <h2>Отделения Лига Банка</h2>
           <img alt="Карта с отделениями" src="./img/content/map.png" />
         </section>
       </main>
-      <footer>
-        <a href="/">
-          <img alt="Лига Банк лого" src="./img/svg/logo.svg" tabIndex={0} />
-          <span className="header-logo">ЛИГА Банк</span>
-        </a>
-        <address>
-          150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка
-          России №1050 Ⓒ Лига Банк, 2019
-        </address>
-        <ul>
-          <a href="/">
-            <li>Услуги</li>
-          </a>
-          <a href="/">
-            <li>Рассчитать кредит</li>
-          </a>
-          <a href="/">
-            <li>Контакты</li>
-          </a>
-          <a href="/">
-            <li>Задать вопрос</li>
-          </a>
-        </ul>
-        <dl>
-          <dt>*0904</dt>
-          <dd>Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</dd>
-          <dt>8 800 111 22 33</dt>
-          <dd>Бесплатный для всех городов России</dd>
-        </dl>
-        <ul>
-          <a href="http://facebook.com">
-            <li>Facebook</li>
-          </a>
-          <a href="http://instagram.com">
-            <li>Instagram</li>
-          </a>
-          <a href="http://twitter.com">
-            <li>Twitter</li>
-          </a>
-          <a href="http://youtube.com">
-            <li>Youtube</li>
-          </a>
-        </ul>
-      </footer>
+      <div className="wrapper">
+        <footer className="footer container">
+          <div className="footer-logo">
+            <a href="/">
+              <span className="header-nav__logo">ЛИГА Банк</span>
+            </a>
+            <address>
+              150015, г. Москва, ул. Московская, д. 32
+              Генеральная лицензия
+              Банка России №1050 Ⓒ Лига Банк, 2019
+            </address>
+          </div>
+          <ul className="footer-links">
+            <li className="footer-links__item">
+              <a href="/">Услуги</a>
+            </li>
+            <li className="footer-links__item">
+              <a href="/">Рассчитать кредит</a>
+            </li>
+            <li className="footer-links__item">
+              <a href="/">Контакты</a>
+            </li>
+            <li className="footer-links__item">
+              <a href="/">Задать вопрос</a>
+            </li>
+          </ul>
+          <div className="footer-sms">
+            <a href="tel:*0904">*0904</a>
+            <br />
+            <p>Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
+          </div>
+          <div className="footer-phone">
+            <a href="tel: 800 111 22 33"> 800 111 22 33</a>
+            <br />
+            <p>Бесплатный для всех городов России</p>
+          </div>
+          <ul className="footer-social">
+            <li className="footer-social__item facebook">
+              <a href="http://facebook.com">
+                <span className="visually-hidden">Facebook</span>
+              </a>
+            </li>
+            <li className="footer-social__item instagram">
+              <a href="http://instagram.com">
+                <span className="visually-hidden">Instagram</span>
+              </a>
+            </li>
+            <li className="footer-social__item twitter">
+              <a href="http://twitter.com">
+                <span className="visually-hidden">Twitter</span>
+              </a>
+            </li>
+            <li className="footer-social__item youtube">
+              <a href="http://youtube.com">
+                <span className="visually-hidden">Youtube</span>
+              </a>
+            </li>
+          </ul>
+        </footer>
+      </div>
     </>
   );
 }
