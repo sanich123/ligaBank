@@ -31,36 +31,29 @@ export default function Main() {
         <div className="wrapper-slider">
           <section className="main-slider container">
             <ul className="main-slider__list">
-              <li className="main-slider__list--item">
+              <li
+                className="main-slider__list--item"
+              >
                 <h2>Лига Банк</h2>
                 <p>Кредиты на любой случай</p>
                 <button type="button">Рассчитать кредит</button>
-                <img
-                  width="289"
-                  height="182"
-                  className="black-card-img"
-                  alt="Black promo card"
-                  src="./img/content/black-card.png"
-                />
-                <img
-                  width="289"
-                  height="182"
-                  className="white-card-img"
-                  alt="White promo card"
-                  src="./img/content/white-card.png"
-                />
               </li>
-              <li className="main-slider__list--item visually-hidden">
+              <li
+                style={{ display: 'none' }}
+                className="main-slider__list--item"
+              >
                 <h2>Лига Банк</h2>
                 <p>Ваша уверенность в завтрашнем дне</p>
-                <button type="button">Рассчитать кредит</button>
-                <img alt="Promo man" src="./img/content/promo-man.png" />
               </li>
-              <li className="main-slider__list--item visually-hidden">
+              <li
+                style={{ display: 'none' }}
+                className="main-slider__list--item"
+              >
                 <h2>Лига Банк</h2>
                 <p>Всегда рядом</p>
-                <button type="button">Найти отделение</button>
-                <img alt="Promo man" src="./img/content/promo-girl.png" />
+                <button type="button" className="btn">
+                  Найти отделение
+                </button>
               </li>
             </ul>
           </section>

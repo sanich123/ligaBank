@@ -685,6 +685,7 @@ body {
   display: grid;
   grid-template-rows: auto auto auto auto;
 }
+
 .wrapper-slider {
   margin: 0 auto;
   width: 100%;
@@ -692,10 +693,17 @@ body {
 }
 
 .main-slider__list {
-
+  position: relative;
   list-style: none;
-  border: 1px solid yellow;
-  min-width: 150px;
+  margin: 0;
+  padding: 0;
+  min-height: 400px;
+}
+
+.main-slider__list--item:first-child {
+  position: relative;
+  min-height: 400px;
+  padding-top: 60px;
 }
 
 .main-slider__list--item:first-child h2 {
@@ -705,7 +713,10 @@ body {
   font-size: 54px;
   line-height: 63px;
   color: #F6F7FF;
+  margin-left: 150px;
+  margin-bottom: 0;
 }
+
 .main-slider__list--item:first-child p {
   font-family: 'Roboto';
   font-style: normal;
@@ -713,5 +724,125 @@ body {
   font-size: 22px;
   line-height: 26px;
   color: #E0E1EA;
+  margin-top: -5px;
+  margin-left: 149px;
 }
+
+.main-slider__list--item:first-child::before {
+  display: block;
+  position: absolute;
+  content: "";
+  background-size: 289px 182px;
+  width: 289px;
+  height: 182px;
+  background-image: url("../img/content/black-card.png");
+  bottom: 90px;
+  left: 571px;
+  z-index: 999;
+}
+
+.main-slider__list--item:first-child::after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-size: 289px 182px;
+  width: 289px;
+  height: 182px;
+  background-image: url("../img/content/white-card.png");
+  left: 650px;
+  top: 80px;
+}
+
+.main-slider__list--item:first-child button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #1F1E25;
+  background: #F6F7FF;
+  border-radius: 4px;
+  width: 234px;
+  height: 53px;
+  margin-left: 149px;
+}
+
+.main-slider__list--item:nth-child(2) {
+  background-image: url("../img/content/promo-man.png");
+  width: 1170px;
+  height: 400px;
+  padding-top: 120px;
+  padding-left: 200px;
+}
+
+.main-slider__list--item:nth-child(2) h2,
+.main-slider__list--item:last-child h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 63px;
+  color: #1F1E25;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.main-slider__list--item:nth-child(2) p,
+.main-slider__list--item:last-child p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: #2B3C4F;
+  margin-top: 0;
+}
+
+.main-slider__list--item:last-child {
+    background-image: url("../img/content/promo-girl.png");
+  width: 1170px;
+  height: 400px;
+  padding-top: 120px;
+  padding-left: 200px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #F6F7FF;
+  padding: 19px 48px 21px 48px;
+  background: #2C36F2;
+  border-radius: 4px;
+}
+
+/*Map section*/
+
+.main-map {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.main-map h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 41px;
+  line-height: 140%;
+  color: #1F1E25;
+}
+
+
 
