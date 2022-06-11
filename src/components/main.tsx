@@ -28,29 +28,44 @@ export default function Main() {
       </header>
       <main className="main">
         <h1 className="visually-hidden">Лига Банк, описание продуктов</h1>
-        <section className="main-slider container">
-          <ul>
-            <li>
-              <h2>Лига Банк</h2>
-              <p>Кредиты на любой случай</p>
-              <button type="button">Рассчитать кредит</button>
-              <img alt="Black promo card" src="./img/content/black-card.png" />
-              <img alt="White promo card" src="./img/content/white-card.png" />
-            </li>
-            <li>
-              <h2>Лига Банк</h2>
-              <p>Ваша уверенность в завтрашнем дне</p>
-              <button type="button">Рассчитать кредит</button>
-              <img alt="Promo man" src="./img/content/promo-man.png" />
-            </li>
-            <li>
-              <h2>Лига Банк</h2>
-              <p>Всегда рядом</p>
-              <button type="button">Найти отделение</button>
-              <img alt="Promo man" src="./img/content/promo-girl.png" />
-            </li>
-          </ul>
-        </section>
+        <div className="wrapper-slider">
+          <section className="main-slider container">
+            <ul className="main-slider__list">
+              <li className="main-slider__list--item">
+                <h2>Лига Банк</h2>
+                <p>Кредиты на любой случай</p>
+                <button type="button">Рассчитать кредит</button>
+                <img
+                  width="289"
+                  height="182"
+                  className="black-card-img"
+                  alt="Black promo card"
+                  src="./img/content/black-card.png"
+                />
+                <img
+                  width="289"
+                  height="182"
+                  className="white-card-img"
+                  alt="White promo card"
+                  src="./img/content/white-card.png"
+                />
+              </li>
+              <li className="main-slider__list--item visually-hidden">
+                <h2>Лига Банк</h2>
+                <p>Ваша уверенность в завтрашнем дне</p>
+                <button type="button">Рассчитать кредит</button>
+                <img alt="Promo man" src="./img/content/promo-man.png" />
+              </li>
+              <li className="main-slider__list--item visually-hidden">
+                <h2>Лига Банк</h2>
+                <p>Всегда рядом</p>
+                <button type="button">Найти отделение</button>
+                <img alt="Promo man" src="./img/content/promo-girl.png" />
+              </li>
+            </ul>
+          </section>
+        </div>
+
         <section className="main-advantages container">
           <h2 className="visually-hidden">Наши преимущества</h2>
           <ul>
@@ -203,8 +218,7 @@ export default function Main() {
               <span className="header-nav__logo">ЛИГА Банк</span>
             </a>
             <address>
-              150015, г. Москва, ул. Московская, д. 32
-              Генеральная лицензия
+              150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия
               Банка России №1050 Ⓒ Лига Банк, 2019
             </address>
           </div>
