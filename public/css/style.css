@@ -700,13 +700,46 @@ body {
   min-height: 400px;
 }
 
-.main-slider__list--item:first-child {
+.slider-controls {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  position: absolute;
+  right: 50%;
+  top: 430px;
+}
+
+.slider-controls button {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  z-index: 100;
+  background: #2028B6;
+}
+
+.slider-controls button:active {
+  background: #E0E0E0;
+}
+
+.slider-controls button:focus {
+  background: #E0E0E0;
+}
+
+.slider-controls .active {
+  background: #E0E0E0;
+}
+.first-slide {
   position: relative;
   min-height: 400px;
   padding-top: 60px;
 }
 
-.main-slider__list--item:first-child h2 {
+.first-slide h2 {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
@@ -717,7 +750,7 @@ body {
   margin-bottom: 0;
 }
 
-.main-slider__list--item:first-child p {
+.first-slide p {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -728,7 +761,7 @@ body {
   margin-left: 149px;
 }
 
-.main-slider__list--item:first-child::before {
+.first-slide::before {
   display: block;
   position: absolute;
   content: "";
@@ -741,7 +774,7 @@ body {
   z-index: 999;
 }
 
-.main-slider__list--item:first-child::after {
+.first-slide::after {
   display: block;
   position: absolute;
   content: "";
@@ -753,7 +786,7 @@ body {
   top: 80px;
 }
 
-.main-slider__list--item:first-child button {
+.first-slide button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -772,7 +805,7 @@ body {
   margin-left: 149px;
 }
 
-.main-slider__list--item:nth-child(2) {
+.second-slide {
   background-image: url("../img/content/promo-man.png");
   width: 1170px;
   height: 400px;
@@ -780,8 +813,8 @@ body {
   padding-left: 200px;
 }
 
-.main-slider__list--item:nth-child(2) h2,
-.main-slider__list--item:last-child h2 {
+.second-slide h2,
+.third-slide h2 {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
@@ -792,8 +825,8 @@ body {
   margin-bottom: 0;
 }
 
-.main-slider__list--item:nth-child(2) p,
-.main-slider__list--item:last-child p {
+.second-slide p,
+.third-slide p {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -803,7 +836,7 @@ body {
   margin-top: 0;
 }
 
-.main-slider__list--item:last-child {
+.third-slide {
     background-image: url("../img/content/promo-girl.png");
   width: 1170px;
   height: 400px;
@@ -843,6 +876,67 @@ body {
   line-height: 140%;
   color: #1F1E25;
 }
+
+.main-advantages__controls {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 93px;
+}
+
+.main-advantages__btn {
+  border: none;
+  outline: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px 4px 0px 0px;
+  width: 292px;
+  height: 93px;
+  column-gap: 20px;
+  background-color: transparent;
+}
+
+.main-advantages__btn--active {
+  background: #F6F7FF;
+}
+
+.main-advantages__list,
+.main-advantages__list--item ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-advantages__list--item {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+  min-height: 395px;
+  padding: 60px;
+  background: #F6F7FF;
+}
+
+.advantages {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.advantages li {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: #1F1E25;
+}
+
 
 
 
