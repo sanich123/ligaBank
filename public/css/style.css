@@ -554,6 +554,13 @@ body {
   margin-right: 10px;
 }
 
+.header-nav button {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+}
+
 .footer {
   display: grid;
   grid-template-columns: 235px 215px 210px 1fr 1fr;
@@ -859,11 +866,14 @@ body {
   padding: 19px 48px 21px 48px;
   background: #2C36F2;
   border-radius: 4px;
+  z-index: 999;
+  cursor: pointer;
 }
 
 /*Map section*/
 
 .main-map {
+  margin-top: 20px;
   padding-top: 110px;
   padding-bottom: 110px;
 }
@@ -935,6 +945,332 @@ body {
   font-size: 18px;
   line-height: 130%;
   color: #1F1E25;
+}
+
+.modal {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+
+  display: flex;
+  visibility: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  -webkit-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+          transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+          transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+          transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  pointer-events: none;
+
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.is-active {
+  visibility: visible;
+
+  opacity: 1;
+  background: rgba(84, 77, 77, 0.65);
+
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  pointer-events: auto;
+}
+
+.modal__wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100%;
+  padding: 60px 40px;
+}
+
+.modal__overlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+}
+
+.modal__content {
+  padding: 60px 60px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 49px;
+  width: 544px;
+  height: 493px;
+  background: #F6F7FF;
+  border: 4px solid #2C36F2;
+}
+
+.modal__logo {
+  display: flex;
+  width: 424px;
+  height: 60px;
+}
+
+.modal__label input {
+  width: 424px;
+  height: 60px;
+}
+
+.modal__submit {
+  width: 424px;
+  height: 60px;
+}
+
+
+/*Main-calculator*/
+.main-calculator {
+  min-height: 1300px;
+}
+.main-calculator h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 41px;
+  line-height: 140%;
+  color: #1F1E25;
+}
+
+.main-calculator h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: #1F1E25;
+}
+
+.main-calculator__select {
+  width: 600px;
+  height: 60px;
+  padding-left: 25px;
+}
+
+.price-input, .price-deposite, .input-time {
+  position: relative;
+  width: 600px;
+  height: 60px;
+  padding-left: 25px;
+}
+
+.input-range {
+  width: 600px;
+}
+
+.price-label {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #394959;
+}
+
+.price-input__btn {
+  position: absolute;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.minus {
+  z-index: 100;
+left: 125px;
+top: 1380px;
+}
+
+.plus {
+  z-index: 100;
+  right: 500px;
+  top: 1380px;
+}
+
+.sub-input {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #707C87;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 600px 500px;
+  gap: 70px;
+}
+
+.step3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.proposal {
+  background: #F6F7FF;
+  border-radius: 4px;
+  height: 389px;
+  padding: 40px 45px;
+}
+
+.proposal h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: #1F1E25;
+  padding: 0;
+  margin: 0;
+}
+
+.proposal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px 50px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.proposal-list__item h3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: #1F1E25;
+  margin: 0;
+  padding: 0;
+}
+
+.proposal-list__item span {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #394959;
+}
+
+.long-btn {
+  width: 382px;
+}
+
+.step3 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 770px;
+  height: 722px;
+  background: #F6F7FF;
+  border-radius: 4px;
+  margin-left: 200px;
+  padding: 70px;
+}
+
+.step3-description__list {
+  display: grid;
+  grid-template-rows:min-content min-content min-content min-content min-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step3-description__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 630px;
+  min-height: 50px;
+  border-bottom: 1px solid #C4C4C4;
+}
+
+.step3-description__item strong {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #394959;
+}
+
+.step3-description__item span {
+  display: flex;
+  align-items: center;
+  justify-self:end;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: #1F1E25;
+}
+
+.submit-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.submit-form__surname {
+  width: 630px;
+  height: 60px;
+  border: 1px solid #0A1E32;
+  border-radius: 4px;
+  grid-column: 1/-1;
+  padding-left: 24px;
+}
+
+.submit-form__surname placeholder,
+.submit-form__mail placeholder,
+.submit-form__phone placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.03em;
+  color: #707C87;
+}
+
+.submit-form__btn {
+  grid-column: 1/-1;
+  width: 198px;
+  height: 51px;
+  justify-self: center;
+  align-items: center;
+}
+
+.submit-form__phone, .submit-form__mail {
+  padding-left: 24px;
 }
 
 

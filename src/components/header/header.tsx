@@ -1,6 +1,6 @@
 import { navLinks } from '../../utils/const';
 
-export default function Header() {
+export default function Header({setIsModalOpen}: {setIsModalOpen: (arg: boolean) => void}) {
   return (
     <header>
       <nav className="header-nav container">
@@ -14,9 +14,9 @@ export default function Header() {
             </li>
           ))}
         </ul>
-        <a href="/">
+        <button onClick={() => setIsModalOpen(true)}>
           <span className="header-nav__cabinet">Войти в Интернет-банк</span>
-        </a>
+        </button>
       </nav>
     </header>
   );
