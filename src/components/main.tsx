@@ -8,6 +8,7 @@ import { MinusIcon, PlusIcon } from './svg';
 
 export default function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [price, setPrice] = useState(12e5);
 
   return (
     <>
@@ -45,16 +46,27 @@ export default function Main() {
                     Стоимость недвижимости
                   </label>
                   <br />
-                  <button className="price-input__btn minus" type="button">
+                  <button
+                    className="price-input__btn minus"
+                    onClick={() => setPrice(price - 100000)}
+                    aria-label="Кнопка минус"
+                    type="button"
+                  >
                     <MinusIcon />
                   </button>
                   <input
                     id="input-price"
                     className="price-input"
                     type="number"
+                    value={price}
                     readOnly
                   />
-                  <button type="button" className="price-input__btn plus">
+                  <button
+                    onClick={() => setPrice(price + 100000)}
+                    type="button"
+                    aria-label="Кнопка плюс"
+                    className="price-input__btn plus"
+                  >
                     <PlusIcon />
                   </button>
                   <br />
