@@ -1103,13 +1103,13 @@ body {
 
 .minus {
   z-index: 100;
-  left: 235px;
+  left: 125px;
   top: 1405px;
 }
 
 .plus {
   z-index: 100;
-  left: 750px;
+  left: 650px;
   top: 1410px;
 }
 

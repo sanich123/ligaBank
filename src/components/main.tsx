@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import Advantages from './advantages/advantages';
+import Step1 from './calculator/step1';
+import Step2 from './calculator/step2/step2';
 import Footer from './footer/footer';
 import Header from './header/header';
 import Modal from './modal/modal';
 import Slider from './slider/slider';
-import { MinusIcon, PlusIcon } from './svg';
 
 export default function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [price, setPrice] = useState(12e5);
+
 
   return (
     <>
@@ -24,96 +25,8 @@ export default function Main() {
           <h2>Кредитный калькулятор</h2>
           <div className="grid-layout">
             <div className="step1-step2">
-              <h3>Шаг 1. Цель кредита</h3>
-              <select className="main-calculator__select">
-                <option
-                  className="main-calculator__select--option"
-                  value="Выберите цель кредита"
-                >
-                  Выберите цель кредита
-                </option>
-                <option value="Ипотечное кредитование">
-                  Ипотечное кредитование
-                </option>
-                <option value="Автомобильное кредитование">
-                  Автомобильное кредитование
-                </option>
-              </select>
-              <h3>Шаг 2. Введите параметры кредита</h3>
-              <div className="step-two-wrapper">
-                <div className="input-wrapper">
-                  <label htmlFor="input-price" className="price-label">
-                    Стоимость недвижимости
-                  </label>
-                  <br />
-                  <button
-                    className="price-input__btn minus"
-                    onClick={() => setPrice(price - 100000)}
-                    aria-label="Кнопка минус"
-                    type="button"
-                  >
-                    <MinusIcon />
-                  </button>
-                  <input
-                    id="input-price"
-                    className="price-input"
-                    type="number"
-                    value={price}
-                    readOnly
-                  />
-                  <button
-                    onClick={() => setPrice(price + 100000)}
-                    type="button"
-                    aria-label="Кнопка плюс"
-                    className="price-input__btn plus"
-                  >
-                    <PlusIcon />
-                  </button>
-                  <br />
-                  <span className="sub-input">
-                    От 1 200 000 до 25 000 000 рублей
-                  </span>
-                  <br />
-                </div>
-                <div className="input-wrapper">
-                  <label className="price-label" htmlFor="input-deposit">
-                    Первоначальный взнос
-                  </label>
-                  <br />
-                  <input
-                    type="number"
-                    id="input-deposit"
-                    className="price-deposite"
-                    readOnly
-                  />
-                  <br />
-                  <input type="range" className="input-range" />
-                  <br />
-                  <span className="sub-input">10%</span>
-                </div>
-                <div className="input-wrapper">
-                  <label className="price-label" htmlFor="input-time">
-                    Срок кредитования
-                  </label>
-                  <br />
-                  <input
-                    className="input-time"
-                    type="number"
-                    id="input-time"
-                    readOnly
-                  />
-                  <br />
-                  <input type="range" className="input-range" />
-                  <br />
-                  <span className="sub-input">5 лет</span>
-                  <span className="sub-input">30 лет</span>
-                </div>
-
-                <input id="checkbox-input" type="checkbox" />
-                <label htmlFor="checkbox-input">
-                  Использовать материнский капитал
-                </label>
-              </div>
+              <Step1/>
+              <Step2/>
             </div>
             <div className="proposal">
               <h3>Наше предложение</h3>

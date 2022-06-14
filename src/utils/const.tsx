@@ -1,5 +1,7 @@
 import { Credits, Deposites, Insurance, Online } from '../components/svg';
-
+export const MAX_PRICE = 25000000;
+export const MIN_PRICE = 1200000;
+export const STEP_PRICE = 100000;
 export const advantagesTypes = {
   deposites: 'Вклады',
   credits: 'Кредиты',
