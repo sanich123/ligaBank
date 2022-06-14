@@ -1068,22 +1068,22 @@ body {
 }
 
 .price-input, .price-deposite, .input-time {
+  width: 100%;
+  text-align: center;
   width: 600px;
   height: 60px;
   padding-left: 25px;
-}
-
-.price-input {
-  width: 100%;
-  text-align: center;
 }
 
 .input-range {
   width: 600px;
 }
 
-.price-label {
+.input-wrapper {
   position: relative;
+}
+
+.price-label {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
@@ -1094,23 +1094,25 @@ body {
 
 .price-input__btn {
   position: absolute;
+  width: 20px;
+  height: 20px;
   border: none;
   outline: none;
   background: transparent;
   cursor: pointer;
-
+  z-index: 100;
 }
 
 .minus {
   z-index: 100;
-  left: 125px;
-  top: 1405px;
+  left: 20px;
+  top: 40px;
 }
 
 .plus {
   z-index: 100;
-  left: 650px;
-  top: 1410px;
+  left: 550px;
+  top: 44px;
 }
 
 .sub-input {
@@ -1132,7 +1134,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
 }
 
 .proposal {

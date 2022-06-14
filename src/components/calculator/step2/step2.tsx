@@ -1,13 +1,18 @@
+import { useState } from 'react';
+import { MIN_PRICE } from '../../../utils/const';
+import { getCleanedNumber } from '../../../utils/utils';
 import PriceOfEstate from './priceOfEstate';
 
 export default function Step2() {
-
+  const initialPrice = `${MIN_PRICE.toLocaleString()} рублей`;
+  const [price, setPrice] = useState(initialPrice);
+  console.log(price);
   return (
     <>
       <h3>Шаг 2. Введите параметры кредита</h3>
       <div className="step-two-wrapper">
 
-        <PriceOfEstate/>
+        <PriceOfEstate price={price} setPrice={setPrice} />
 
         <div className="input-wrapper">
           <label className="price-label" htmlFor="input-deposit">
@@ -15,13 +20,22 @@ export default function Step2() {
           </label>
           <br />
           <input
-            type="number"
+            type="text"
             id="input-deposit"
             className="price-deposite"
-            readOnly
+            value={`${(getCleanedNumber(price) / 10).toLocaleString()} рублей`}
+            tabIndex={0}
           />
           <br />
-          <input type="range" className="input-range" />
+          <input
+            type="range"
+            className="input-range"
+            min="10"
+            max="100"
+            step="5"
+            value={getCleanedNumber(price) / 100000}
+            onChange={({target}) => console.log(target.value)}
+          />
           <br />
           <span className="sub-input">10%</span>
         </div>

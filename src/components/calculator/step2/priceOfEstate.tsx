@@ -1,11 +1,14 @@
-import { useState } from 'react';
 import { MAX_PRICE, MIN_PRICE, STEP_PRICE } from '../../../utils/const';
 import { getCleanedNumber } from '../../../utils/utils';
 import { MinusIcon, PlusIcon } from '../../svg';
 
-export default function PriceOfEstate() {
-  const initialPrice = `${MIN_PRICE.toLocaleString()} рублей`;
-  const [price, setPrice] = useState(initialPrice);
+interface PriceOfEstateProps {
+  price: string,
+  setPrice: (arg: string) => void,
+}
+
+export default function PriceOfEstate({price, setPrice}: PriceOfEstateProps) {
+
   const isInvalidInput =
       getCleanedNumber(price) < MIN_PRICE ||
       getCleanedNumber(price) > MAX_PRICE;
