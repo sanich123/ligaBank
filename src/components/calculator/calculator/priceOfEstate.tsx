@@ -1,4 +1,4 @@
-import { MAX_CARCREDIT_PRICE, MAX_MORTGAGE_PRICE, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit, STEP_PRICE } from '../../../utils/const';
+import { MAX_CARCREDIT_PRICE, MAX_MORTGAGE_PRICE, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit, STEP_CARCREDIT_PRICE, STEP_MORTGAGE_PRICE } from '../../../utils/const';
 import { getCleanedNumber } from '../../../utils/utils';
 import { MinusIcon, PlusIcon } from '../../svg';
 
@@ -9,10 +9,10 @@ interface PriceOfEstateProps {
 }
 
 export default function PriceOfEstate({goal, price, setPrice}: PriceOfEstateProps) {
-  console.log(goal);
   const minPrice = goal !== '' && goal === purposesOfCredit.mortgage ? MIN_MORTGAGE_PRICE : MIN_CARCREDIT_PRICE;
   const maxPrice = goal !== '' && goal === purposesOfCredit.carCredit ? MAX_CARCREDIT_PRICE : MAX_MORTGAGE_PRICE;
   const nameOfProduct = goal !== '' && goal === purposesOfCredit.mortgage ? 'недвижимости' : 'автомобиля';
+  const stepPrice = goal !== '' && goal === purposesOfCredit.mortgage ? STEP_MORTGAGE_PRICE : STEP_CARCREDIT_PRICE;
 
   const isInvalidInput =
       getCleanedNumber(price) < minPrice ||
@@ -26,7 +26,7 @@ export default function PriceOfEstate({goal, price, setPrice}: PriceOfEstateProp
       <br />
       <button
         className="price-input__btn minus"
-        onClick={() => setPrice(`${(getCleanedNumber(price) - STEP_PRICE).toLocaleString()} рублей`)}
+        onClick={() => setPrice(`${(getCleanedNumber(price) - stepPrice).toLocaleString()} рублей`)}
         aria-label="Кнопка минус"
         type="button"
         tabIndex={0}
@@ -47,7 +47,7 @@ export default function PriceOfEstate({goal, price, setPrice}: PriceOfEstateProp
           }}}
       />
       <button
-        onClick={() => setPrice(`${(getCleanedNumber(price) + STEP_PRICE).toLocaleString()} рублей`)}
+        onClick={() => setPrice(`${(getCleanedNumber(price) + stepPrice).toLocaleString()} рублей`)}
         type="button"
         aria-label="Кнопка плюс"
         className="price-input__btn plus"
@@ -62,7 +62,7 @@ export default function PriceOfEstate({goal, price, setPrice}: PriceOfEstateProp
       >
         {isInvalidInput
           ? 'Вы ввели некорректные данные'
-          : `От ${minPrice} до ${maxPrice} рублей`}
+          : `От ${minPrice.toLocaleString()} до ${maxPrice.toLocaleString()} рублей`}
       </span>
       <br />
     </div>

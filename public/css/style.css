@@ -1038,11 +1038,11 @@ body {
   height: 60px;
 }
 
-
 /*Main-calculator*/
 .main-calculator {
-  min-height: 1300px;
+  min-height: min-content;
 }
+
 .main-calculator h2 {
   font-family: 'Roboto';
   font-style: normal;

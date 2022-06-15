@@ -3,7 +3,9 @@ export const MAX_MORTGAGE_PRICE = 25000000;
 export const MIN_MORTGAGE_PRICE = 1200000;
 export const MIN_CARCREDIT_PRICE = 500000;
 export const MAX_CARCREDIT_PRICE = 2000000;
-export const STEP_PRICE = 100000;
+export const STEP_MORTGAGE_PRICE = 100000;
+export const STEP_CARCREDIT_PRICE = 50000;
+
 export const advantagesTypes = {
   deposites: 'Вклады',
   credits: 'Кредиты',
@@ -69,4 +71,5 @@ export const sliderTabs = [
 export const purposesOfCredit = {
   mortgage: 'Ипотечное кредитование',
   carCredit: 'Автомобильное кредитование',
+  notSelected: 'Выберите цель кредита',
 };
