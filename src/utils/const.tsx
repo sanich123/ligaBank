@@ -1,6 +1,8 @@
 import { Credits, Deposites, Insurance, Online } from '../components/svg';
-export const MAX_PRICE = 25000000;
-export const MIN_PRICE = 1200000;
+export const MAX_MORTGAGE_PRICE = 25000000;
+export const MIN_MORTGAGE_PRICE = 1200000;
+export const MIN_CARCREDIT_PRICE = 500000;
+export const MAX_CARCREDIT_PRICE = 2000000;
 export const STEP_PRICE = 100000;
 export const advantagesTypes = {
   deposites: 'Вклады',
@@ -63,3 +65,8 @@ export const socialLinks = {
 export const sliderTabs = [
   'Кредиты', 'Уверенность', 'Всегда рядом',
 ];
+
+export const purposesOfCredit = {
+  mortgage: 'Ипотечное кредитование',
+  carCredit: 'Автомобильное кредитование',
+};
