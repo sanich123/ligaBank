@@ -3,12 +3,11 @@ import { getCleanedNumber } from '../../../utils/utils';
 
 interface FirstDepositeProps {
   price: string;
-  goal: string;
   setTypedDeposite: (arg: string) => void;
   typedDeposite: string,
 }
 
-export default function FirstDeposite({price, goal, setTypedDeposite, typedDeposite}: FirstDepositeProps) {
+export default function FirstDeposite({price, setTypedDeposite, typedDeposite}: FirstDepositeProps) {
   const [rangeNumber, setRangeNumber] = useState(10);
 
   return (
@@ -56,7 +55,11 @@ export default function FirstDeposite({price, goal, setTypedDeposite, typedDepos
           10 *
           rangeNumber
         }
-        onChange={({ target }) => setRangeNumber(+target.value)}
+        onChange={({ target }) => {
+          setRangeNumber(+target.value);
+          const percent = +target.value / 100;
+          setTypedDeposite(`${(getCleanedNumber(price) * percent).toLocaleString()} рублей`);
+        }}
       />
       <br />
       <span className="sub-input">{rangeNumber}%</span>

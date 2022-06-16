@@ -2,13 +2,13 @@ import { MAX_CARCREDIT_PRICE, MAX_MORTGAGE_PRICE, MIN_CARCREDIT_PRICE, MIN_MORTG
 import { getCleanedNumber } from '../../../utils/utils';
 import { MinusIcon, PlusIcon } from '../../svg';
 
-interface PriceOfEstateProps {
+interface CreditPriceProps {
   price: string,
   setPrice: (arg: string) => void,
   goal: string,
 }
 
-export default function PriceOfEstate({goal, price, setPrice}: PriceOfEstateProps) {
+export default function CreditPrice({goal, price, setPrice}: CreditPriceProps) {
   const minPrice = goal !== '' && goal === purposesOfCredit.mortgage ? MIN_MORTGAGE_PRICE : MIN_CARCREDIT_PRICE;
   const maxPrice = goal !== '' && goal === purposesOfCredit.carCredit ? MAX_CARCREDIT_PRICE : MAX_MORTGAGE_PRICE;
   const nameOfProduct = goal !== '' && goal === purposesOfCredit.mortgage ? 'недвижимости' : 'автомобиля';

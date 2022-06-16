@@ -10,6 +10,8 @@ export const MIN_MORTGAGE_SUM = 500000;
 export const MIN_CARCREDIT_SUM = 200000;
 export const MIN_MORTGAGE_PERCENT = 8.50;
 export const MAX_MORTGAGE_PERCENT = 9.40;
+export const INITIAL_MORTGAGE_TIME = '5';
+export const INITIAL_CARCREDIT_TIME = '1';
 
 export const advantagesTypes = {
   deposites: 'Вклады',

@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import {  purposesOfCredit } from '../../../utils/const';
 import { totalCredit } from '../../../utils/utils';
+import Proposal from './proposal';
+import ProposalError from './proposal-error';
 
-import Step1 from './step1';
-import Step2 from './step2';
+import Step1 from './step-one';
+import StepThree from './step-three';
+import Step2 from './step-two';
 
 export default function Calculator() {
   const [goal, setGoal] = useState('');
@@ -46,102 +49,14 @@ export default function Calculator() {
             />
           )}
         </div>
-        {goal && goal !== purposesOfCredit.notSelected && (
+        {goal !== purposesOfCredit.notSelected && (
           <div className="proposal">
-            {isVisible && (
-              <div className="proposal-wrong">
-                <h3>
-                  Наш банк не выдаёт {typeOfCredit} меньше {minSum} рублей.
-                </h3>
-                <p>Попробуйте использовать другие параметры для расчёта.</p>
-              </div>
-            )}
-            {!isVisible && (
-              <>
-                <h3>Наше предложение</h3>
-                <ul className="proposal-list">
-                  <li className="proposal-list__item">
-                    <h3>{totalSum.toLocaleString()} рублей</h3>
-                    <span>
-                      Сумма {type3}
-                    </span>
-                  </li>
-                  <li className="proposal-list__item">
-                    <h3>{calculatedPercent}%</h3>
-                    <span>Процентная ставка</span>
-                  </li>
-                  <li className="proposal-list__item">
-                    <h3>{monthPayment.toLocaleString()} рублей</h3>
-                    <span>Ежемесячный платеж</span>
-                  </li>
-                  <li className="proposal-list__item">
-                    <h3>{(monthPayment * 2.1).toLocaleString()} рублей</h3>
-                    <span>Необходимый доход</span>
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  className="btn long-btn"
-                  onClick={() => setIsFormOpen(true)}
-                >
-                  Оформить заявку
-                </button>
-              </>
-            )}
+            {isVisible && <ProposalError minSum={minSum} typeOfCredit={typeOfCredit} />}
+            {!isVisible && <Proposal totalSum={totalSum} type3={type3} calculatedPercent={calculatedPercent} monthPayment={monthPayment} setIsFormOpen={setIsFormOpen}/>}
           </div>
         )}
       </div>
-      {isFormOpen && (
-        <div className="step3">
-          <h3>Шаг 3. Оформление заявки</h3>
-          <ul className="step3-description__list">
-            <li className="step3-description__item">
-              <strong>Номер заявки</strong>
-              <span>№ 0010</span>
-            </li>
-            <li className="step3-description__item">
-              <strong>Цель кредита</strong>
-              <span>{type}</span>
-            </li>
-            <li className="step3-description__item">
-              <strong>Стоимость {type2}</strong>
-              <span>{currentPrice.toLocaleString()} рублей</span>
-            </li>
-            <li className="step3-description__item">
-              <strong>Первоначальный взнос</strong>
-              <span>{currentDeposite.toLocaleString()} рублей</span>
-            </li>
-            <li className="step3-description__item">
-              <strong>Срок кредитования</strong>
-              <span>{currentRangeOfTime} лет</span>
-            </li>
-          </ul>
-          <form className="submit-form">
-            <input
-              className="submit-form__surname"
-              id="input-surname"
-              type="text"
-              placeholder="ФИО"
-              autoFocus
-            />
-            <input
-              className="submit-form__phone"
-              id="input-phone"
-              type="tel"
-              placeholder="Телефон"
-            />
-            <input
-              className="submit-form__mail"
-              id="input-mail"
-              type="mail"
-              placeholder="E-mail"
-            />
-            <button className="submit-form__btn btn" type="submit">
-              Отправить
-            </button>
-          </form>
-        </div>
-      )}
+      {isFormOpen && <StepThree type={type} type2={type2} currentPrice={currentPrice} currentDeposite={currentDeposite} currentRangeOfTime={currentRangeOfTime} />}
     </>
   );
 }
