@@ -13,8 +13,9 @@ export default function Calculator() {
   const [isMotherCapital, setIsMotherCapital] = useState(false);
   const [isNeedInsurance, setIsNeedInsurance] = useState(false);
   const [isNeedKasko, setIsNeedKasko] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
-  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment} = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
+  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime} = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
 
   return (
     <>
@@ -62,10 +63,7 @@ export default function Calculator() {
                   <li className="proposal-list__item">
                     <h3>{totalSum.toLocaleString()} рублей</h3>
                     <span>
-                      Сумма{' '}
-                      {goal === purposesOfCredit.mortgage
-                        ? 'ипотеки'
-                        : 'автокредита'}
+                      Сумма {type3}
                     </span>
                   </li>
                   <li className="proposal-list__item">
@@ -77,11 +75,15 @@ export default function Calculator() {
                     <span>Ежемесячный платеж</span>
                   </li>
                   <li className="proposal-list__item">
-                    <h3>{(monthPayment * 2.10).toLocaleString()} рублей</h3>
+                    <h3>{(monthPayment * 2.1).toLocaleString()} рублей</h3>
                     <span>Необходимый доход</span>
                   </li>
                 </ul>
-                <button type="button" className="btn long-btn">
+                <button
+                  type="button"
+                  className="btn long-btn"
+                  onClick={() => setIsFormOpen(true)}
+                >
                   Оформить заявку
                 </button>
               </>
@@ -89,54 +91,57 @@ export default function Calculator() {
           </div>
         )}
       </div>
-      <div className="step3" style={{ display: 'none' }}>
-        <h3>Шаг 3. Оформление заявки</h3>
-        <ul className="step3-description__list">
-          <li className="step3-description__item">
-            <strong>Номер заявки</strong>
-            <span>№ 0010</span>
-          </li>
-          <li className="step3-description__item">
-            <strong>Цель кредита</strong>
-            <span>Ипотека</span>
-          </li>
-          <li className="step3-description__item">
-            <strong>Стоимость недвижимости</strong>
-            <span>2 000 000 рублей</span>
-          </li>
-          <li className="step3-description__item">
-            <strong>Первоначальный взнос</strong>
-            <span>200 000 рублей</span>
-          </li>
-          <li className="step3-description__item">
-            <strong>Срок кредитования</strong>
-            <span>5 лет</span>
-          </li>
-        </ul>
-        <form className="submit-form">
-          <input
-            className="submit-form__surname"
-            id="input-surname"
-            type="text"
-            placeholder="ФИО"
-          />
-          <input
-            className="submit-form__phone"
-            id="input-phone"
-            type="tel"
-            placeholder="Телефон"
-          />
-          <input
-            className="submit-form__mail"
-            id="input-mail"
-            type="mail"
-            placeholder="E-mail"
-          />
-          <button className="submit-form__btn btn" type="submit">
-            Отправить
-          </button>
-        </form>
-      </div>
+      {isFormOpen && (
+        <div className="step3">
+          <h3>Шаг 3. Оформление заявки</h3>
+          <ul className="step3-description__list">
+            <li className="step3-description__item">
+              <strong>Номер заявки</strong>
+              <span>№ 0010</span>
+            </li>
+            <li className="step3-description__item">
+              <strong>Цель кредита</strong>
+              <span>{type}</span>
+            </li>
+            <li className="step3-description__item">
+              <strong>Стоимость {type2}</strong>
+              <span>{currentPrice.toLocaleString()} рублей</span>
+            </li>
+            <li className="step3-description__item">
+              <strong>Первоначальный взнос</strong>
+              <span>{currentDeposite.toLocaleString()} рублей</span>
+            </li>
+            <li className="step3-description__item">
+              <strong>Срок кредитования</strong>
+              <span>{currentRangeOfTime} лет</span>
+            </li>
+          </ul>
+          <form className="submit-form">
+            <input
+              className="submit-form__surname"
+              id="input-surname"
+              type="text"
+              placeholder="ФИО"
+              autoFocus
+            />
+            <input
+              className="submit-form__phone"
+              id="input-phone"
+              type="tel"
+              placeholder="Телефон"
+            />
+            <input
+              className="submit-form__mail"
+              id="input-mail"
+              type="mail"
+              placeholder="E-mail"
+            />
+            <button className="submit-form__btn btn" type="submit">
+              Отправить
+            </button>
+          </form>
+        </div>
+      )}
     </>
   );
 }
