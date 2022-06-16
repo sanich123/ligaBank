@@ -1186,6 +1186,14 @@ body {
   color: #394959;
 }
 
+.proposal-wrong {
+  width: 500px;
+  min-height: 225px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+
 .long-btn {
   width: 382px;
 }

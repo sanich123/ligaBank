@@ -1,8 +1,11 @@
-import { useState } from 'react';
 import { getFormattedValue } from '../../../utils/utils';
 
-export default function AmountOfTime() {
-  const [rangeOfTime, setRangeOfTime] = useState('5');
+interface AmountOfTimeProps {
+  rangeOfTime: string,
+  setRangeOfTime: (arg: string) => void,
+}
+
+export default function AmountOfTime({rangeOfTime, setRangeOfTime}: AmountOfTimeProps) {
 
   return (
     <div className="input-wrapper">

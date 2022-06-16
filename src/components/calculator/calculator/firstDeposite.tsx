@@ -1,20 +1,16 @@
 import { useState } from 'react';
-import { MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit } from '../../../utils/const';
-
 import { getCleanedNumber } from '../../../utils/utils';
 
 interface FirstDepositeProps {
-  price: string,
-  goal: string,
+  price: string;
+  goal: string;
+  setTypedDeposite: (arg: string) => void;
+  typedDeposite: string,
 }
 
-export default function FirstDeposite({price, goal}: FirstDepositeProps) {
-  const minPrice = goal === purposesOfCredit.mortgage ? MIN_MORTGAGE_PRICE : MIN_CARCREDIT_PRICE;
-  const initialPercent = goal === purposesOfCredit.mortgage ? 10 : 20;
-
-  const initialTypedDeposite = `${(minPrice / initialPercent).toLocaleString()} рублей`;
-  const [typedDeposite, setTypedDeposite] = useState(initialTypedDeposite);
+export default function FirstDeposite({price, goal, setTypedDeposite, typedDeposite}: FirstDepositeProps) {
   const [rangeNumber, setRangeNumber] = useState(10);
+
   return (
     <div className="input-wrapper">
       <label className="price-label" htmlFor="input-deposit">

@@ -5,6 +5,11 @@ export const MIN_CARCREDIT_PRICE = 500000;
 export const MAX_CARCREDIT_PRICE = 2000000;
 export const STEP_MORTGAGE_PRICE = 100000;
 export const STEP_CARCREDIT_PRICE = 50000;
+export const MATERNITY_CAPITAL = 470000;
+export const MIN_MORTGAGE_SUM = 500000;
+export const MIN_CARCREDIT_SUM = 200000;
+export const MIN_MORTGAGE_PERCENT = 8.50;
+export const MAX_MORTGAGE_PERCENT = 9.40;
 
 export const advantagesTypes = {
   deposites: 'Вклады',

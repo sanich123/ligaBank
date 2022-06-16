@@ -13,17 +13,21 @@ interface Step2Props {
   isNeedKasko: boolean,
   isMotherCapital: boolean;
   goal: string;
+  typedDeposite: string,
+  setTypedDeposite: (arg: string) => void,
+  setRangeOfTime: (arg: string) => void,
+  rangeOfTime: string,
 }
 
-export default function Step2({price, setPrice, setIsMotherCapital, isMotherCapital, goal, setIsNeedInsurance, setIsNeedKasko, isNeedInsurance, isNeedKasko}: Step2Props) {
+export default function Step2({price, setPrice, setIsMotherCapital, isMotherCapital, goal, setIsNeedInsurance, setIsNeedKasko, isNeedInsurance, isNeedKasko, typedDeposite, setTypedDeposite, setRangeOfTime, rangeOfTime}: Step2Props) {
 
   return (
     <>
       <h3>Шаг 2. Введите параметры кредита</h3>
       <div className="step-two-wrapper">
         <PriceOfEstate goal={goal} price={price} setPrice={setPrice} />
-        <FirstDeposite goal={goal} price={price} />
-        <AmountOfTime />
+        <FirstDeposite typedDeposite={typedDeposite} setTypedDeposite={setTypedDeposite} goal={goal} price={price} />
+        <AmountOfTime setRangeOfTime={setRangeOfTime} rangeOfTime={rangeOfTime} />
         {goal === purposesOfCredit.mortgage && (
           <label>
             <input
