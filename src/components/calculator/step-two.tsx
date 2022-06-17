@@ -1,4 +1,4 @@
-import { purposesOfCredit } from '../../../utils/const';
+import { purposesOfCredit } from '../../utils/const';
 import AmountOfTime from './amountOfTime';
 import FirstDeposite from './firstDeposite';
 import PriceOfEstate from './credit-price';

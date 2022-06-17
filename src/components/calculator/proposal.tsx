@@ -26,7 +26,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, typ
           <span>Ежемесячный платеж</span>
         </li>
         <li className="proposal-list__item">
-          <h3>{(monthPayment * 2.1).toLocaleString()} рублей</h3>
+          <h3>{(Math.trunc(monthPayment * 2.1)).toLocaleString()} рублей</h3>
           <span>Необходимый доход</span>
         </li>
       </ul>

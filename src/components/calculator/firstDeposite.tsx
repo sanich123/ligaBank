@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getCleanedNumber } from '../../../utils/utils';
+import { getCleanedNumber } from '../../utils/utils';
 
 interface FirstDepositeProps {
   price: string;

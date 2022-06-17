@@ -4,11 +4,10 @@ import Footer from './footer/footer';
 import Header from './header/header';
 import Modal from './modal/modal';
 import Slider from './slider/slider';
-import Calculator from './calculator/calculator/calculator';
+import Calculator from './calculator/calculator';
 
 export default function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
 
   return (
     <>
@@ -22,9 +21,7 @@ export default function Main() {
 
         <section className="main-calculator container">
           <h2>Кредитный калькулятор</h2>
-          <Calculator/>
-
-
+          <Calculator />
         </section>
         <section className="main-map container">
           <h2>Отделения Лига Банка</h2>

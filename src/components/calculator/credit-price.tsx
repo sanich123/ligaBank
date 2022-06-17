@@ -1,6 +1,6 @@
-import { MAX_CARCREDIT_PRICE, MAX_MORTGAGE_PRICE, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit, STEP_CARCREDIT_PRICE, STEP_MORTGAGE_PRICE } from '../../../utils/const';
-import { getCleanedNumber } from '../../../utils/utils';
-import { MinusIcon, PlusIcon } from '../../svg';
+import { MAX_CARCREDIT_PRICE, MAX_MORTGAGE_PRICE, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit, STEP_CARCREDIT_PRICE, STEP_MORTGAGE_PRICE } from '../../utils/const';
+import { getCleanedNumber } from '../../utils/utils';
+import { MinusIcon, PlusIcon } from '../svg';
 
 interface CreditPriceProps {
   price: string,

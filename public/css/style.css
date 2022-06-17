@@ -778,7 +778,7 @@ body {
   background-image: url("../img/content/black-card.png");
   bottom: 90px;
   left: 571px;
-  z-index: 999;
+  z-index: 100;
 }
 
 .first-slide::after {
@@ -866,7 +866,7 @@ body {
   padding: 19px 48px 21px 48px;
   background: #2C36F2;
   border-radius: 4px;
-  z-index: 999;
+  z-index: 100;
   cursor: pointer;
 }
 
@@ -953,7 +953,7 @@ body {
   bottom: 0;
   left: 0;
   position: fixed;
-  z-index: 1000;
+  z-index: 999;
 
   display: flex;
   visibility: hidden;
@@ -962,15 +962,7 @@ body {
 
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.8);
-
-  -webkit-transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-          transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-          transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-          transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1), -webkit-transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
   pointer-events: none;
-
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -1000,17 +992,6 @@ body {
   padding: 60px 40px;
 }
 
-.modal__overlay {
-  top: 0;
-  left: 0;
-  position: absolute;
-
-  width: 100%;
-  height: 100%;
-
-  cursor: pointer;
-}
-
 .modal__content {
   padding: 60px 60px;
   display: grid;
@@ -1024,8 +1005,18 @@ body {
 
 .modal__logo {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
   width: 424px;
   height: 60px;
+}
+
+.modal__close--btn {
+  border: none;
+  outline: none;
+  background: transparent;
+  cursor: pointer;
 }
 
 .modal__label input {
@@ -1038,9 +1029,12 @@ body {
   height: 60px;
 }
 
+
 /*Main-calculator*/
 .main-calculator {
-  min-height: min-content;
+  display: grid;
+  grid-template-rows: auto auto;
+  height: auto;
 }
 
 .main-calculator h2 {
@@ -1075,8 +1069,54 @@ body {
   padding-left: 25px;
 }
 
-.input-range {
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+/* input[type=range]:focus {
+  outline: none;
+} */
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #2C36F2;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
   width: 600px;
+  height: 0px;
+  border: 1px solid #C1C2CA;
 }
 
 .input-wrapper {
@@ -1126,17 +1166,24 @@ body {
 
 .grid-layout {
   display: grid;
+  grid-template-areas:
+  "step1-2 proposal"
+  "step3 step3";
   grid-template-columns: 600px 500px;
+  grid-template-rows: auto auto;
   gap: 70px;
 }
 
+.step1-step2 {
+  grid-area: step1-2;
+}
+
 .step3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  grid-area: step3;
 }
 
 .proposal {
+  grid-area: proposal;
   background: #F6F7FF;
   border-radius: 4px;
   height: 389px;
@@ -1239,7 +1286,7 @@ body {
 .step3-description__item span {
   display: flex;
   align-items: center;
-  justify-self:end;
+  justify-self: end;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;

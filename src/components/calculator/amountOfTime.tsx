@@ -1,4 +1,4 @@
-import { getFormattedValue } from '../../../utils/utils';
+import { getFormattedValue } from '../../utils/utils';
 
 interface AmountOfTimeProps {
   rangeOfTime: string,

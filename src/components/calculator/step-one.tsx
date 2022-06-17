@@ -1,4 +1,4 @@
-import { INITIAL_CARCREDIT_TIME, INITIAL_MORTGAGE_TIME, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit } from '../../../utils/const';
+import { INITIAL_CARCREDIT_TIME, INITIAL_MORTGAGE_TIME, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit } from '../../utils/const';
 
 interface Step1Props {
   setGoal: (arg: string) => void,
@@ -13,7 +13,6 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
     <>
       <h3>Шаг 1. Цель кредита</h3>
       <select
-        value="Выберите цель кредита"
         className="main-calculator__select"
         onChange={({ target }) => {
           setGoal(target.value);
@@ -34,7 +33,6 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
         <option
           className="main-calculator__select--option"
           value="Выберите цель кредита"
-          selected
         >
           Выберите цель кредита
         </option>
