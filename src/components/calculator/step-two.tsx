@@ -1,5 +1,5 @@
 import { purposesOfCredit } from '../../utils/const';
-import AmountOfTime from './amountOfTime';
+import AmountOfTime from './amount-of-time';
 import FirstDeposite from './firstDeposite';
 import PriceOfEstate from './credit-price';
 
@@ -11,6 +11,8 @@ interface StepTwoProps {
   goal: string;
   typedDeposite: string;
   rangeOfTime: string;
+  minTime: number,
+  maxTime: number,
   setPrice: (arg: string) => void;
   setIsMotherCapital: (arg: boolean) => void;
   setIsNeedInsurance: (arg: boolean) => void;
@@ -27,6 +29,8 @@ export default function StepTwo({
   isMotherCapital,
   goal,
   rangeOfTime,
+  minTime,
+  maxTime,
   setPrice,
   setIsMotherCapital,
   setIsNeedInsurance,
@@ -46,6 +50,8 @@ export default function StepTwo({
           price={price}
         />
         <AmountOfTime
+          minTime={minTime}
+          maxTime={maxTime}
           setRangeOfTime={setRangeOfTime}
           rangeOfTime={rangeOfTime}
         />

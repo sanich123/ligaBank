@@ -4,10 +4,9 @@ import { totalCredit } from '../../utils/utils';
 import ModalSuccess from '../modal/modal-success';
 import Proposal from './proposal';
 import ProposalError from './proposal-error';
-
-import Step1 from './step-one';
+import StepOne from './step-one';
 import StepThree from './step-three';
-import Step2 from './step-two';
+import StepTwo from './step-two';
 
 export default function Calculator() {
   const [goal, setGoal] = useState(purposesOfCredit.notSelected);
@@ -20,12 +19,12 @@ export default function Calculator() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSuccessMessage, setIsSuccessMessage] = useState(false);
 
-  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime } = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
+  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime } = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
 
   return (
     <div className="grid-layout">
       <div className="step1-step2">
-        <Step1
+        <StepOne
           setGoal={setGoal}
           setPrice={setPrice}
           setTypedDeposite={setTypedDeposite}
@@ -33,7 +32,9 @@ export default function Calculator() {
         />
         {(goal === purposesOfCredit.carCredit ||
             goal === purposesOfCredit.mortgage) && (
-          <Step2
+          <StepTwo
+            minTime={minTime}
+            maxTime={maxTime}
             goal={goal}
             price={price}
             setPrice={setPrice}

@@ -6,8 +6,8 @@ interface ProposalProps {
   setIsFormOpen: (arg: boolean) => void,
 }
 
-
 export default function Proposal({totalSum, calculatedPercent, monthPayment, type3, setIsFormOpen}: ProposalProps) {
+  const isError = monthPayment === Infinity;
 
   return (
     <>
@@ -22,12 +22,18 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, typ
           <span>Процентная ставка</span>
         </li>
         <li className="proposal-list__item">
-          <h3>{monthPayment.toLocaleString()} рублей</h3>
-          <span>Ежемесячный платеж</span>
+          {!isError && (
+            <>
+              <h3>{monthPayment.toLocaleString()} рублей</h3>
+              <span>Ежемесячный платеж</span>
+            </>)}
         </li>
         <li className="proposal-list__item">
-          <h3>{(Math.trunc(monthPayment * 2.1)).toLocaleString()} рублей</h3>
-          <span>Необходимый доход</span>
+          {!isError && (
+            <>
+              <h3>{Math.round((monthPayment * 2.1)).toLocaleString()} рублей</h3>
+              <span>Необходимый доход</span>
+            </>)}
         </li>
       </ul>
       <button
@@ -37,6 +43,5 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, typ
       >
         Оформить заявку
       </button>
-    </>
-  );
+    </>);
 }

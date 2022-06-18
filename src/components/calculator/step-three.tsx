@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { storageKeys } from '../../utils/const';
 import { getRightZeroes } from '../../utils/utils';
 
 interface StepThreeProps {
@@ -16,7 +17,9 @@ export default function StepThree({type, type2, currentPrice, currentDeposite, c
   const [mail, setMail] = useState('');
   const [isError, setIsError] = useState(false);
 
-  const inStorage = JSON.parse(localStorage.getItem('application') || '');
+  const inStorage = JSON.parse(
+    localStorage.getItem(storageKeys.application) || '',
+  );
   const newId = inStorage.pop().id + 1;
   const numberOfApplication = !inStorage.length ? 1 : newId;
   const isAllRight = surname && phone && mail;
@@ -26,10 +29,13 @@ export default function StepThree({type, type2, currentPrice, currentDeposite, c
       setIsError(true);
     }
     if (!inStorage.length && isAllRight) {
-      localStorage.setItem('application', JSON.stringify([{id: 1, surname, phone, mail}]));
+      localStorage.setItem(storageKeys.application, JSON.stringify([{id: 1, surname, phone, mail}]));
       setIsSuccessMessage(true);
     } else if (inStorage.length && isAllRight) {
-      localStorage.setItem('application', JSON.stringify([...inStorage, { id: newId, surname, phone, mail }]));
+      localStorage.setItem(
+        storageKeys.application,
+        JSON.stringify([...inStorage, { id: newId, surname, phone, mail }]),
+      );
       setIsSuccessMessage(true);
     }
   };

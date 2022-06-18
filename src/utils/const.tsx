@@ -16,6 +16,10 @@ export const MEDIUM_CARCREDIT_PERCENT = 15;
 export const MAX_CARCREDIT_PERCENT = 16;
 export const INITIAL_MORTGAGE_TIME = '5';
 export const INITIAL_CARCREDIT_TIME = '1';
+export const MIN_MORTGAGE_TIME = 5;
+export const MAX_MORTGAGE_TIME = 30;
+export const MIN_CARCREDIT_TIME = 1;
+export const MAX_CARCREDIT_TIME = 5;
 
 export const advantagesTypes = {
   deposites: 'Вклады',
@@ -83,4 +87,17 @@ export const purposesOfCredit = {
   mortgage: 'Ипотечное кредитование',
   carCredit: 'Автомобильное кредитование',
   notSelected: 'Выберите цель кредита',
+};
+
+export const storageKeys = {
+  loginPassword: 'loginPassword',
+  application: 'application',
+};
+
+export const inputPatterns = {
+  password: '(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
+};
+
+export const inputTitles = {
+  password: 'Не менее восьми символов, содержащих хотя бы одну цифру и символы из верхнего и нижнего регистра',
 };

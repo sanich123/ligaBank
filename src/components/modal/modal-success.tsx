@@ -10,42 +10,31 @@ interface ModalSuccessProps {
 }
 export default function ModalSuccess({ setIsSuccessMessage, setGoal, setPrice, setIsFormOpen}: ModalSuccessProps) {
 
+  const resetToDefault = () => {
+    setIsSuccessMessage(false);
+    setGoal(purposesOfCredit.notSelected);
+    setPrice('');
+    setIsFormOpen(false);
+  };
+
   return (
     <div className="modal is-active">
       <div className="modal__wrapper">
-        <FocusOn
-          onEscapeKey={() => {
-            setIsSuccessMessage(false);
-            setGoal(purposesOfCredit.notSelected);
-            setPrice('');
-            setIsFormOpen(false);
-          }}
-          onClickOutside={() => {
-            setIsSuccessMessage(false);
-            setGoal(purposesOfCredit.notSelected);
-            setPrice('');
-            setIsFormOpen(false);
-          }}
-        >
-          <div className="modal__content proposal-wrong">
+        <FocusOn onEscapeKey={resetToDefault} onClickOutside={resetToDefault}>
+          <div className="modal__success">
+            <button
+              className="modal__success--close-btn"
+              type="button"
+              aria-label="Закрыть"
+              tabIndex={0}
+              onClick={resetToDefault}
+            >
+              <CloseIcon />
+            </button>
             <h3>Спасибо за обращение в наш банк.</h3>
             <p>
               Наш менеджер скоро свяжется с вами по указанному номеру телефона.
             </p>
-            <button
-              className="modal__close--btn"
-              type="button"
-              aria-label="Закрыть"
-              tabIndex={0}
-              onClick={() => {
-                setIsSuccessMessage(false);
-                setGoal(purposesOfCredit.notSelected);
-                setPrice('');
-                setIsFormOpen(false);
-              }}
-            >
-              <CloseIcon />
-            </button>
           </div>
         </FocusOn>
       </div>
