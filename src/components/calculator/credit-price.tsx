@@ -1,32 +1,33 @@
-import { MAX_CARCREDIT_PRICE, MAX_MORTGAGE_PRICE, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit, STEP_CARCREDIT_PRICE, STEP_MORTGAGE_PRICE } from '../../utils/const';
 import { getCleanedNumber } from '../../utils/utils';
 import { MinusIcon, PlusIcon } from '../svg';
 
 interface CreditPriceProps {
   price: string,
   setPrice: (arg: string) => void,
-  goal: string,
+  minPrice: number,
+  maxPrice: number,
+  nameOfProduct: string,
+  stepOfPrice: number,
 }
 
-export default function CreditPrice({goal, price, setPrice}: CreditPriceProps) {
-  const minPrice = goal !== '' && goal === purposesOfCredit.mortgage ? MIN_MORTGAGE_PRICE : MIN_CARCREDIT_PRICE;
-  const maxPrice = goal !== '' && goal === purposesOfCredit.carCredit ? MAX_CARCREDIT_PRICE : MAX_MORTGAGE_PRICE;
-  const nameOfProduct = goal !== '' && goal === purposesOfCredit.mortgage ? 'недвижимости' : 'автомобиля';
-  const stepPrice = goal !== '' && goal === purposesOfCredit.mortgage ? STEP_MORTGAGE_PRICE : STEP_CARCREDIT_PRICE;
+export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOfProduct, stepOfPrice}: CreditPriceProps) {
+  const currentPrice = getCleanedNumber(price);
+  const isInvalidPrice =  currentPrice < minPrice || currentPrice > maxPrice;
+  const incrementedPrice = Math.abs((currentPrice + stepOfPrice)).toLocaleString();
+  const decrementedPrice = Math.abs((currentPrice - stepOfPrice)).toLocaleString();
+  const formattedMinPrice = minPrice.toLocaleString();
+  const formattedMaxPrice = maxPrice.toLocaleString();
 
-  const isInvalidInput =
-      getCleanedNumber(price) < minPrice ||
-      getCleanedNumber(price) > maxPrice;
 
   return (
     <div className="input-wrapper">
       <label htmlFor="input-price" className="price-label">
-        Стоимость {nameOfProduct}
+        {`Стоимость ${nameOfProduct} ${isInvalidPrice ? `должна быть от ${formattedMinPrice} до ${formattedMaxPrice}` : ''}`}
       </label>
       <br />
       <button
         className="price-input__btn minus"
-        onClick={() => setPrice(`${(getCleanedNumber(price) - stepPrice).toLocaleString()} рублей`)}
+        onClick={() => setPrice(`${decrementedPrice} рублей`)}
         aria-label="Кнопка минус"
         type="button"
         tabIndex={0}
@@ -34,7 +35,7 @@ export default function CreditPrice({goal, price, setPrice}: CreditPriceProps) {
         <MinusIcon />
       </button>
       <input
-        style={{ border: `1px solid ${isInvalidInput ? 'red' : '#1F1E25'}` }}
+        style={{ border: `1px solid ${isInvalidPrice ? 'red' : '#1F1E25'}` }}
         id="input-price"
         className="price-input"
         type="text"
@@ -42,12 +43,12 @@ export default function CreditPrice({goal, price, setPrice}: CreditPriceProps) {
         onFocus={() => setPrice('')}
         onBlur={() => setPrice(`${Number(price).toLocaleString()} рублей`)}
         onChange={({ target }) => {
-          if (!/\D/gi.test(target.value)) {
+          if (/\d/gi.test(target.value)) {
             setPrice(target.value);
           }}}
       />
       <button
-        onClick={() => setPrice(`${(getCleanedNumber(price) + stepPrice).toLocaleString()} рублей`)}
+        onClick={() => setPrice(`${incrementedPrice} рублей`)}
         type="button"
         aria-label="Кнопка плюс"
         className="price-input__btn plus"
@@ -57,12 +58,12 @@ export default function CreditPrice({goal, price, setPrice}: CreditPriceProps) {
       </button>
       <br />
       <span
-        style={{ color: `${isInvalidInput ? 'red' : '#707C87'}` }}
+        style={{ color: `${isInvalidPrice ? 'red' : '#707C87'}` }}
         className="sub-input"
       >
-        {isInvalidInput
+        {isInvalidPrice
           ? 'Вы ввели некорректные данные'
-          : `От ${minPrice.toLocaleString()} до ${maxPrice.toLocaleString()} рублей`}
+          : `От ${formattedMinPrice} до ${formattedMaxPrice} рублей`}
       </span>
       <br />
     </div>

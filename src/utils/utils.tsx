@@ -1,4 +1,4 @@
-import { MATERNITY_CAPITAL, MAX_CARCREDIT_PERCENT, MAX_CARCREDIT_TIME, MAX_MORTGAGE_PERCENT, MAX_MORTGAGE_TIME, MEDIUM_CARCREDIT_PERCENT, MIN_CARCREDIT_SUM, MIN_CARCREDIT_TIME, MIN_MORTGAGE_PERCENT, MIN_MORTGAGE_SUM, MIN_MORTGAGE_TIME, purposesOfCredit, SMALLEST_CARCREDIT_PERCENT, SMALL_CARCREDIT_PERCENT } from './const';
+import { MATERNITY_CAPITAL, MAX_CARCREDIT_PERCENT, MAX_CARCREDIT_PRICE, MAX_CARCREDIT_TIME, MAX_MORTGAGE_PERCENT, MAX_MORTGAGE_PRICE, MAX_MORTGAGE_TIME, MEDIUM_CARCREDIT_PERCENT, MIN_CARCREDIT_PRICE, MIN_CARCREDIT_SUM, MIN_CARCREDIT_TIME, MIN_MORTGAGE_PERCENT, MIN_MORTGAGE_PRICE, MIN_MORTGAGE_SUM, MIN_MORTGAGE_TIME, purposesOfCredit, SMALLEST_CARCREDIT_PERCENT, SMALL_CARCREDIT_PERCENT, STEP_CARCREDIT_PRICE, STEP_MORTGAGE_PRICE } from './const';
 
 export const getCleanedNumber = (formattedString: string) => +formattedString.replace(/\s/gi, '').replace(/рублей/gi, '');
 
@@ -46,6 +46,9 @@ export const totalCredit = (isKasko: boolean, isInsurance: boolean,isMotherCapit
     const totalSum = currentPrice - currentDeposite - (isMotherCapital ? MATERNITY_CAPITAL : 0);
     const isVisible = totalSum <= MIN_MORTGAGE_SUM;
     const minSum = MIN_MORTGAGE_SUM;
+    const minPrice = MIN_MORTGAGE_PRICE;
+    const maxPrice = MAX_MORTGAGE_PRICE;
+    const stepOfPrice = STEP_MORTGAGE_PRICE;
     const minTime = MIN_MORTGAGE_TIME;
     const maxTime = MAX_MORTGAGE_TIME;
     const typeOfCredit = 'ипотечные кредиты';
@@ -55,12 +58,15 @@ export const totalCredit = (isKasko: boolean, isInsurance: boolean,isMotherCapit
     const calculatedPercent = percentOfDeposite < 15 ? MAX_MORTGAGE_PERCENT : MIN_MORTGAGE_PERCENT;
     const monthPercentage = (calculatedPercent * 0.001) / 12;
     const monthPayment = Math.round(totalSum * (monthPercentage / (1 - Math.pow((1 + monthPercentage), -(currentRangeOfTime * 12)))));
-    return { isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPercentage, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime };
+    return { isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPercentage, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice };
   }
   const totalSum = getCleanedNumber(price) - getCleanedNumber(deposite);
   const isVisible = totalSum < MIN_CARCREDIT_SUM;
   const minSum = MIN_CARCREDIT_SUM;
   const typeOfCredit = 'автокредиты';
+  const minPrice = MIN_CARCREDIT_PRICE;
+  const maxPrice = MAX_CARCREDIT_PRICE;
+  const stepOfPrice = STEP_CARCREDIT_PRICE;
   const minTime = MIN_CARCREDIT_TIME;
   const maxTime = MAX_CARCREDIT_TIME;
   const type = 'автокредит';
@@ -69,7 +75,7 @@ export const totalCredit = (isKasko: boolean, isInsurance: boolean,isMotherCapit
   const calculatedPercent = percentChanger(isKasko, isInsurance, currentPrice);
   const monthPercentage = (calculatedPercent * 0.001) / 12;
   const monthPayment = Math.round(currentPrice * (monthPercentage / (1 - Math.pow((1 + monthPercentage), -(currentRangeOfTime * 12)))));
-  return { isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime };
+  return { isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice };
 };
 
 export const getRightZeroes = (number: number) => {

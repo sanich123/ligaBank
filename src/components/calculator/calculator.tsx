@@ -19,7 +19,7 @@ export default function Calculator() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSuccessMessage, setIsSuccessMessage] = useState(false);
 
-  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime } = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
+  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice } = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
 
   return (
     <div className="grid-layout">
@@ -33,6 +33,10 @@ export default function Calculator() {
         {(goal === purposesOfCredit.carCredit ||
             goal === purposesOfCredit.mortgage) && (
           <StepTwo
+            stepOfPrice={stepOfPrice}
+            type2={type2}
+            minPrice={minPrice}
+            maxPrice={maxPrice}
             minTime={minTime}
             maxTime={maxTime}
             goal={goal}

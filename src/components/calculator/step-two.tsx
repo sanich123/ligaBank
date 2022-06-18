@@ -1,7 +1,7 @@
 import { purposesOfCredit } from '../../utils/const';
 import AmountOfTime from './amount-of-time';
 import FirstDeposite from './firstDeposite';
-import PriceOfEstate from './credit-price';
+import CreditPrice from './credit-price';
 
 interface StepTwoProps {
   price: string;
@@ -19,9 +19,17 @@ interface StepTwoProps {
   setIsNeedKasko: (arg: boolean) => void;
   setTypedDeposite: (arg: string) => void;
   setRangeOfTime: (arg: string) => void;
+  minPrice: number,
+  maxPrice: number,
+  type2: string,
+  stepOfPrice: number,
 }
 
 export default function StepTwo({
+  stepOfPrice,
+  type2,
+  minPrice,
+  maxPrice,
   price,
   isNeedInsurance,
   isNeedKasko,
@@ -43,7 +51,7 @@ export default function StepTwo({
     <>
       <h3>Шаг 2. Введите параметры кредита</h3>
       <div className="step-two-wrapper">
-        <PriceOfEstate goal={goal} price={price} setPrice={setPrice} />
+        <CreditPrice minPrice={minPrice} maxPrice={maxPrice} price={price} setPrice={setPrice} nameOfProduct={type2} stepOfPrice={stepOfPrice}/>
         <FirstDeposite
           typedDeposite={typedDeposite}
           setTypedDeposite={setTypedDeposite}
@@ -82,8 +90,7 @@ export default function StepTwo({
               />
               Оформить Страхование жизни в нашем банке
             </label>
-          </>
-        )}
+          </>)}
       </div>
     </>
   );
