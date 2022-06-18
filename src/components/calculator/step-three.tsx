@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getRightZeroes } from '../../utils/utils';
 
 interface StepThreeProps {
@@ -14,23 +14,33 @@ export default function StepThree({type, type2, currentPrice, currentDeposite, c
   const [surname, setSurname] = useState('');
   const [phone, setPhone] = useState('');
   const [mail, setMail] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const inStorage = JSON.parse(localStorage.getItem('application') || '');
   const newId = inStorage.pop().id + 1;
   const numberOfApplication = !inStorage.length ? 1 : newId;
+  const isAllRight = surname && phone && mail;
 
   const handleSubmit = () => {
-    if (!inStorage.length && surname && phone && mail) {
+    if (!surname || !phone || !mail) {
+      setIsError(true);
+    }
+    if (!inStorage.length && isAllRight) {
       localStorage.setItem('application', JSON.stringify([{id: 1, surname, phone, mail}]));
       setIsSuccessMessage(true);
-    } else if (inStorage.length && surname && phone && mail) {
+    } else if (inStorage.length && isAllRight) {
       localStorage.setItem('application', JSON.stringify([...inStorage, { id: newId, surname, phone, mail }]));
       setIsSuccessMessage(true);
     }
   };
 
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsError(false), 1500);
+    return () => clearTimeout(timeout);
+  });
+
   return (
-    <div className="step3">
+    <div className={`step3 ${isError ? 'swinging' : ''}`}>
       <h3>Шаг 3. Оформление заявки</h3>
       <ul className="step3-description__list">
         <li className="step3-description__item">
@@ -69,6 +79,8 @@ export default function StepThree({type, type2, currentPrice, currentDeposite, c
           className="submit-form__phone"
           id="input-phone"
           type="tel"
+          pattern="(\+?\d[- .]*){7,13}"
+          title="Международный, государственный или местный телефонный номер"
           placeholder="Телефон"
           value={phone}
           onChange={({ target }) => setPhone(target.value)}
@@ -77,7 +89,8 @@ export default function StepThree({type, type2, currentPrice, currentDeposite, c
         <input
           className="submit-form__mail"
           id="input-mail"
-          type="mail"
+          type="email"
+          pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"
           placeholder="E-mail"
           value={mail}
           onChange={({ target }) => setMail(target.value)}
