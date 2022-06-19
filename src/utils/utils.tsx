@@ -19,7 +19,7 @@ export const getFormattedValue = (string: string) => {
   return `${string} лет`;
 };
 
-const percentChanger = (isKasko: boolean, isInsurance: boolean, price: number) => {
+export const percentChanger = (isKasko: boolean, isInsurance: boolean, price: number) => {
   if (isKasko && isInsurance) {
     return SMALLEST_CARCREDIT_PERCENT;
   }

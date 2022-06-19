@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useAllInputs } from '../../hooks/use-all-inputs';
 import {  purposesOfCredit } from '../../utils/const';
-import { totalCredit } from '../../utils/utils';
 import ModalSuccess from '../modal/modal-success';
 import AmountOfTime from './amount-of-time';
 import CreditPrice from './credit-price';
@@ -13,20 +12,12 @@ import StepOne from './step-one';
 import StepThree from './step-three';
 
 export default function Calculator() {
-  const [goal, setGoal] = useState(purposesOfCredit.notSelected);
-  const [price, setPrice] = useState('');
-  const [typedDeposite, setTypedDeposite] = useState('');
-  const [rangeOfTime, setRangeOfTime] = useState('');
-  const [isMotherCapital, setIsMotherCapital] = useState(false);
-  const [isNeedInsurance, setIsNeedInsurance] = useState(false);
-  const [isNeedKasko, setIsNeedKasko] = useState(false);
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isSuccessMessage, setIsSuccessMessage] = useState(false);
+
+  const { isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite,currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, setGoal, setPrice, setTypedDeposite, setRangeOfTime,setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage, goal, price, typedDeposite, rangeOfTime,isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage } = useAllInputs();
+
   const isCarOrMortgage = goal === purposesOfCredit.carCredit || goal === purposesOfCredit.mortgage;
   const isMortgage = goal === purposesOfCredit.mortgage;
   const isCarCredit = goal === purposesOfCredit.carCredit;
-
-  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent } = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
 
   return (
     <div className="grid-layout">

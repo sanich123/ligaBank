@@ -27,7 +27,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
   useEffect(() => {
     if (minDeposite > currentDeposite && typedDeposite.includes('рублей')) {
       setTypedDeposite(
-        `${minDeposite.toLocaleString()} рублей`,
+        `${Math.round(minDeposite).toLocaleString()} рублей`,
       );
     }
   }, [currentDeposite, minDeposite, setTypedDeposite, typedDeposite]);

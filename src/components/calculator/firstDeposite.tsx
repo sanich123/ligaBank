@@ -20,7 +20,7 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
       <label className="price-label" htmlFor="input-deposit">
         {`Первоначальный взнос ${
           isError
-            ? `не может быть < ${smallestDeposite.toLocaleString()} или >= ${currentPrice.toLocaleString()}`
+            ? `не может быть < ${Math.round(smallestDeposite).toLocaleString()} или >= ${Math.round(currentPrice).toLocaleString()}`
             : ''
         }`}
       </label>
@@ -34,8 +34,8 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
         onFocus={() => setTypedDeposite('')}
         onBlur={() =>
           isError
-            ? setTypedDeposite(`${smallestDeposite.toLocaleString()} рублей`)
-            : setTypedDeposite(`${(+typedDeposite).toLocaleString()} рублей`)}
+            ? setTypedDeposite(`${Math.round(smallestDeposite).toLocaleString()} рублей`)
+            : setTypedDeposite(`${(Math.round(+typedDeposite)).toLocaleString()} рублей`)}
         onChange={({ target }) => {
           if (/^\d+$/gi.test(target.value)) {
             setTypedDeposite(target.value);
@@ -54,10 +54,7 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
             value={priceToDepositePercent}
             onChange={({ target }) => {
               setTypedDeposite(
-                `${(
-                  currentPrice *
-                  (+target.value / 100)
-                ).toLocaleString()} рублей`,
+                `${Math.round((currentPrice * (+target.value / 100))).toLocaleString()} рублей`,
               );
             }}
           />
