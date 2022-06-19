@@ -48,6 +48,9 @@ export default function Calculator() {
                 setPrice={setPrice}
                 nameOfProduct={type2}
                 stepOfPrice={stepOfPrice}
+                typedDeposite={typedDeposite}
+                setTypedDeposite={setTypedDeposite}
+                minPercent={minPercent}
               />
               <FirstDeposite
                 typedDeposite={typedDeposite}
