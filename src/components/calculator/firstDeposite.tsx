@@ -1,40 +1,41 @@
-import { useState } from 'react';
 import { getCleanedNumber } from '../../utils/utils';
 
 interface FirstDepositeProps {
   price: string;
   setTypedDeposite: (arg: string) => void;
   typedDeposite: string,
+  minPercent: number,
 }
 
-export default function FirstDeposite({price, setTypedDeposite, typedDeposite}: FirstDepositeProps) {
-  const [rangeNumber, setRangeNumber] = useState(10);
+export default function FirstDeposite({price, setTypedDeposite, typedDeposite, minPercent}: FirstDepositeProps) {
+  const currentPrice = getCleanedNumber(price);
+  const currentDeposite = getCleanedNumber(typedDeposite);
+  const smallestDeposite = currentPrice * (minPercent / 100);
+  const isError = (currentDeposite < smallestDeposite) || (currentDeposite >= currentPrice);
+  const priceToDepositePercent = Math.floor((currentDeposite / currentPrice) * 100);
 
   return (
     <div className="input-wrapper">
       <label className="price-label" htmlFor="input-deposit">
-        Первоначальный взнос
+        {`Первоначальный взнос ${isError ? `не может быть < ${smallestDeposite.toLocaleString()} или >= ${currentPrice.toLocaleString()}` : ''}`}
       </label>
       <br />
       <input
         type="text"
         id="input-deposit"
         className="price-deposite"
-        value={(getCleanedNumber(typedDeposite) * rangeNumber) / 10}
+        value={currentDeposite < smallestDeposite ? `${smallestDeposite.toLocaleString()} рублей` : typedDeposite}
         tabIndex={0}
-        onFocus={() => {
-          setTypedDeposite('');
-          setRangeNumber(10);
-        }}
-        onBlur={() => {
-          if (getCleanedNumber(typedDeposite) > getCleanedNumber(price) / 10) {
+        onFocus={() => setTypedDeposite('')}
+        onBlur={({target}) => {
+          if (isError) {
             setTypedDeposite(
-              `${Number(typedDeposite).toLocaleString()} рублей`,
+              `${smallestDeposite.toLocaleString()} рублей`,
             );
-          } else {
-            setTypedDeposite(
-              `${(getCleanedNumber(price) / 10).toLocaleString()} рублей`,
-            );
+          }
+          else {
+            console.log((+typedDeposite).toLocaleString());
+            setTypedDeposite(`${(+typedDeposite).toLocaleString()} рублей`);
           }
         }}
         onChange={({ target }) => {
@@ -47,22 +48,20 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite}: 
       <input
         type="range"
         className="input-range"
-        min="10"
+        min={minPercent}
         max="100"
         step="5"
-        value={
-          (getCleanedNumber(typedDeposite) / getCleanedNumber(price)) *
-          10 *
-          rangeNumber
-        }
+        value={priceToDepositePercent}
         onChange={({ target }) => {
-          setRangeNumber(+target.value);
-          const percent = +target.value / 100;
-          setTypedDeposite(`${(getCleanedNumber(price) * percent).toLocaleString()} рублей`);
+          setTypedDeposite(
+            `${(currentPrice * (+target.value / 100)).toLocaleString()} рублей`,
+          );
         }}
       />
       <br />
-      <span className="sub-input">{rangeNumber}%</span>
+      <span className="sub-input">
+        {priceToDepositePercent}%
+      </span>
     </div>
   );
 }

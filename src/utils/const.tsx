@@ -2,7 +2,8 @@ import { Credits, Deposites, Insurance, Online } from '../components/svg';
 export const MAX_MORTGAGE_PRICE = 25000000;
 export const MIN_MORTGAGE_PRICE = 1200000;
 export const MIN_CARCREDIT_PRICE = 500000;
-export const MAX_CARCREDIT_PRICE = 2000000;
+export const MEDIUM_CARCREDIT_PRICE = 2000000;
+export const MAX_CARCREDIT_PRICE = 5000000;
 export const STEP_MORTGAGE_PRICE = 100000;
 export const STEP_CARCREDIT_PRICE = 50000;
 export const MATERNITY_CAPITAL = 470000;
@@ -14,8 +15,6 @@ export const SMALLEST_CARCREDIT_PERCENT = 3.5;
 export const SMALL_CARCREDIT_PERCENT = 8.5;
 export const MEDIUM_CARCREDIT_PERCENT = 15;
 export const MAX_CARCREDIT_PERCENT = 16;
-export const INITIAL_MORTGAGE_TIME = '5';
-export const INITIAL_CARCREDIT_TIME = '1';
 export const MIN_MORTGAGE_TIME = 5;
 export const MAX_MORTGAGE_TIME = 30;
 export const MIN_CARCREDIT_TIME = 1;
@@ -84,9 +83,9 @@ export const sliderTabs = [
 ];
 
 export const purposesOfCredit = {
+  notSelected: 'Выберите цель кредита',
   mortgage: 'Ипотечное кредитование',
   carCredit: 'Автомобильное кредитование',
-  notSelected: 'Выберите цель кредита',
 };
 
 export const storageKeys = {

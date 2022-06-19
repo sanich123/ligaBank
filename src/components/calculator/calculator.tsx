@@ -2,11 +2,15 @@ import { useState } from 'react';
 import {  purposesOfCredit } from '../../utils/const';
 import { totalCredit } from '../../utils/utils';
 import ModalSuccess from '../modal/modal-success';
+import AmountOfTime from './amount-of-time';
+import CreditPrice from './credit-price';
+import FirstDeposite from './firstDeposite';
+import KaskoInsurance from './kasko-insurance';
+import MaternalCapital from './maternal-capital';
 import Proposal from './proposal';
 import ProposalError from './proposal-error';
 import StepOne from './step-one';
 import StepThree from './step-three';
-import StepTwo from './step-two';
 
 export default function Calculator() {
   const [goal, setGoal] = useState(purposesOfCredit.notSelected);
@@ -18,8 +22,11 @@ export default function Calculator() {
   const [isNeedKasko, setIsNeedKasko] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isSuccessMessage, setIsSuccessMessage] = useState(false);
+  const isCarOrMortgage = goal === purposesOfCredit.carCredit || goal === purposesOfCredit.mortgage;
+  const isMortgage = goal === purposesOfCredit.mortgage;
+  const isCarCredit = goal === purposesOfCredit.carCredit;
 
-  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice } = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
+  const {isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent } = totalCredit(isNeedKasko, isNeedInsurance, isMotherCapital, goal, price, typedDeposite, rangeOfTime);
 
   return (
     <div className="grid-layout">
@@ -30,36 +37,48 @@ export default function Calculator() {
           setTypedDeposite={setTypedDeposite}
           setRangeOfTime={setRangeOfTime}
         />
-        {(goal === purposesOfCredit.carCredit ||
-            goal === purposesOfCredit.mortgage) && (
-          <StepTwo
-            stepOfPrice={stepOfPrice}
-            type2={type2}
-            minPrice={minPrice}
-            maxPrice={maxPrice}
-            minTime={minTime}
-            maxTime={maxTime}
-            goal={goal}
-            price={price}
-            setPrice={setPrice}
-            setIsMotherCapital={setIsMotherCapital}
-            isMotherCapital={isMotherCapital}
-            setIsNeedInsurance={setIsNeedInsurance}
-            setIsNeedKasko={setIsNeedKasko}
-            isNeedInsurance={isNeedInsurance}
-            isNeedKasko={isNeedKasko}
-            typedDeposite={typedDeposite}
-            setTypedDeposite={setTypedDeposite}
-            setRangeOfTime={setRangeOfTime}
-            rangeOfTime={rangeOfTime}
-          />
-        )}
+        {isCarOrMortgage && (
+          <>
+            <h3>Шаг 2. Введите параметры кредита</h3>
+            <div className="step-two-wrapper">
+              <CreditPrice
+                minPrice={minPrice}
+                maxPrice={maxPrice}
+                price={price}
+                setPrice={setPrice}
+                nameOfProduct={type2}
+                stepOfPrice={stepOfPrice}
+              />
+              <FirstDeposite
+                typedDeposite={typedDeposite}
+                setTypedDeposite={setTypedDeposite}
+                price={price}
+                minPercent={minPercent}
+              />
+              <AmountOfTime
+                minTime={minTime}
+                maxTime={maxTime}
+                setRangeOfTime={setRangeOfTime}
+                rangeOfTime={rangeOfTime}
+              />
+              {isMortgage && (
+                <MaternalCapital
+                  isMotherCapital={isMotherCapital}
+                  setIsMotherCapital={setIsMotherCapital}
+                />)}
+              {isCarCredit && (
+                <KaskoInsurance
+                  isNeedInsurance={isNeedInsurance}
+                  setIsNeedInsurance={setIsNeedInsurance}
+                  isNeedKasko={isNeedKasko}
+                  setIsNeedKasko={setIsNeedKasko}
+                />)}
+            </div>
+          </>)}
       </div>
-      {goal !== purposesOfCredit.notSelected && (
+      {isCarOrMortgage && (
         <div className="proposal">
-          {isVisible && (
-            <ProposalError minSum={minSum} typeOfCredit={typeOfCredit} />
-          )}
+          {isVisible && <ProposalError minSum={minSum} typeOfCredit={typeOfCredit} />}
           {!isVisible && (
             <Proposal
               totalSum={totalSum}
@@ -67,10 +86,8 @@ export default function Calculator() {
               calculatedPercent={calculatedPercent}
               monthPayment={monthPayment}
               setIsFormOpen={setIsFormOpen}
-            />
-          )}
-        </div>
-      )}
+            />)}
+        </div>)}
       {isFormOpen && (
         <StepThree
           type={type}
@@ -79,11 +96,13 @@ export default function Calculator() {
           currentDeposite={currentDeposite}
           currentRangeOfTime={currentRangeOfTime}
           setIsSuccessMessage={setIsSuccessMessage}
-        />
-      )}
+        />)}
       {isSuccessMessage && (
-        <ModalSuccess setGoal={setGoal} setIsFormOpen={setIsFormOpen} setPrice={setPrice} setIsSuccessMessage={setIsSuccessMessage} />
-      )}
-    </div>
-  );
+        <ModalSuccess
+          setGoal={setGoal}
+          setIsFormOpen={setIsFormOpen}
+          setPrice={setPrice}
+          setIsSuccessMessage={setIsSuccessMessage}
+        />)}
+    </div>);
 }

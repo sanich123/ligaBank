@@ -18,6 +18,11 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
   const formattedMinPrice = minPrice.toLocaleString();
   const formattedMaxPrice = maxPrice.toLocaleString();
 
+  const getRightMinMaxPrice = (number: number) => {
+    if (number < minPrice) {return minPrice;}
+    if (number > maxPrice) {return maxPrice;}
+    return number;
+  };
 
   return (
     <div className="input-wrapper">
@@ -31,6 +36,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
         aria-label="Кнопка минус"
         type="button"
         tabIndex={0}
+        disabled={currentPrice === 100000}
       >
         <MinusIcon />
       </button>
@@ -41,9 +47,12 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
         type="text"
         value={price}
         onFocus={() => setPrice('')}
-        onBlur={() => setPrice(`${Number(price).toLocaleString()} рублей`)}
+        onBlur={() => setPrice(`${getRightMinMaxPrice(currentPrice).toLocaleString()} рублей`)}
         onChange={({ target }) => {
-          if (/\d/gi.test(target.value)) {
+          if (!target.value) {
+            setPrice('');
+          }
+          if (/^\d+$/gi.test(target.value)) {
             setPrice(target.value);
           }}}
       />
@@ -53,6 +62,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
         aria-label="Кнопка плюс"
         className="price-input__btn plus"
         tabIndex={0}
+        disabled={currentPrice === maxPrice}
       >
         <PlusIcon />
       </button>

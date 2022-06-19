@@ -1,4 +1,4 @@
-import { INITIAL_CARCREDIT_TIME, INITIAL_MORTGAGE_TIME, MIN_CARCREDIT_PRICE, MIN_MORTGAGE_PRICE, purposesOfCredit } from '../../utils/const';
+import { MIN_CARCREDIT_PRICE, MIN_CARCREDIT_TIME, MIN_MORTGAGE_PRICE, MIN_MORTGAGE_TIME, purposesOfCredit } from '../../utils/const';
 import { getFormattedValue } from '../../utils/utils';
 
 interface Step1Props {
@@ -20,29 +20,30 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
           if (target.value) {
             if (target.value === purposesOfCredit.mortgage) {
               setPrice(`${MIN_MORTGAGE_PRICE.toLocaleString()} рублей`);
-              setTypedDeposite(`${(MIN_MORTGAGE_PRICE * 0.1).toLocaleString()} рублей`);
-              setRangeOfTime(getFormattedValue(INITIAL_MORTGAGE_TIME));
+              setTypedDeposite(
+                `${(MIN_MORTGAGE_PRICE * 0.1).toLocaleString()} рублей`,
+              );
+              setRangeOfTime(getFormattedValue(`${MIN_MORTGAGE_TIME}`));
             }
             if (target.value === purposesOfCredit.carCredit) {
               setPrice(`${MIN_CARCREDIT_PRICE.toLocaleString()} рублей`);
-              setTypedDeposite(`${(MIN_CARCREDIT_PRICE * 0.2).toLocaleString()} рублей`);
-              setRangeOfTime(getFormattedValue(INITIAL_CARCREDIT_TIME));
+              setTypedDeposite(
+                `${(MIN_CARCREDIT_PRICE * 0.2).toLocaleString()} рублей`,
+              );
+              setRangeOfTime(getFormattedValue(`${MIN_CARCREDIT_TIME}`));
             }
           }
         }}
       >
-        <option
-          className="main-calculator__select--option"
-          value="Выберите цель кредита"
-        >
-          Выберите цель кредита
-        </option>
-        <option value={purposesOfCredit.mortgage}>
-          {purposesOfCredit.mortgage}
-        </option>
-        <option value={purposesOfCredit.carCredit}>
-          {purposesOfCredit.carCredit}
-        </option>
+        {Object.values(purposesOfCredit).map((purpose) => (
+          <option
+            key={purpose}
+            className="main-calculator__select--option"
+            value={purpose}
+          >
+            {purpose}
+          </option>
+        ))}
       </select>
     </>
   );
