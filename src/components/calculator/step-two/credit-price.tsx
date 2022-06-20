@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import { getCleanedNumber } from '../../utils/utils';
-import { MinusIcon, PlusIcon } from '../svg';
+import { getCleanedNumber } from '../../../utils/utils';
+import { MinusIcon, PlusIcon } from '../../svgs';
 
 interface CreditPriceProps {
   price: string,

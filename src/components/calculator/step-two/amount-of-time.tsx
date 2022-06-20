@@ -1,4 +1,4 @@
-import { getCleanedTime, getFormattedValue } from '../../utils/utils';
+import { getCleanedTime, getFormattedValue } from '../../../utils/utils';
 
 interface AmountOfTimeProps {
   rangeOfTime: string,

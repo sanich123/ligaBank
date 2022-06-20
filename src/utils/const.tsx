@@ -1,4 +1,5 @@
-import { Credits, Deposites, Insurance, Online } from '../components/svg';
+import { Credits, Deposites, Insurance, Online } from '../components/svgs';
+
 export const MAX_MORTGAGE_PRICE = 25000000;
 export const MIN_MORTGAGE_PRICE = 1200000;
 export const MIN_CARCREDIT_PRICE = 500000;
@@ -19,6 +20,8 @@ export const MIN_MORTGAGE_TIME = 5;
 export const MAX_MORTGAGE_TIME = 30;
 export const MIN_CARCREDIT_TIME = 1;
 export const MAX_CARCREDIT_TIME = 5;
+export const MIN_MORTGAGE_RANGE = 10;
+export const MIN_CARCREDIT_RANGE = 20;
 
 export const advantagesTypes = {
   deposites: 'Вклады',
@@ -95,8 +98,13 @@ export const storageKeys = {
 
 export const inputPatterns = {
   password: '(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}',
+  phone: '(+?d[- .]*){7,13}',
+  email: '[^@]+@[^@]+.[a-zA-Z]{2,6}',
 };
 
 export const inputTitles = {
-  password: 'Не менее восьми символов, содержащих хотя бы одну цифру и символы из верхнего и нижнего регистра',
+  password:
+    'Не менее восьми символов, содержащих хотя бы одну цифру и символы из верхнего и нижнего регистра',
+  phone: 'Международный, государственный или местный телефонный номер',
+  email: 'Введите валидный email адрес',
 };

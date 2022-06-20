@@ -1,12 +1,12 @@
 interface ProposalProps {
-  type3: string,
+  modificatorFour: string,
   totalSum: number,
   calculatedPercent: number,
   monthPayment: number,
   setIsFormOpen: (arg: boolean) => void,
 }
 
-export default function Proposal({totalSum, calculatedPercent, monthPayment, type3, setIsFormOpen}: ProposalProps) {
+export default function Proposal({totalSum, calculatedPercent, monthPayment, modificatorFour, setIsFormOpen}: ProposalProps) {
   const isError = monthPayment === Infinity;
 
   return (
@@ -15,7 +15,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, typ
       <ul className="proposal-list">
         <li className="proposal-list__item">
           <h3>{totalSum.toLocaleString()} рублей</h3>
-          <span>Сумма {type3}</span>
+          <span>Сумма {modificatorFour}</span>
         </li>
         <li className="proposal-list__item">
           <h3>{calculatedPercent}%</h3>

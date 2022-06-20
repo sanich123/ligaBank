@@ -1,6 +1,6 @@
 import { FocusOn } from 'react-focus-on';
 import { purposesOfCredit } from '../../utils/const';
-import { CloseIcon } from '../svg';
+import { CloseIcon } from '../svgs';
 
 interface ModalSuccessProps {
   setIsSuccessMessage: (arg: boolean) => void,

@@ -1,7 +1,7 @@
-import { CloseIcon, IsVisible, LogoIcon } from '../svg';
 import {FocusOn} from 'react-focus-on';
 import { useEffect, useState } from 'react';
 import { inputPatterns, inputTitles, storageKeys } from '../../utils/const';
+import { CloseIcon, IsVisible, LogoIcon } from '../svgs';
 
 export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) => void}) {
   const [login, setLogin] = useState('');
@@ -69,6 +69,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 onChange={({ target }) => setLogin(target.value)}
                 tabIndex={0}
                 autoComplete=""
+                required
               />
             </label>
 
@@ -82,6 +83,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 onChange={({ target }) => setPassword(target.value)}
                 tabIndex={0}
                 autoComplete=""
+                required
               />
               <button
                 className="modal__label--btn"

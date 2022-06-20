@@ -1,19 +1,19 @@
 import { useAllInputs } from '../../hooks/use-all-inputs';
 import {  purposesOfCredit } from '../../utils/const';
 import ModalSuccess from '../modal/modal-success';
-import AmountOfTime from './amount-of-time';
-import CreditPrice from './credit-price';
-import FirstDeposite from './firstDeposite';
-import KaskoInsurance from './kasko-insurance';
-import MaternalCapital from './maternal-capital';
-import Proposal from './proposal';
-import ProposalError from './proposal-error';
-import StepOne from './step-one';
-import StepThree from './step-three';
+import AmountOfTime from './step-two/amount-of-time';
+import CreditPrice from './step-two/credit-price';
+import FirstDeposite from './step-two/first-deposite';
+import KaskoInsurance from './step-two/kasko-insurance';
+import MaternalCapital from './step-two/maternal-capital';
+import Proposal from './proposal/proposal';
+import ProposalError from './proposal/proposal-error';
+import StepOne from './step-one/step-one';
+import StepThree from './step-three/step-three';
 
 export default function Calculator() {
 
-  const { isVisible, totalSum, minSum, typeOfCredit, calculatedPercent, monthPayment, type, type2, type3, currentPrice, currentDeposite,currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, setGoal, setPrice, setTypedDeposite, setRangeOfTime,setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage, goal, price, typedDeposite, rangeOfTime,isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage } = useAllInputs();
+  const { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite,currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, setGoal, setPrice, setTypedDeposite, setRangeOfTime,setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage, goal, price, typedDeposite, rangeOfTime,isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage } = useAllInputs();
 
   const isCarOrMortgage = goal === purposesOfCredit.carCredit || goal === purposesOfCredit.mortgage;
   const isMortgage = goal === purposesOfCredit.mortgage;
@@ -37,7 +37,7 @@ export default function Calculator() {
                 maxPrice={maxPrice}
                 price={price}
                 setPrice={setPrice}
-                nameOfProduct={type2}
+                nameOfProduct={modificatorThree}
                 stepOfPrice={stepOfPrice}
                 typedDeposite={typedDeposite}
                 setTypedDeposite={setTypedDeposite}
@@ -72,11 +72,11 @@ export default function Calculator() {
       </div>
       {isCarOrMortgage && (
         <div className="proposal">
-          {isVisible && <ProposalError minSum={minSum} typeOfCredit={typeOfCredit} />}
-          {!isVisible && (
+          {isErrorProposal && <ProposalError minSum={minSum} modificatorOne={modificatorOne} />}
+          {!isErrorProposal && (
             <Proposal
               totalSum={totalSum}
-              type3={type3}
+              modificatorFour={modificatorFour}
               calculatedPercent={calculatedPercent}
               monthPayment={monthPayment}
               setIsFormOpen={setIsFormOpen}
@@ -84,12 +84,13 @@ export default function Calculator() {
         </div>)}
       {isFormOpen && (
         <StepThree
-          type={type}
-          type2={type2}
+          modificatorTwo={modificatorTwo}
+          modificatorThree={modificatorThree}
           currentPrice={currentPrice}
           currentDeposite={currentDeposite}
           currentRangeOfTime={currentRangeOfTime}
           setIsSuccessMessage={setIsSuccessMessage}
+          setIsFormOpen={setIsFormOpen}
         />)}
       {isSuccessMessage && (
         <ModalSuccess

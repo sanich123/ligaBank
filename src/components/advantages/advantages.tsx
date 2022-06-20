@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { advantageInsurances, advantagesBtns, advantagesCredits, advantagesDeposites, advantagesOnline, advantagesTypes } from '../../utils/const';
-import { AcceptIcon } from '../svg';
+import { AcceptIcon } from '../svgs';
 
 export default function Advantages() {
   const [activeBtn, setActiveBtn] = useState(advantagesTypes.deposites);
