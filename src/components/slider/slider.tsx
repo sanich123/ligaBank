@@ -40,7 +40,7 @@ export default function Slider() {
             <li className="main-slider__list--item first-slide">
               <h2>Лига Банк</h2>
               <p>Кредиты на любой случай</p>
-              <button type="button">Рассчитать кредит</button>
+              <a className="btn" href="#calculator">Рассчитать кредит</a>
             </li>
           )}
           {activeSlide === 1 && (
@@ -53,9 +53,9 @@ export default function Slider() {
             <li className="main-slider__list--item third-slide">
               <h2>Лига Банк</h2>
               <p>Всегда рядом</p>
-              <button type="button" className="btn">
+              <a href="#offices">
                 Найти отделение
-              </button>
+              </a>
             </li>
           )}
         </ul>

@@ -23,7 +23,7 @@ export default function Main() {
           <h2>Кредитный калькулятор</h2>
           <Calculator />
         </section>
-        <section className="main-map container">
+        <section id="offices" className="main-map container">
           <h2>Отделения Лига Банка</h2>
           <img alt="Карта с отделениями" src="./img/content/map.png" />
         </section>

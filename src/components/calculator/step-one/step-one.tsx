@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MIN_CARCREDIT_PRICE, MIN_CARCREDIT_TIME, MIN_MORTGAGE_PRICE, MIN_MORTGAGE_TIME, purposesOfCredit } from '../../../utils/const';
 import { getFormattedValue } from '../../../utils/utils';
 

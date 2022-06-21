@@ -1,5 +1,5 @@
 import { useAllInputs } from '../../hooks/use-all-inputs';
-import {  purposesOfCredit } from '../../utils/const';
+import { purposesOfCredit } from '../../utils/const';
 import ModalSuccess from '../modal/modal-success';
 import AmountOfTime from './step-two/amount-of-time';
 import CreditPrice from './step-two/credit-price';
@@ -20,7 +20,7 @@ export default function Calculator() {
   const isCarCredit = goal === purposesOfCredit.carCredit;
 
   return (
-    <div className="grid-layout">
+    <div className="grid-layout" id="calculator">
       <div className="step1-step2">
         <StepOne
           goal={goal}
