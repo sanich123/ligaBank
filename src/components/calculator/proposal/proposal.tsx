@@ -40,6 +40,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
         type="button"
         className="btn long-btn"
         onClick={() => setIsFormOpen(true)}
+        aria-label="Оформить заявку"
       >
         Оформить заявку
       </button>

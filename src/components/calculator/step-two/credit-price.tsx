@@ -60,6 +60,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
       <input
         style={{ border: `1px solid ${isInvalidPrice ? 'red' : '#1F1E25'}` }}
         id="input-price"
+        aria-labelledby="Поле ввода стоимости кредита"
         className="price-input"
         type="text"
         value={price}

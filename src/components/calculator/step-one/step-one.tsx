@@ -26,6 +26,7 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
               id="car-credit"
               className="select__input"
               type="radio"
+              aria-labelledby={purposesOfCredit.carCredit}
             />
             <label
               htmlFor="car-credit"
@@ -33,7 +34,9 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
               onClick={() => {
                 setGoal(purposesOfCredit.carCredit);
                 setPrice(`${MIN_CARCREDIT_PRICE.toLocaleString()} рублей`);
-                setTypedDeposite(`${(MIN_CARCREDIT_PRICE * 0.2).toLocaleString()} рублей`);
+                setTypedDeposite(
+                  `${(MIN_CARCREDIT_PRICE * 0.2).toLocaleString()} рублей`,
+                );
                 setRangeOfTime(getFormattedValue(`${MIN_CARCREDIT_TIME}`));
                 setIsClick(!isClick);
               }}
@@ -45,6 +48,7 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
               id="mortgage"
               className="select__input"
               type="radio"
+              area-labelledby={purposesOfCredit.mortgage}
             />
             <label
               htmlFor="mortgage"

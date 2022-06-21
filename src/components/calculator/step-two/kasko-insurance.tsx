@@ -11,7 +11,11 @@ export default function KaskoInsurance({isNeedKasko, isNeedInsurance, setIsNeedI
   return (
     <>
       <label>
-        <input type="checkbox" onChange={() => setIsNeedKasko(!isNeedKasko)} />
+        <input
+          type="checkbox"
+          onChange={() => setIsNeedKasko(!isNeedKasko)}
+          aria-labelledby="Оформление каско в нашем банке"
+        />
         Оформить КАСКО в нашем банке
       </label>
       <br />
@@ -19,6 +23,7 @@ export default function KaskoInsurance({isNeedKasko, isNeedInsurance, setIsNeedI
         <input
           type="checkbox"
           onChange={() => setIsNeedInsurance(!isNeedInsurance)}
+          aria-labelledby="Оформление страхования жизни в нашем банке"
         />
         Оформить Страхование жизни в нашем банке
       </label>

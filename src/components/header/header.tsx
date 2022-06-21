@@ -14,7 +14,7 @@ export default function Header({setIsModalOpen}: {setIsModalOpen: (arg: boolean)
             </li>
           ))}
         </ul>
-        <button onClick={() => setIsModalOpen(true)}>
+        <button aria-label="Войти в интернет-банк" onClick={() => setIsModalOpen(true)}>
           <span className="header-nav__cabinet">Войти в Интернет-банк</span>
         </button>
       </nav>

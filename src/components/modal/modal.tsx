@@ -61,6 +61,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 type="text"
                 autoFocus
                 value={login}
+                aria-labelledby="Поле ввода логина"
                 onChange={({ target }) => setLogin(target.value)}
                 tabIndex={0}
                 autoComplete=""
@@ -75,6 +76,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 pattern={inputPatterns.password}
                 title={inputTitles.password}
                 value={password}
+                aria-labelledby="Поле ввода пароля"
                 onChange={({ target }) => setPassword(target.value)}
                 tabIndex={0}
                 autoComplete=""
@@ -89,13 +91,14 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
               >
                 <IsVisible />
               </button>
-              <a href="/">Забыли пароль?</a>
+              <a href="/" aria-label="Ссылка на страницу, где можно поменять пароль">Забыли пароль?</a>
             </label>
             <button
               className="modal__submit--btn btn"
               type="button"
               onClick={handleClick}
               tabIndex={0}
+              aria-label="Кнопка войти"
             >
               Войти
             </button>

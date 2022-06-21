@@ -36,14 +36,12 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
   };
   return (
     <form className="submit-form" onSubmit={handleSubmit}>
-      <label
-        aria-label="Поле ввода текста"
-        className="submit-form__surname-label"
-      >
+      <label className="submit-form__surname-label">
         <input
           className="submit-form__surname"
           type="text"
           placeholder="ФИО"
+          aria-label="Поле ввода текста"
           value={surname}
           onChange={({ target }) => setSurname(target.value)}
           tabIndex={0}
@@ -52,12 +50,13 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
           autoFocus
         />
       </label>
-      <label aria-label="Поле ввода телефона">
+      <label>
         <NumberFormat
           className="submit-form__phone"
           format="+7 (9##) ###-##-##"
           placeholder="Телефон"
           type="tel"
+          aria-label="Поле ввода телефона"
           pattern={inputPatterns.phone}
           title={inputTitles.phone}
           mask="_"
@@ -68,10 +67,11 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
           required
         />
       </label>
-      <label aria-label="Поле ввода электронной почты">
+      <label>
         <input
           className="submit-form__mail"
           type="email"
+          aria-label="Поле ввода электронной почты"
           pattern={inputPatterns.email}
           title={inputTitles.email}
           placeholder="E-mail"
@@ -83,7 +83,7 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
         />
       </label>
 
-      <button className="submit-form__btn btn" type="submit" tabIndex={0}>
+      <button aria-label="Отправить" className="submit-form__btn btn" type="submit" tabIndex={0}>
         Отправить
       </button>
     </form>

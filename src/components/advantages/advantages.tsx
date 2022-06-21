@@ -18,6 +18,7 @@ export default function Advantages() {
             type="button"
             onClick={() => setActiveBtn(key)}
             tabIndex={0}
+            aria-label="Кнопка показывающая преимущества нашего банка"
           >
             {icon}
             {key}
@@ -33,10 +34,17 @@ export default function Advantages() {
               </h3>
               <ul className="advantages">
                 {advantagesDeposites.map((advantage) => (
-                  <li key={advantage}><AcceptIcon/>{advantage}</li>
+                  <li key={advantage}>
+                    <AcceptIcon />
+                    {advantage}
+                  </li>
                 ))}
               </ul>
-              <button className="btn" type="button">
+              <button
+                aria-label="Узнать подробнее"
+                className="btn"
+                type="button"
+              >
                 Узнать подробнее
               </button>
             </div>
@@ -52,7 +60,10 @@ export default function Advantages() {
               <h3>Лига Банк выдает кредиты под любые цели</h3>
               <ul className="advantages">
                 {advantagesCredits.map((credit) => (
-                  <li key={credit}><AcceptIcon/>{credit}</li>
+                  <li key={credit}>
+                    <AcceptIcon />
+                    {credit}
+                  </li>
                 ))}
               </ul>
               <p>
@@ -71,9 +82,18 @@ export default function Advantages() {
             <div>
               <h3>Лига Страхование — застрахуем все что захотите</h3>
               <ul className="advantages">
-                {advantageInsurances.map((insurance) => <li key={insurance}><AcceptIcon/>{insurance}</li>)}
+                {advantageInsurances.map((insurance) => (
+                  <li key={insurance}>
+                    <AcceptIcon />
+                    {insurance}
+                  </li>
+                ))}
               </ul>
-              <button className="btn" type="button">
+              <button
+                aria-label="Кнопка узнать подробнее"
+                className="btn"
+                type="button"
+              >
                 Узнать подробнее
               </button>
             </div>
@@ -91,9 +111,18 @@ export default function Advantages() {
                 удобства
               </h3>
               <ul>
-                {advantagesOnline.map((online) => <li key={online}><AcceptIcon/>{online}</li>)}
+                {advantagesOnline.map((online) => (
+                  <li key={online}>
+                    <AcceptIcon />
+                    {online}
+                  </li>
+                ))}
               </ul>
-              <button className="btn" type="button">
+              <button
+                aria-label="Кнопка узнать подробнее"
+                className="btn"
+                type="button"
+              >
                 Узнать подробнее
               </button>
             </div>

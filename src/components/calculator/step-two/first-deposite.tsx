@@ -31,6 +31,7 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
         className="price-deposite"
         value={typedDeposite}
         tabIndex={0}
+        aria-labelledby="Поле ввода первоначального взноса"
         onFocus={() => setTypedDeposite('')}
         onBlur={() =>
           isError
@@ -49,6 +50,7 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
             type="range"
             className="input-range"
             min={minPercent}
+            aria-labelledby="Поле изменения первоначального взноса с помощью range"
             max="100"
             step="5"
             value={priceToDepositePercent}

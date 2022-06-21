@@ -11,6 +11,7 @@ export default function MaternalCapital({setIsMotherCapital, isMotherCapital}: M
         onChange={() => setIsMotherCapital(!isMotherCapital)}
         id="checkbox-input"
         type="checkbox"
+        aria-labelledby="Использовать материнский капитал"
       />
       Использовать материнский капитал
     </label>
