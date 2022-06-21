@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { sliderTabs } from '../../utils/const';
 
 export default function Slider() {
+  const DELAY = 4000;
   const [activeSlide, setActiveSlide] = useState(0);
-  const [inClick, setIsClick] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
 
   useEffect(() => {
-    if (!inClick) {
-      const interval = setInterval(() => {
-        setActiveSlide((current) => current === 2 ? 0 : current + 1);
-      }, 4000);
-      return () => clearInterval(interval);
-    }
-    if (inClick) {
-      const timeout = setTimeout(() => {
-        setIsClick(false);
-      }, 4000);
-      return () => clearTimeout(timeout);
-    }
-  }, [inClick]);
+    resetTimeout();
+    timeoutRef.current = setTimeout(() => setActiveSlide(activeSlide === 2 ? 0 : activeSlide + 1), DELAY);
+    return () => {
+      resetTimeout();
+    };
+  }, [activeSlide, setActiveSlide]);
 
   return (
     <div className="wrapper-slider">
@@ -29,10 +29,7 @@ export default function Slider() {
               key={tab}
               type="button"
               className={activeSlide === index ? 'active' : ''}
-              onClick={() => {
-                setIsClick(true);
-                setActiveSlide(index);
-              }}
+              disabled
             >
               <span className="visually-hidden">{tab}</span>
             </button>

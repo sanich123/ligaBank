@@ -1,18 +1,11 @@
 import {FocusOn} from 'react-focus-on';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { inputPatterns, inputTitles, storageKeys } from '../../utils/const';
 import { CloseIcon, IsVisible, LogoIcon } from '../svgs';
+import UseAuthForm from '../../hooks/use-auth-form';
 
 export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) => void}) {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
-  const [isError, setIsError] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const isSwinging = isError ? 'swinging' : '';
-  const isRedBorder = isError ? '3px solid red' : '4px solid #2C36F2';
-  const isEmptyLogin = isError ? 'Не должно быть пусто' : 'Логин';
-  const isEmptyPassword = isError ? 'Не должно быть пусто' : 'Пароль';
-  const typeChanger = isVisible ? 'text' : 'password';
+  const { login, password, isError, isVisible, isSwinging, isRedBorder, isEmptyLogin, isEmptyPassword, typeChanger, setLogin, setPassword,  setIsError, setIsVisible} = UseAuthForm();
 
   const handleClick = () => {
     if (!login || !password) {
@@ -25,9 +18,11 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsError(false), 1500);
-    return () => clearTimeout(timeout);
-  });
+    if (isError) {
+      const timeout = setTimeout(() => setIsError(false), 1500);
+      return () => clearTimeout(timeout);
+    }
+  }, [isError, setIsError]);
 
   return (
     <div className="modal is-active">
@@ -96,7 +91,6 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
               </button>
               <a href="/">Забыли пароль?</a>
             </label>
-
             <button
               className="modal__submit--btn btn"
               type="button"

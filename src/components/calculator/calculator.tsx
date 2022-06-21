@@ -23,6 +23,7 @@ export default function Calculator() {
     <div className="grid-layout">
       <div className="step1-step2">
         <StepOne
+          goal={goal}
           setGoal={setGoal}
           setPrice={setPrice}
           setTypedDeposite={setTypedDeposite}

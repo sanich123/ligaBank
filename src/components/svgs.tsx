@@ -204,3 +204,17 @@ export function IsVisible() {
     </svg>
   );
 }
+
+export function SelectIcon() {
+  return (
+    <svg
+      width="18"
+      height="11"
+      viewBox="0 0 18 11"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M17 10L9 2L1 10" stroke="#0A1E32" strokeWidth="2" />
+    </svg>
+  );
+}
