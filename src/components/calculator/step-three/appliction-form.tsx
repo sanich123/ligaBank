@@ -12,8 +12,11 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
   const [surname, setSurname] = useState('');
   const [phone, setPhone] = useState('');
   const [mail, setMail] = useState('');
-  const inStorage = JSON.parse(localStorage.getItem(storageKeys.application) || '');
-  const newId = inStorage?.pop().id + 1;
+
+  const checkKeys = localStorage.getItem(storageKeys.application);
+  const inStorage = checkKeys !== null ? JSON.parse(checkKeys) : [{ id: 0 }];
+
+  const newId = inStorage.pop().id + 1;
 
   const resetView = () => {
     setIsFormOpen(false);

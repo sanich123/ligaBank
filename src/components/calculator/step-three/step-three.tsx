@@ -13,9 +13,13 @@ interface StepThreeProps {
 }
 
 export default function StepThree({modificatorTwo, modificatorThree, currentPrice, currentDeposite, currentRangeOfTime, setIsSuccessMessage, setIsFormOpen}: StepThreeProps) {
-  const inStorage = JSON.parse(localStorage.getItem(storageKeys.application) || '') || 0;
+  const checkKeys = localStorage.getItem(storageKeys.application);
+
+
+  const inStorage = checkKeys !== null ? JSON.parse(checkKeys) : [{'id': 0}];
+
   const newId = inStorage.pop().id + 1;
-  const numberOfApplication = !inStorage.length ? 1 : newId;
+  const numberOfApplication = !checkKeys ? 1 : newId;
 
   return (
     <div className="step3">
