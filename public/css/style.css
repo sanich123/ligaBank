@@ -372,24 +372,6 @@ summary {
   display: list-item;
 }
 
-/* Misc
-  ========================================================================== */
-
-/**
-* Add the correct display in IE 10+.
-*/
-
-template {
-  display: none;
-}
-
-/**
-* Add the correct display in IE 10.
-*/
-
-[hidden] {
-  display: none;
-}
 
 @font-face {
   font-family: "Roboto", sans-serif;
@@ -464,6 +446,7 @@ body {
   min-width: 1366px;
   min-height: 100vh;
   font-family: "Roboto", "Arial", sans-serif;
+  font-style: normal;
 }
 
 .container {
@@ -477,90 +460,13 @@ body {
 
 .visually-hidden {
   position: absolute;
-
   clip: rect(0 0 0 0);
-
   width: 1px;
   height: 1px;
   margin: -1px;
 }
 
-.header-nav {
-  display: grid;
-  grid-template-columns: 145px 1fr auto;
-  justify-items: center;
-  align-items: center;
-  gap: 109px;
-  min-height: 91px;
-}
-
-.header-nav__logo {
-  display: flex;
-  font-family: 'Work Sans', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
-}
-
-.header-nav__logo::before {
-  display: block;
-  content: '';
-  background-image: url('../img/svg/logo.svg');
-  background-size: 28px 25px;
-  margin-right: 9px;
-  width: 28px;
-  height: 25px;
-}
-
-.header-nav__menu {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: #1F1E25;
-}
-
-.header-nav__menu-item {
-  margin-right: 25px;
-}
-
-.header-nav__menu-item:last-child {
-  margin-right: 0;
-}
-
-.header-nav__cabinet {
-  display: flex;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.header-nav__cabinet::before {
-  display: block;
-  content: '';
-  background-image: url('../img/svg/userCabinet.svg');
-  background-size: 20px 22px;
-  width: 20px;
-  height: 22px;
-  margin-right: 10px;
-}
-
-.header-nav button {
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-}
-
+/* Footer */
 .footer {
   display: grid;
   grid-template-columns: 235px 215px 210px 1fr 1fr;
@@ -691,164 +597,6 @@ body {
 .main {
   display: grid;
   grid-template-rows: auto auto auto auto;
-}
-
-.wrapper-slider {
-  margin: 0 auto;
-  width: 100%;
-  background: #2C36F2;
-}
-
-.main-slider__list {
-  position: relative;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  min-height: 400px;
-}
-
-.slider-controls {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 8px;
-  position: absolute;
-  right: 50%;
-  top: 430px;
-}
-
-.slider-controls button {
-  border: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-  cursor: pointer;
-  z-index: 100;
-  background: #2028B6;
-}
-
-.slider-controls button:active {
-  background: #E0E0E0;
-}
-
-.slider-controls button:focus {
-  background: #E0E0E0;
-}
-
-.slider-controls .active {
-  background: #E0E0E0;
-}
-.first-slide {
-  position: relative;
-  min-height: 400px;
-  padding-top: 60px;
-}
-
-.first-slide h2 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 63px;
-  color: #F6F7FF;
-  margin-left: 150px;
-  margin-bottom: 0;
-}
-
-.first-slide p {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 26px;
-  color: #E0E1EA;
-  margin-top: -5px;
-  margin-left: 149px;
-}
-
-.first-slide::before {
-  display: block;
-  position: absolute;
-  content: "";
-  background-size: 289px 182px;
-  width: 289px;
-  height: 182px;
-  background-image: url("../img/content/black-card.png");
-  bottom: 90px;
-  left: 571px;
-  z-index: 100;
-}
-
-.first-slide::after {
-  display: block;
-  position: absolute;
-  content: "";
-  background-size: 289px 182px;
-  width: 289px;
-  height: 182px;
-  background-image: url("../img/content/white-card.png");
-  left: 650px;
-  top: 80px;
-}
-
-.first-slide button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  outline: none;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  color: #1F1E25;
-  background: #F6F7FF;
-  border-radius: 4px;
-  width: 234px;
-  height: 53px;
-  margin-left: 149px;
-}
-
-.second-slide {
-  background-image: url("../img/content/promo-man.png");
-  width: 1170px;
-  height: 400px;
-  padding-top: 120px;
-  padding-left: 200px;
-}
-
-.second-slide h2,
-.third-slide h2 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 54px;
-  line-height: 63px;
-  color: #1F1E25;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.second-slide p,
-.third-slide p {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 26px;
-  color: #2B3C4F;
-  margin-top: 0;
-}
-
-.third-slide {
-  background-image: url("../img/content/promo-girl.png");
-  width: 1170px;
-  height: 400px;
-  padding-top: 120px;
-  padding-left: 200px;
 }
 
 .btn {

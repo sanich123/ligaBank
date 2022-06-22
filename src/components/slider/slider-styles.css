@@ -1,0 +1,167 @@
+.wrapper-slider {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wrapper-slider__first-slide {
+  background: #2C36F2;
+}
+
+.wrapper-slider__second-slide {
+  background:rgba(221, 226, 236, 1)
+}
+
+.wrapper-slider__third-slide {
+  background:rgba(230, 241, 254, 1)
+}
+
+.slider {
+  position: relative;
+}
+
+.slider__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-height: 400px;
+}
+
+.slider__list--first-slide,
+.slider__list--second-slide,
+.slider__list--third-slide {
+  min-width: 1170px;
+  min-height: 400px;
+  padding-top: 102px;
+  padding-left: 170px;
+}
+
+.slider__list--first-slide {
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+  position: relative;
+}
+
+.slider__list--first-slide::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 315px;
+  height: 202px;
+  background-image: url('../../../public/img/content/black-card.png');
+  bottom: 79px;
+  left: 600px;
+  z-index: 100;
+}
+
+.slider__list--first-slide::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 315px;
+  height: 202px;
+  background-image: url("../../../public/img/content/white-card.png");
+  left: 709px;
+  top: 61px;
+}
+
+.slider__list--second-slide {
+  background-image: url("../../../public/img/content/promo-man.png");
+}
+
+.slider__list--third-slide {
+  background-image: url("../../../public/img/content/promo-girl.png");
+}
+
+.slider__list--first-slide h2,
+.slider__list--second-slide h2,
+.slider__list--third-slide h2 {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 63px;
+  color: #1F1E25;
+  margin: 0;
+  padding: 0;
+}
+
+.slider__list--first-slide h2 {
+  color: #F6F7FF;
+}
+
+.slider__list--first-slide p,
+.slider__list--second-slide p,
+.slider__list--third-slide p {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: #2B3C4F;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.slider__list--first-slide p {
+  color: #E0E1EA;
+}
+
+.slider__list--first-slide a,
+.slider__list--third-slide a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 4px;
+  color: #F6F7FF;
+  width: 234px;
+  height: 53px;
+  left: 268px;
+  top: 324px;
+  background: #2C36F2;
+  margin-top: 12px;
+}
+
+.slider__list--first-slide a {
+  color: #1F1E25;
+  background: #F6F7FF;
+}
+
+.slider__controls {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  position: absolute;
+  right: 565px;
+  top: 352px;
+}
+
+.slider__controls button {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  z-index: 100;
+  background: #2028B6;
+}
+
+.slider__controls button:active {
+  background: #E0E0E0;
+}
+
+.slider__controls button:focus {
+  background: #E0E0E0;
+}
+
+.slider__controls .active {
+  background: #E0E0E0;
+}
+

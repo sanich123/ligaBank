@@ -23,6 +23,10 @@ export const MAX_CARCREDIT_TIME = 5;
 export const MIN_MORTGAGE_RANGE = 10;
 export const MIN_CARCREDIT_RANGE = 20;
 
+export const FIRST_SLIDE = 0;
+export const SECOND_SLIDE = 1;
+export const LAST_SLIDE = 2;
+
 export const advantagesTypes = {
   deposites: 'Вклады',
   credits: 'Кредиты',
@@ -108,3 +112,6 @@ export const inputTitles = {
   phone: 'Международный, государственный или местный телефонный номер',
   email: 'Введите валидный email адрес',
 };
+
+export const slidersNumbers = ['first','second','third'];
+

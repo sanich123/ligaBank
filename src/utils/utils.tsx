@@ -48,4 +48,14 @@ export const getRightZeroes = (number: number) => {
   return `${number}`;
 };
 
+export const backgroundChanger = (activeSlide: number) => {
+  if (activeSlide === 0) {
+    return 'first';
+  }
+  if (activeSlide === 1) {
+    return 'second';
+  }
+  return 'third';
+};
+
 
