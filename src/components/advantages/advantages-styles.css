@@ -1,0 +1,116 @@
+.advantages {
+  margin-top: 60px;
+}
+
+.advantages__controls {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 93px;
+}
+
+.advantages__controls--btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #1F1E25;
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 4px 4px 0px 0px;
+  width: 292px;
+  min-height: 93px;
+  padding-left: 8px;
+}
+
+.advantages__controls--btn-active {
+  background: #F6F7FF;
+}
+
+.advantages__slider,
+.advantages__slider--item ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.advantages__slider--item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  min-height: 395px;
+  background: #F6F7FF;
+}
+
+.advantages__slider--item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #F6F7FF;
+  width: 198px;
+  height: 51px;
+  padding: 20px 30px;
+  background: #2C36F2;
+  border-radius: 4px;
+  margin-top: 38px;
+}
+
+.advantages__slider--item img {
+  margin-top: 60px;
+}
+
+.advantage__slider--item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 55px 70px;
+}
+
+.advantage__slider--item-wrapper h3 {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: #1F1E25;
+  margin: 0;
+  padding: 0;
+}
+
+.advantages__slider--item ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 16px;
+}
+
+.advantages__list:first-child {
+  margin-top: 0;
+}
+
+.advantages__list li {
+  display: grid;
+  grid-template-columns: 11px 1fr;
+  column-gap: 10px;
+  margin-top: 12px;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  color: #1F1E25;
+  width: 400px;
+}

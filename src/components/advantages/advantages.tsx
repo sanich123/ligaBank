@@ -1,19 +1,20 @@
 import { useState } from 'react';
 import { advantageInsurances, advantagesBtns, advantagesCredits, advantagesDeposites, advantagesOnline, advantagesTypes } from '../../utils/const';
 import { AcceptIcon } from '../svgs';
+import './advantages-styles.css';
 
 export default function Advantages() {
   const [activeBtn, setActiveBtn] = useState(advantagesTypes.deposites);
 
   return (
-    <section className="main-advantages container">
+    <section className="advantages container">
       <h2 className="visually-hidden">Наши преимущества</h2>
-      <div className="main-advantages__controls">
+      <div className="advantages__controls">
         {Object.entries(advantagesBtns).map(([key, icon]) => (
           <button
             key={key}
-            className={`main-advantages__btn ${
-              activeBtn === key ? 'main-advantages__btn--active' : ''
+            className={`advantages__controls--btn ${
+              activeBtn === key ? 'advantages__controls--btn-active' : ''
             }`}
             type="button"
             onClick={() => setActiveBtn(key)}
@@ -25,28 +26,32 @@ export default function Advantages() {
           </button>
         ))}
       </div>
-      <ul className="main-advantages__list">
+      <ul className="advantages__slider">
         {activeBtn === advantagesTypes.deposites && (
-          <li className="main-advantages__list--item">
-            <div>
+          <li className="advantages__slider--item">
+            <div className="advantage__slider--item-wrapper">
               <h3>
-                Вклады Лига Банка – это выгодная инвестиция в свое будущее
+                Вклады Лига Банка – это выгодная <br />
+                инвестиция в свое будущее
               </h3>
-              <ul className="advantages">
+              <ul className="advantages__list">
                 {advantagesDeposites.map((advantage) => (
                   <li key={advantage}>
-                    <AcceptIcon />
+                    <span className="accept-icon">
+                      <AcceptIcon />
+                    </span>
                     {advantage}
                   </li>
                 ))}
               </ul>
-              <button
-                aria-label="Узнать подробнее"
-                className="btn"
+              <a
+                href="/"
+                className="advantages__slider--item-btn"
+                aria-labelledby="Узнать подробнее"
                 type="button"
               >
                 Узнать подробнее
-              </button>
+              </a>
             </div>
             <img
               alt="Промо картинка свинья с копилкой"
@@ -55,10 +60,10 @@ export default function Advantages() {
           </li>
         )}
         {activeBtn === advantagesTypes.credits && (
-          <li className="main-advantages__list--item">
-            <div>
+          <li className="advantages__slider--item">
+            <div className="advantage__slider--item-wrapper">
               <h3>Лига Банк выдает кредиты под любые цели</h3>
-              <ul className="advantages">
+              <ul className="advantages__list">
                 {advantagesCredits.map((credit) => (
                   <li key={credit}>
                     <AcceptIcon />
@@ -78,10 +83,10 @@ export default function Advantages() {
           </li>
         )}
         {activeBtn === advantagesTypes.insurance && (
-          <li className="main-advantages__list--item">
-            <div>
+          <li className="advantages__slider--item">
+            <div className="advantage__slider--item-wrapper">
               <h3>Лига Страхование — застрахуем все что захотите</h3>
-              <ul className="advantages">
+              <ul className="advantages__list">
                 {advantageInsurances.map((insurance) => (
                   <li key={insurance}>
                     <AcceptIcon />
@@ -89,13 +94,14 @@ export default function Advantages() {
                   </li>
                 ))}
               </ul>
-              <button
+              <a
+                href="/"
                 aria-label="Кнопка узнать подробнее"
-                className="btn"
+                className="advantages__slider--item-btn"
                 type="button"
               >
                 Узнать подробнее
-              </button>
+              </a>
             </div>
             <img
               alt="Промо картинка замок с сердечком"
@@ -104,13 +110,13 @@ export default function Advantages() {
           </li>
         )}
         {activeBtn === advantagesTypes.online && (
-          <li className="main-advantages__list--item">
-            <div>
+          <li className="advantages__slider--item">
+            <div className="advantage__slider--item-wrapper">
               <h3>
                 Лига Банк — это огромное количество онлайн-сервисов для вашего
                 удобства
               </h3>
-              <ul>
+              <ul className="advantages__list">
                 {advantagesOnline.map((online) => (
                   <li key={online}>
                     <AcceptIcon />
@@ -118,13 +124,14 @@ export default function Advantages() {
                   </li>
                 ))}
               </ul>
-              <button
+              <a
+                href="/"
                 aria-label="Кнопка узнать подробнее"
-                className="btn"
+                className="advantages__slider--item-btn"
                 type="button"
               >
                 Узнать подробнее
-              </button>
+              </a>
             </div>
             <img
               alt="Промо картинка замок с сердечком"
