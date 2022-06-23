@@ -10,6 +10,7 @@ import Proposal from './proposal/proposal';
 import ProposalError from './proposal/proposal-error';
 import StepOne from './step-one/step-one';
 import StepThree from './step-three/step-three';
+import './calculator-styles.css';
 
 export default function Calculator() {
 

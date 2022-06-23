@@ -19,7 +19,7 @@ export default function Main() {
         <Slider />
         <Advantages />
 
-        <section className="main-calculator container">
+        <section className="calculator container">
           <h2>Кредитный калькулятор</h2>
           <Calculator />
         </section>

@@ -46,7 +46,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
-  min-height: 395px;
+  min-height: 410px;
   background: #F6F7FF;
 }
 
@@ -65,7 +65,7 @@
   padding: 20px 30px;
   background: #2C36F2;
   border-radius: 4px;
-  margin-top: 38px;
+  margin-top: 30px;
 }
 
 .advantages__slider--item img {
@@ -94,7 +94,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  padding-top: 16px;
+  padding-top: 12px;
 }
 
 .advantages__list:first-child {

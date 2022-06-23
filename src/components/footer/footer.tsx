@@ -1,4 +1,5 @@
 import { footerNavLinks, socialLinks } from '../../utils/const';
+import './footer-styles.css';
 
 export default function Footer() {
   return (

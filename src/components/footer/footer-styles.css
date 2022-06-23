@@ -1,0 +1,120 @@
+.footer {
+  display: grid;
+  grid-template-columns: 235px 215px 210px 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  gap: 50px;
+  min-height: 224px;
+  background-color: #F6F7FF;
+}
+
+.footer-links, .footer-social {
+  list-style: none;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #1F1E25;
+}
+
+.footer-links__item {
+  margin-bottom: 10px;
+}
+
+.footer-links:last-child {
+  margin-bottom: 0;
+}
+
+.footer-sms p,
+.footer-phone p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #707C87;
+}
+
+.footer-sms a::before {
+  display: inline-flex;
+  content: '';
+  background-image: url('../../../public/img/svg/online-small.svg');
+  background-size: 10px 16px;
+  width: 10px;
+  height: 16px;
+  margin-right: 19px;
+}
+
+.footer-sms p {
+  padding-left: 30px;
+}
+
+.footer-phone a::before {
+  display: inline-flex;
+  content: '';
+  background-image: url('../../../public/img/svg/phone.svg');
+  background-size: 16px 18px;
+  width: 16px;
+  height: 18px;
+  margin-right: 17px;
+}
+
+.footer-phone p {
+  padding-left: 33px;
+}
+
+.facebook a::before {
+  display: inline-flex;
+  content: '';
+  background-image: url('../../../public/img/svg/facebook.svg');
+  background-size: 9px 16px;
+  width: 9px;
+  height: 16px;
+}
+
+.instagram a::before {
+  display: inline-flex;
+  content: '';
+  background-image: url('../../../public/img/svg/instagram.svg');
+  background-size: 16px 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.twitter a::before {
+  display: inline-flex;
+  content: '';
+  background-image: url('../../../public/img/svg/twitter.svg');
+  background-size: 16px 13px;
+  width: 16px;
+  height: 13px;
+}
+
+.youtube a::before {
+  display: inline-flex;
+  content: '';
+  background-image: url('../../../public/img/svg/youtube.svg');
+  background-size: 16px 13px;
+  width: 16px;
+  height: 13px;
+}
+
+.footer-social {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.footer-logo address {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #707C87;
+}

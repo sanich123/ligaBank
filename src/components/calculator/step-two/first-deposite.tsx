@@ -1,4 +1,5 @@
 import { getCleanedNumber } from '../../../utils/utils';
+import './inputs-styles.css';
 
 interface FirstDepositeProps {
   price: string;

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { inputPatterns, inputTitles, storageKeys } from '../../utils/const';
 import { CloseIcon, IsVisible, LogoIcon } from '../svgs';
 import UseAuthForm from '../../hooks/use-auth-form';
+import './modal-styles.css';
 
 export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) => void}) {
   const { login, password, isError, isVisible, isSwinging, isRedBorder, isEmptyLogin, isEmptyPassword, typeChanger, setLogin, setPassword,  setIsError, setIsVisible} = UseAuthForm();

@@ -23,8 +23,7 @@ export default function Advantages() {
           >
             {icon}
             {key}
-          </button>
-        ))}
+          </button>))}
       </div>
       <ul className="advantages__slider">
         {activeBtn === advantagesTypes.deposites && (
@@ -41,8 +40,7 @@ export default function Advantages() {
                       <AcceptIcon />
                     </span>
                     {advantage}
-                  </li>
-                ))}
+                  </li>))}
               </ul>
               <a
                 href="/"
@@ -57,8 +55,7 @@ export default function Advantages() {
               alt="Промо картинка свинья с копилкой"
               src="./img/content/piggybank.png"
             />
-          </li>
-        )}
+          </li>)}
         {activeBtn === advantagesTypes.credits && (
           <li className="advantages__slider--item">
             <div className="advantage__slider--item-wrapper">
@@ -68,8 +65,7 @@ export default function Advantages() {
                   <li key={credit}>
                     <AcceptIcon />
                     {credit}
-                  </li>
-                ))}
+                  </li>))}
               </ul>
               <p>
                 Рассчитайте ежемесячный платеж и ставку по кредиту
@@ -80,8 +76,7 @@ export default function Advantages() {
               alt="Промо картинка кредит на машину"
               src="./img/content/car-credit.png"
             />
-          </li>
-        )}
+          </li>)}
         {activeBtn === advantagesTypes.insurance && (
           <li className="advantages__slider--item">
             <div className="advantage__slider--item-wrapper">
@@ -91,8 +86,7 @@ export default function Advantages() {
                   <li key={insurance}>
                     <AcceptIcon />
                     {insurance}
-                  </li>
-                ))}
+                  </li>))}
               </ul>
               <a
                 href="/"
@@ -107,8 +101,7 @@ export default function Advantages() {
               alt="Промо картинка замок с сердечком"
               src="./img/content/secure-lock.png"
             />
-          </li>
-        )}
+          </li>)}
         {activeBtn === advantagesTypes.online && (
           <li className="advantages__slider--item">
             <div className="advantage__slider--item-wrapper">
@@ -121,8 +114,7 @@ export default function Advantages() {
                   <li key={online}>
                     <AcceptIcon />
                     {online}
-                  </li>
-                ))}
+                  </li>))}
               </ul>
               <a
                 href="/"
@@ -137,8 +129,7 @@ export default function Advantages() {
               alt="Промо картинка замок с сердечком"
               src="./img/content/mobile.png"
             />
-          </li>
-        )}
+          </li>)}
       </ul>
     </section>
   );

@@ -1,6 +1,7 @@
 import { FocusOn } from 'react-focus-on';
 import { purposesOfCredit } from '../../utils/const';
 import { CloseIcon } from '../svgs';
+import './modal-success-styles.css';
 
 interface ModalSuccessProps {
   setIsSuccessMessage: (arg: boolean) => void,
@@ -8,6 +9,7 @@ interface ModalSuccessProps {
   setPrice: (arg: string) => void,
   setIsFormOpen: (arg: boolean) => void,
 }
+
 export default function ModalSuccess({ setIsSuccessMessage, setGoal, setPrice, setIsFormOpen}: ModalSuccessProps) {
 
   const resetToDefault = () => {

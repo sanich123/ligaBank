@@ -1,4 +1,5 @@
 import { getCleanedTime, getFormattedValue } from '../../../utils/utils';
+import './inputs-styles.css';
 
 interface AmountOfTimeProps {
   rangeOfTime: string,
