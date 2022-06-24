@@ -14,10 +14,7 @@ interface StepThreeProps {
 
 export default function StepThree({modificatorTwo, modificatorThree, currentPrice, currentDeposite, currentRangeOfTime, setIsSuccessMessage, setIsFormOpen}: StepThreeProps) {
   const checkKeys = localStorage.getItem(storageKeys.application);
-
-
   const inStorage = checkKeys !== null ? JSON.parse(checkKeys) : [{'id': 0}];
-
   const newId = inStorage.pop().id + 1;
   const numberOfApplication = !checkKeys ? 1 : newId;
 

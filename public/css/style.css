@@ -495,15 +495,17 @@ body {
 /*Map section*/
 
 .main-map {
+
   padding-bottom: 110px;
 }
 
 .main-map h2 {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 700;
   font-size: 41px;
   line-height: 140%;
   color: #1F1E25;
+  margin-bottom: 58px;
 }
 

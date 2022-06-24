@@ -23,9 +23,16 @@
 
 .calculator__layout {
   display: grid;
+  grid-template-areas:
+  'steps proposal'
+  'step3 step3';
   grid-template-columns: 600px 500px;
   grid-template-rows: auto auto;
   gap: 70px;
+}
+
+.steps {
+  grid-area: steps;
 }
 
 .calculator__layout--steps {
@@ -37,75 +44,25 @@
   margin-bottom: 16px;
 }
 
-.proposal {
-  background: #F6F7FF;
-  border-radius: 4px;
-  height: 389px;
-  padding: 40px 45px;
-}
 
-.proposal h3 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 140%;
-  color: #1F1E25;
-  padding: 0;
-  margin: 0;
-}
-
-.proposal-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 40px 50px;
-  margin-bottom: 40px;
-  margin-top: 20px;
-}
-
-.proposal-list__item h3 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 22px;
-  line-height: 140%;
-  color: #1F1E25;
-  margin: 0;
-  padding: 0;
-}
-
-.proposal-list__item span {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 140%;
-  color: #394959;
-}
-
-.proposal-wrong {
-  width: 500px;
-  min-height: 225px;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-.long-btn {
-  width: 382px;
-}
 
 .step3 {
+  grid-area: step3;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
   box-sizing: border-box;
   width: 770px;
   height: 722px;
   background: #F6F7FF;
   border-radius: 4px;
-  margin-left: 200px;
-  padding: 70px;
+  margin-top: -5px;
+  padding-top: 49px;
+  margin-bottom: 62px;
+}
+
+.step3 h3 {
+  text-align: center;
 }
 
 .step3-description__list {
@@ -114,14 +71,18 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-left: 69px;
+  padding-right: 20px;
+  margin-top: -7px;
 }
 
 .step3-description__item {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 630px;
-  min-height: 50px;
+  width: 635px;
+  height: 53px;
   border-bottom: 1px solid #C4C4C4;
+  padding-right: 5px;
 }
 
 .step3-description__item strong {
@@ -152,10 +113,11 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 30px;
-  margin-top: 30px;
+  margin-top: 35px;
 }
 
 .submit-form__surname-label {
+  justify-self: center;
   width: 630px;
   height: 60px;
   border-radius: 4px;
@@ -178,11 +140,15 @@
   padding-left: 24px;
 }
 
+.submit-form__phone {
+margin-left: 68px;
+}
+
 .submit-form__surname placeholder,
 .submit-form__mail placeholder,
 .submit-form__phone placeholder {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
@@ -196,8 +162,12 @@
   height: 51px;
   justify-self: center;
   align-items: center;
+  margin-top: 10px;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #F6F7FF;
 }
 
-.submit-form__phone, .submit-form__mail {
-  padding-left: 24px;
-}

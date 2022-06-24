@@ -1,3 +1,5 @@
+import './proposal-styles.css';
+
 interface ProposalProps {
   modificatorFour: string,
   totalSum: number,
@@ -8,6 +10,7 @@ interface ProposalProps {
 
 export default function Proposal({totalSum, calculatedPercent, monthPayment, modificatorFour, setIsFormOpen}: ProposalProps) {
   const isError = monthPayment === Infinity;
+  const formattedPercent = calculatedPercent.toFixed(2).replace('.', ',');
 
   return (
     <>
@@ -18,7 +21,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
           <span>Сумма {modificatorFour}</span>
         </li>
         <li className="proposal-list__item">
-          <h3>{calculatedPercent}%</h3>
+          <h3>{formattedPercent}%</h3>
           <span>Процентная ставка</span>
         </li>
         <li className="proposal-list__item">
@@ -26,14 +29,16 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
             <>
               <h3>{monthPayment.toLocaleString()} рублей</h3>
               <span>Ежемесячный платеж</span>
-            </>)}
+            </>
+          )}
         </li>
         <li className="proposal-list__item">
           {!isError && (
             <>
-              <h3>{Math.round((monthPayment * 2.1)).toLocaleString()} рублей</h3>
+              <h3>{Math.round(monthPayment * 2.1).toLocaleString()} рублей</h3>
               <span>Необходимый доход</span>
-            </>)}
+            </>
+          )}
         </li>
       </ul>
       <button
@@ -44,5 +49,6 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
       >
         Оформить заявку
       </button>
-    </>);
+    </>
+  );
 }

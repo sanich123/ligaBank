@@ -21,7 +21,7 @@ export default function CreditInfo({numberOfApplication, type, modificatorThree,
         </li>
         <li className="step3-description__item">
           <strong>Цель кредита</strong>
-          <span>{type}</span>
+          <span>{`${type[0].toUpperCase()}${type.slice(1)}`}</span>
         </li>
         <li className="step3-description__item">
           <strong>Стоимость {modificatorThree}</strong>

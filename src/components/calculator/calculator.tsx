@@ -22,7 +22,7 @@ export default function Calculator() {
 
   return (
     <div className="calculator__layout" id="calculator">
-      <div>
+      <div className="steps">
         <StepOne
           goal={goal}
           setGoal={setGoal}
