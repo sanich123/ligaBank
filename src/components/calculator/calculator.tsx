@@ -1,11 +1,11 @@
 import { useAllInputs } from '../../hooks/use-all-inputs';
 import { purposesOfCredit } from '../../utils/const';
 import ModalSuccess from '../modal/modal-success';
-import AmountOfTime from './step-two/amount-of-time';
+import AmountOfTime from './step-two/amount-of-time/amount-of-time';
 import CreditPrice from './step-two/credit-price';
-import FirstDeposite from './step-two/first-deposite';
-import KaskoInsurance from './step-two/kasko-insurance';
-import MaternalCapital from './step-two/maternal-capital';
+import FirstDeposite from './step-two/first-deposite/first-deposite';
+import KaskoInsurance from './step-two/kasko-insurance/kasko-insurance';
+import MaternalCapital from './step-two/maternal-capital/maternal-capital';
 import Proposal from './proposal/proposal';
 import ProposalError from './proposal/proposal-error';
 import StepOne from './step-one/step-one';

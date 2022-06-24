@@ -1,5 +1,6 @@
-import { getCleanedNumber } from '../../../utils/utils';
-import './inputs-styles.css';
+import { getCleanedNumber } from '../../../../utils/utils';
+import '../inputs-styles.css';
+import './range-styles.css';
 
 interface FirstDepositeProps {
   price: string;

@@ -1,3 +1,5 @@
+import './checkbox-styles.css';
+
 interface MaternalCapitalProps {
   setIsMotherCapital: (arg: boolean) => void,
   isMotherCapital: boolean,
@@ -6,14 +8,20 @@ interface MaternalCapitalProps {
 export default function MaternalCapital({setIsMotherCapital, isMotherCapital}: MaternalCapitalProps) {
 
   return (
-    <label>
+    <>
       <input
+        id="label-checkbox"
+        className="custom-checkbox"
         onChange={() => setIsMotherCapital(!isMotherCapital)}
-        id="checkbox-input"
         type="checkbox"
         aria-labelledby="Использовать материнский капитал"
       />
-      Использовать материнский капитал
-    </label>
+      <label
+        htmlFor="label-checkbox"
+        className="label-checkbox"
+      >
+        Использовать материнский капитал
+      </label>
+    </>
   );
 }
