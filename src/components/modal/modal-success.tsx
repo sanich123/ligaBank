@@ -28,7 +28,6 @@ export default function ModalSuccess({ setIsSuccessMessage, setGoal, setPrice, s
               className="modal__success--close-btn"
               type="button"
               aria-label="Закрыть"
-              tabIndex={0}
               onClick={resetToDefault}
             >
               <CloseIcon />

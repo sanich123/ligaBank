@@ -18,7 +18,6 @@ export default function Advantages() {
             }`}
             type="button"
             onClick={() => setActiveBtn(key)}
-            tabIndex={0}
             aria-label="Кнопка показывающая преимущества нашего банка"
           >
             {icon}

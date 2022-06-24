@@ -8,7 +8,7 @@
 }
 
 .isActive {
-  margin-bottom: 120px;
+  margin-bottom: 113px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: 0;
@@ -74,8 +74,8 @@
 	 display: flex;
 	 align-items: center;
 	 width: 100%;
-	 min-height: 60px;
-	 padding: 0 22px;
+	 min-height: 59px;
+	 padding: 0 23px;
 	 transition: all 0.2s ease-out;
 	 cursor: pointer;
 	 overflow: hidden;

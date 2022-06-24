@@ -1,10 +1,10 @@
 .calculator {
-  margin-top: 62px;
+  margin-top: 63px;
 }
 
 .calculator h2 {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 700;
   font-size: 41px;
   line-height: 140%;
@@ -21,11 +21,20 @@
   color: #1F1E25;
 }
 
-.grid-layout {
+.calculator__layout {
   display: grid;
   grid-template-columns: 600px 500px;
   grid-template-rows: auto auto;
   gap: 70px;
+}
+
+.calculator__layout--steps {
+  margin-top: 33px;
+}
+
+
+.calculator__layout--steps h3 {
+  margin-bottom: 16px;
 }
 
 .proposal {

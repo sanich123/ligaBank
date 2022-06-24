@@ -47,7 +47,6 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
           aria-label="Поле ввода текста"
           value={surname}
           onChange={({ target }) => setSurname(target.value)}
-          tabIndex={0}
           autoComplete=""
           required
           autoFocus
@@ -65,7 +64,6 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
           mask="_"
           value={phone}
           onValueChange={({ formattedValue }) => setPhone(formattedValue)}
-          tabIndex={0}
           autoComplete=""
           required
         />
@@ -80,13 +78,12 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
           placeholder="E-mail"
           value={mail}
           onChange={({ target }) => setMail(target.value)}
-          tabIndex={0}
           autoComplete=""
           required
         />
       </label>
 
-      <button aria-label="Отправить" className="submit-form__btn btn" type="submit" tabIndex={0}>
+      <button aria-label="Отправить" className="submit-form__btn btn" type="submit">
         Отправить
       </button>
     </form>

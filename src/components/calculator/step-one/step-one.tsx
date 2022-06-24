@@ -19,7 +19,7 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
     setPrice(`${MIN_CARCREDIT_PRICE.toLocaleString()} рублей`);
     setTypedDeposite(`${(MIN_CARCREDIT_PRICE * 0.2).toLocaleString()} рублей`);
     setRangeOfTime(getFormattedValue(`${MIN_CARCREDIT_TIME}`));
-    setIsClick(!isClick);
+    setIsClick(false);
   };
 
   const initialMortgage = () => {
@@ -27,7 +27,7 @@ export default function StepOne({setGoal, setPrice, setTypedDeposite, setRangeOf
     setPrice(`${MIN_MORTGAGE_PRICE.toLocaleString()} рублей`);
     setTypedDeposite(`${(MIN_MORTGAGE_PRICE * 0.1).toLocaleString()} рублей`);
     setRangeOfTime(getFormattedValue(`${MIN_MORTGAGE_TIME}`));
-    setIsClick(!isClick);
+    setIsClick(false);
   };
 
   return (

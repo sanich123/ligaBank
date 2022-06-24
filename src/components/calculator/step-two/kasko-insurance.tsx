@@ -18,7 +18,6 @@ export default function KaskoInsurance({isNeedKasko, isNeedInsurance, setIsNeedI
         />
         Оформить КАСКО в нашем банке
       </label>
-      <br />
       <label>
         <input
           type="checkbox"

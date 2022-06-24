@@ -21,8 +21,8 @@ export default function Calculator() {
   const isCarCredit = goal === purposesOfCredit.carCredit;
 
   return (
-    <div className="grid-layout" id="calculator">
-      <div className="step1-step2">
+    <div className="calculator__layout" id="calculator">
+      <div>
         <StepOne
           goal={goal}
           setGoal={setGoal}
@@ -31,46 +31,43 @@ export default function Calculator() {
           setRangeOfTime={setRangeOfTime}
         />
         {isCarOrMortgage && (
-          <>
-            <h3>Шаг 2. Введите параметры кредита</h3>
-            <div className="step-two-wrapper">
-              <CreditPrice
-                minPrice={minPrice}
-                maxPrice={maxPrice}
-                price={price}
-                setPrice={setPrice}
-                nameOfProduct={modificatorThree}
-                stepOfPrice={stepOfPrice}
-                typedDeposite={typedDeposite}
-                setTypedDeposite={setTypedDeposite}
-                minPercent={minPercent}
-              />
-              <FirstDeposite
-                typedDeposite={typedDeposite}
-                setTypedDeposite={setTypedDeposite}
-                price={price}
-                minPercent={minPercent}
-              />
-              <AmountOfTime
-                minTime={minTime}
-                maxTime={maxTime}
-                setRangeOfTime={setRangeOfTime}
-                rangeOfTime={rangeOfTime}
-              />
-              {isMortgage && (
-                <MaternalCapital
-                  isMotherCapital={isMotherCapital}
-                  setIsMotherCapital={setIsMotherCapital}
-                />)}
-              {isCarCredit && (
-                <KaskoInsurance
-                  isNeedInsurance={isNeedInsurance}
-                  setIsNeedInsurance={setIsNeedInsurance}
-                  isNeedKasko={isNeedKasko}
-                  setIsNeedKasko={setIsNeedKasko}
-                />)}
-            </div>
-          </>)}
+          <div className="calculator__layout--steps">
+            <CreditPrice
+              minPrice={minPrice}
+              maxPrice={maxPrice}
+              price={price}
+              setPrice={setPrice}
+              nameOfProduct={modificatorThree}
+              stepOfPrice={stepOfPrice}
+              typedDeposite={typedDeposite}
+              setTypedDeposite={setTypedDeposite}
+              minPercent={minPercent}
+            />
+            <FirstDeposite
+              typedDeposite={typedDeposite}
+              setTypedDeposite={setTypedDeposite}
+              price={price}
+              minPercent={minPercent}
+            />
+            <AmountOfTime
+              minTime={minTime}
+              maxTime={maxTime}
+              setRangeOfTime={setRangeOfTime}
+              rangeOfTime={rangeOfTime}
+            />
+            {isMortgage && (
+              <MaternalCapital
+                isMotherCapital={isMotherCapital}
+                setIsMotherCapital={setIsMotherCapital}
+              />)}
+            {isCarCredit && (
+              <KaskoInsurance
+                isNeedInsurance={isNeedInsurance}
+                setIsNeedInsurance={setIsNeedInsurance}
+                isNeedKasko={isNeedKasko}
+                setIsNeedKasko={setIsNeedKasko}
+              />)}
+          </div>)}
       </div>
       {isCarOrMortgage && (
         <div className="proposal">

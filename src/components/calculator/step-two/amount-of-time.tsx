@@ -16,14 +16,13 @@ export default function AmountOfTime({rangeOfTime, setRangeOfTime, minTime, maxT
 
   return (
     <div className="input-wrapper">
-      <label className="price-label" htmlFor="input-time">
+      <label className="price-label time-label" htmlFor="input-time">
         {`Срок кредитования ${
           isError
             ? `должен быть в промежутке от ${formattedMinValue} до ${formattedMaxValue}`
             : ''
         }`}
       </label>
-      <br />
       <input
         className="input-time"
         type="text"
@@ -41,10 +40,9 @@ export default function AmountOfTime({rangeOfTime, setRangeOfTime, minTime, maxT
             ? setRangeOfTime(formattedMinValue)
             : setRangeOfTime(getFormattedValue(target.value))}
       />
-      <br />
       <input
         type="range"
-        className="input-range"
+        className="input-range last-range"
         aria-labelledby="Поле ввода срока кредита с помощью range"
         min={minTime}
         max={maxTime}
@@ -53,10 +51,9 @@ export default function AmountOfTime({rangeOfTime, setRangeOfTime, minTime, maxT
         onChange={({ target }) =>
           setRangeOfTime(getFormattedValue(target.value))}
       />
-      <br />
       <div className="wrapper-for-sub">
-        <span className="sub-input">{formattedMinValue}</span>
-        <span className="sub-input">{formattedMaxValue}</span>
+        <span className="sub-range">{formattedMinValue}</span>
+        <span className="sub-range">{formattedMaxValue}</span>
       </div>
     </div>
   );

@@ -50,7 +50,6 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 className="modal__logo--close-btn"
                 type="button"
                 aria-label="Закрыть"
-                tabIndex={0}
                 onClick={() => setIsModalOpen(false)}
               >
                 <CloseIcon />
@@ -64,7 +63,6 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 value={login}
                 aria-labelledby="Поле ввода логина"
                 onChange={({ target }) => setLogin(target.value)}
-                tabIndex={0}
                 autoComplete=""
                 required
               />
@@ -79,7 +77,6 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 value={password}
                 aria-labelledby="Поле ввода пароля"
                 onChange={({ target }) => setPassword(target.value)}
-                tabIndex={0}
                 autoComplete=""
                 required
               />
@@ -87,7 +84,6 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 className="modal__label--btn"
                 type="button"
                 onClick={() => setIsVisible(!isVisible)}
-                tabIndex={0}
                 aria-label="Показать пароль"
               >
                 <IsVisible />
@@ -98,7 +94,6 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
               className="modal__submit--btn btn"
               type="button"
               onClick={handleClick}
-              tabIndex={0}
               aria-label="Кнопка войти"
             >
               Войти

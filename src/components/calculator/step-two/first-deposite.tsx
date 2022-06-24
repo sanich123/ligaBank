@@ -25,7 +25,6 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
             : ''
         }`}
       </label>
-      <br />
       <input
         type="text"
         id="input-deposit"
@@ -44,12 +43,11 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
           }
         }}
       />
-      <br />
       {currentPrice > currentDeposite && (
         <>
           <input
             type="range"
-            className="input-range"
+            className="input-range first-range"
             min={minPercent}
             aria-labelledby="Поле изменения первоначального взноса с помощью range"
             max="100"
@@ -61,8 +59,7 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
               );
             }}
           />
-          <br />
-          <span className="sub-input">
+          <span className="sub-range">
             {currentDeposite > smallestDeposite
               ? priceToDepositePercent
               : smallestPercent}

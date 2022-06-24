@@ -1,15 +1,39 @@
-.price-input, .price-deposite, .input-time {
+.price-input,
+.price-deposite,
+.input-time {
   width: 100%;
-  text-align: center;
-  width: 600px;
-  height: 60px;
-  padding-left: 25px;
+  min-height: 60px;
+  padding-left: 227px;
+  border-radius: 5px;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  border: 1px solid #1F1E25;
+  border-radius: 4px;
+  color: #1F1E25;
+}
+
+.price-deposite {
+  padding-left: 233px;
+}
+
+.input-time {
+  padding-left: 277px;
+  margin-top: -1px;
 }
 
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   width: 100%; /* Specific width is required for Firefox. */
   background: transparent; /* Otherwise white in Chrome */
+}
+.first-range {
+  margin-top: 21px;
+}
+.last-range {
+  margin-top: 17px;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -53,7 +77,10 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 .input-wrapper {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  margin-bottom: 18px;
 }
 
 .wrapper-for-sub {
@@ -63,13 +90,19 @@ input[type=range]::-webkit-slider-runnable-track {
   justify-content: space-between;
 }
 
+
 .price-label {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
   color: #394959;
+  margin-bottom: 10px;
+}
+
+.time-label {
+  padding-top: 2px;
 }
 
 .price-input__btn {
@@ -85,21 +118,32 @@ input[type=range]::-webkit-slider-runnable-track {
 
 .minus {
   z-index: 100;
-  left: 20px;
-  top: 40px;
+  left: 18px;
+  top: 47px;
 }
 
 .plus {
   z-index: 100;
-  left: 550px;
-  top: 44px;
+  left: 555px;
+  top: 52px;
 }
 
 .sub-input {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
   color: #707C87;
+  padding-top: 5px;
+}
+
+.sub-range {
+    font-family: inherit;
+  font-style: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #707C87;
+  padding-top: 9px;
 }

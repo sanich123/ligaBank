@@ -40,64 +40,68 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
   };
 
   return (
-    <div className="input-wrapper">
-      <label htmlFor="input-price" className="price-label">
-        {`Стоимость ${nameOfProduct} ${isInvalidPrice ? `должна быть от ${formattedMinPrice} до ${formattedMaxPrice}` : ''}`}
-      </label>
-      <br />
-      <button
-        className="price-input__btn minus"
-        onClick={() => {
-          setPrice(`${decrementedPrice} рублей`);
-
-        }}
-        aria-label="Кнопка минус"
-        type="button"
-        tabIndex={0}
-        disabled={currentPrice === 100000}
-      >
-        <MinusIcon />
-      </button>
-      <input
-        style={{ border: `1px solid ${isInvalidPrice ? 'red' : '#1F1E25'}` }}
-        id="input-price"
-        aria-labelledby="Поле ввода стоимости кредита"
-        className="price-input"
-        type="text"
-        value={price}
-        onFocus={() => setPrice('')}
-        onBlur={() => setPrice(`${getRightMinMaxPrice(currentPrice).toLocaleString()} рублей`)}
-        onChange={({ target }) => {
-          if (!target.value) {
-            setPrice('');
-          }
-          if (/^\d+$/gi.test(target.value)) {
-            setPrice(target.value);
-          }}}
-      />
-      <button
-        onClick={() => {
-          setPrice(`${incrementedPrice} рублей`);
-
-        }}
-        type="button"
-        aria-label="Кнопка плюс"
-        className="price-input__btn plus"
-        tabIndex={0}
-        disabled={currentPrice === maxPrice}
-      >
-        <PlusIcon />
-      </button>
-      <br />
-      <span
-        style={{ color: `${isInvalidPrice ? 'red' : '#707C87'}` }}
-        className="sub-input"
-      >
-        {isInvalidPrice
-          ? 'Вы ввели некорректные данные'
-          : `От ${formattedMinPrice} до ${formattedMaxPrice} рублей`}
-      </span>
-      <br />
-    </div>
+    <>
+      <h3>Шаг 2. Введите параметры кредита</h3>
+      <div className="input-wrapper">
+        <label htmlFor="input-price" className="price-label">
+          {`Стоимость ${nameOfProduct} ${
+            isInvalidPrice
+              ? `должна быть от ${formattedMinPrice} до ${formattedMaxPrice}`
+              : ''
+          }`}
+        </label>
+        <button
+          className="price-input__btn minus"
+          onClick={() => {
+            setPrice(`${decrementedPrice} рублей`);
+          }}
+          aria-label="Кнопка минус"
+          type="button"
+          disabled={currentPrice === 100000}
+        >
+          <MinusIcon />
+        </button>
+        <input
+          style={{ border: `1px solid ${isInvalidPrice ? 'red' : '#1F1E25'}` }}
+          id="input-price"
+          aria-labelledby="Поле ввода стоимости кредита"
+          className="price-input"
+          type="text"
+          value={price}
+          onFocus={() => setPrice('')}
+          onBlur={() =>
+            setPrice(
+              `${getRightMinMaxPrice(currentPrice).toLocaleString()} рублей`,
+            )}
+          onChange={({ target }) => {
+            if (!target.value) {
+              setPrice('');
+            }
+            if (/^\d+$/gi.test(target.value)) {
+              setPrice(target.value);
+            }
+          }}
+        />
+        <button
+          onClick={() => {
+            setPrice(`${incrementedPrice} рублей`);
+          }}
+          type="button"
+          aria-label="Кнопка плюс"
+          className="price-input__btn plus"
+          disabled={currentPrice === maxPrice}
+        >
+          <PlusIcon />
+        </button>
+        <span
+          style={{ color: `${isInvalidPrice ? 'red' : '#707C87'}` }}
+          className="sub-input"
+        >
+          {isInvalidPrice
+            ? 'Вы ввели некорректные данные'
+            : `От ${formattedMinPrice} до ${formattedMaxPrice} рублей`}
+        </span>
+      </div>
+    </>
   );
 }
