@@ -10,28 +10,29 @@ interface CreditPriceProps {
   maxPrice: number,
   nameOfProduct: string,
   stepOfPrice: number,
-  typedDeposite: string,
-  setTypedDeposite: (arg: string) => void,
+  deposite: string,
+  setDeposite: (arg: string) => void,
   minPercent: number,
 }
 
-export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOfProduct, stepOfPrice, typedDeposite, setTypedDeposite, minPercent}: CreditPriceProps) {
+export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOfProduct, stepOfPrice, deposite, setDeposite, minPercent}: CreditPriceProps) {
   const currentPrice = getCleanedNumber(price);
-  const currentDeposite = getCleanedNumber(typedDeposite);
+  const currentDeposite = getCleanedNumber(deposite);
   const minDeposite = currentPrice * (minPercent / 100);
   const isInvalidPrice =  currentPrice < minPrice || currentPrice > maxPrice;
   const incrementedPrice = Math.abs((currentPrice + stepOfPrice)).toLocaleString();
   const decrementedPrice = Math.abs((currentPrice - stepOfPrice)).toLocaleString();
   const formattedMinPrice = minPrice.toLocaleString();
   const formattedMaxPrice = maxPrice.toLocaleString();
+  const labelMessage = `Стоимость ${nameOfProduct} ${isInvalidPrice ? `должна быть от ${formattedMinPrice} до ${formattedMaxPrice}` : ''}`;
 
   useEffect(() => {
-    if (minDeposite > currentDeposite && typedDeposite.includes('рублей')) {
-      setTypedDeposite(
+    if (minDeposite > currentDeposite && deposite.includes('рублей')) {
+      setDeposite(
         `${Math.round(minDeposite).toLocaleString()} рублей`,
       );
     }
-  }, [currentDeposite, minDeposite, setTypedDeposite, typedDeposite]);
+  }, [currentDeposite, minDeposite, setDeposite, deposite]);
 
   const getRightMinMaxPrice = (number: number) => {
     if (number < minPrice) {return minPrice;}
@@ -44,11 +45,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
       <h3>Шаг 2. Введите параметры кредита</h3>
       <div className="input-wrapper">
         <label htmlFor="input-price" className="price-label">
-          {`Стоимость ${nameOfProduct} ${
-            isInvalidPrice
-              ? `должна быть от ${formattedMinPrice} до ${formattedMaxPrice}`
-              : ''
-          }`}
+          {labelMessage}
         </label>
         <button
           className="price-input__btn minus"

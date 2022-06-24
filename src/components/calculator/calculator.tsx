@@ -14,7 +14,7 @@ import './calculator-styles.css';
 
 export default function Calculator() {
 
-  const { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite,currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, setGoal, setPrice, setTypedDeposite, setRangeOfTime,setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage, goal, price, typedDeposite, rangeOfTime,isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage } = useAllInputs();
+  const { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, setGoal, setPrice, setDeposite, setRangeOfTime,setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage, goal, price, deposite, rangeOfTime,isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage } = useAllInputs();
 
   const isCarOrMortgage = goal === purposesOfCredit.carCredit || goal === purposesOfCredit.mortgage;
   const isMortgage = goal === purposesOfCredit.mortgage;
@@ -27,7 +27,7 @@ export default function Calculator() {
           goal={goal}
           setGoal={setGoal}
           setPrice={setPrice}
-          setTypedDeposite={setTypedDeposite}
+          setDeposite={setDeposite}
           setRangeOfTime={setRangeOfTime}
         />
         {isCarOrMortgage && (
@@ -39,13 +39,13 @@ export default function Calculator() {
               setPrice={setPrice}
               nameOfProduct={modificatorThree}
               stepOfPrice={stepOfPrice}
-              typedDeposite={typedDeposite}
-              setTypedDeposite={setTypedDeposite}
+              deposite={deposite}
+              setDeposite={setDeposite}
               minPercent={minPercent}
             />
             <FirstDeposite
-              typedDeposite={typedDeposite}
-              setTypedDeposite={setTypedDeposite}
+              deposite={deposite}
+              setDeposite={setDeposite}
               price={price}
               minPercent={minPercent}
             />
@@ -74,6 +74,9 @@ export default function Calculator() {
           {isErrorProposal && <ProposalError minSum={minSum} modificatorOne={modificatorOne} />}
           {!isErrorProposal && (
             <Proposal
+              minTime={minTime}
+              maxTime={maxTime}
+              currentRangeOfTime={currentRangeOfTime}
               totalSum={totalSum}
               modificatorFour={modificatorFour}
               calculatedPercent={calculatedPercent}

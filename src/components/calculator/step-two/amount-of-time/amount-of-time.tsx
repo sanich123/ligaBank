@@ -14,15 +14,12 @@ export default function AmountOfTime({rangeOfTime, setRangeOfTime, minTime, maxT
   const isError = currentTime < minTime || currentTime > maxTime;
   const formattedMinValue = getFormattedValue(minTime.toString());
   const formattedMaxValue = getFormattedValue(maxTime.toString());
+  const labelMessage = `Срок кредитования ${isError ? `должен быть в промежутке от ${formattedMinValue} до ${formattedMaxValue}` : ''}`;
 
   return (
     <div className="input-wrapper">
       <label className="price-label time-label" htmlFor="input-time">
-        {`Срок кредитования ${
-          isError
-            ? `должен быть в промежутке от ${formattedMinValue} до ${formattedMaxValue}`
-            : ''
-        }`}
+        {labelMessage}
       </label>
       <input
         className="input-time"
@@ -31,7 +28,7 @@ export default function AmountOfTime({rangeOfTime, setRangeOfTime, minTime, maxT
         aria-labelledby="Поле ручного ввода срока кредита"
         value={rangeOfTime}
         onChange={({ target }) => {
-          if (/\d/gi.test(target.value)) {
+          if (/^\d+$/gi.test(target.value)) {
             setRangeOfTime(target.value);
           }
         }}
@@ -49,8 +46,7 @@ export default function AmountOfTime({rangeOfTime, setRangeOfTime, minTime, maxT
         max={maxTime}
         step="1"
         value={isError ? minTime : currentTime}
-        onChange={({ target }) =>
-          setRangeOfTime(getFormattedValue(target.value))}
+        onChange={({ target }) => setRangeOfTime(getFormattedValue(target.value))}
       />
       <div className="wrapper-for-sub">
         <span className="sub-range">{formattedMinValue}</span>

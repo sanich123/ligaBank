@@ -6,10 +6,14 @@ interface ProposalProps {
   calculatedPercent: number,
   monthPayment: number,
   setIsFormOpen: (arg: boolean) => void,
+  minTime: number,
+  maxTime: number,
+  currentRangeOfTime: number,
 }
 
-export default function Proposal({totalSum, calculatedPercent, monthPayment, modificatorFour, setIsFormOpen}: ProposalProps) {
+export default function Proposal({totalSum, calculatedPercent, monthPayment, modificatorFour, setIsFormOpen, minTime, maxTime, currentRangeOfTime}: ProposalProps) {
   const isError = monthPayment === Infinity;
+  const isRightTime = currentRangeOfTime >= minTime && currentRangeOfTime <= maxTime;
   const formattedPercent = calculatedPercent.toFixed(2).replace('.', ',');
 
   return (
@@ -25,7 +29,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
           <span>Процентная ставка</span>
         </li>
         <li className="proposal-list__item">
-          {!isError && (
+          {!isError && isRightTime && (
             <>
               <h3>{monthPayment.toLocaleString()} рублей</h3>
               <span>Ежемесячный платеж</span>
@@ -33,7 +37,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
           )}
         </li>
         <li className="proposal-list__item">
-          {!isError && (
+          {!isError && isRightTime && (
             <>
               <h3>{Math.round(monthPayment * 2.1).toLocaleString()} рублей</h3>
               <span>Необходимый доход</span>

@@ -4,43 +4,43 @@ import './range-styles.css';
 
 interface FirstDepositeProps {
   price: string;
-  setTypedDeposite: (arg: string) => void;
-  typedDeposite: string,
+  setDeposite: (arg: string) => void;
+  deposite: string,
   minPercent: number,
 }
 
-export default function FirstDeposite({price, setTypedDeposite, typedDeposite, minPercent}: FirstDepositeProps) {
+export default function FirstDeposite({price, setDeposite, deposite, minPercent}: FirstDepositeProps) {
   const currentPrice = getCleanedNumber(price);
-  const currentDeposite = getCleanedNumber(typedDeposite);
+  const currentDeposite = getCleanedNumber(deposite);
   const smallestDeposite = currentPrice * (minPercent / 100);
   const isError = (currentDeposite < smallestDeposite) || (currentDeposite >= currentPrice) || currentPrice === 0;
   const priceToDepositePercent = Math.round((currentDeposite / currentPrice) * 100);
   const smallestPercent = Math.round((smallestDeposite / currentPrice) * 100);
+  const formattedMinValue = Math.round(smallestDeposite).toLocaleString();
+  const formattedMaxValue = Math.round(currentPrice).toLocaleString();
+  const labelMessage = `Первоначальный взнос ${isError ? `не может быть < ${formattedMinValue} или >= ${formattedMaxValue}` : ''}`;
 
   return (
     <div className="input-wrapper">
       <label className="price-label" htmlFor="input-deposit">
-        {`Первоначальный взнос ${
-          isError
-            ? `не может быть < ${Math.round(smallestDeposite).toLocaleString()} или >= ${Math.round(currentPrice).toLocaleString()}`
-            : ''
-        }`}
+        {labelMessage}
       </label>
       <input
         type="text"
         id="input-deposit"
         className="price-deposite"
-        value={typedDeposite}
-        tabIndex={0}
+        value={deposite}
         aria-labelledby="Поле ввода первоначального взноса"
-        onFocus={() => setTypedDeposite('')}
+        onFocus={() => setDeposite('')}
         onBlur={() =>
           isError
-            ? setTypedDeposite(`${Math.round(smallestDeposite).toLocaleString()} рублей`)
-            : setTypedDeposite(`${(Math.round(+typedDeposite)).toLocaleString()} рублей`)}
+            ? setDeposite(`${Math.round(smallestDeposite).toLocaleString()} рублей`)
+            : setDeposite(`${(Math.round(+deposite)).toLocaleString()} рублей`)}
         onChange={({ target }) => {
           if (/^\d+$/gi.test(target.value)) {
-            setTypedDeposite(target.value);
+            if (+target.value <= currentPrice) {
+              setDeposite(target.value);
+            }
           }
         }}
       />
@@ -54,11 +54,7 @@ export default function FirstDeposite({price, setTypedDeposite, typedDeposite, m
             max="100"
             step="5"
             value={priceToDepositePercent}
-            onChange={({ target }) => {
-              setTypedDeposite(
-                `${Math.round((currentPrice * (+target.value / 100))).toLocaleString()} рублей`,
-              );
-            }}
+            onChange={({ target }) => setDeposite(`${Math.round((currentPrice * (+target.value / 100))).toLocaleString()} рублей`)}
           />
           <span className="sub-range">
             {currentDeposite > smallestDeposite

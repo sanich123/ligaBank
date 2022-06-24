@@ -5,7 +5,7 @@ import { getCleanedNumber, getCleanedTime, percentChanger } from '../utils/utils
 export function useAllInputs() {
   const [goal, setGoal] = useState(purposesOfCredit.notSelected);
   const [price, setPrice] = useState('');
-  const [typedDeposite, setTypedDeposite] = useState('');
+  const [deposite, setDeposite] = useState('');
   const [rangeOfTime, setRangeOfTime] = useState('');
   const [isMotherCapital, setIsMotherCapital] = useState(false);
   const [isNeedInsurance, setIsNeedInsurance] = useState(false);
@@ -14,7 +14,7 @@ export function useAllInputs() {
   const [isSuccessMessage, setIsSuccessMessage] = useState(false);
 
   const currentPrice = getCleanedNumber(price);
-  const currentDeposite = getCleanedNumber(typedDeposite);
+  const currentDeposite = getCleanedNumber(deposite);
   const currentRangeOfTime = getCleanedTime(rangeOfTime);
   const percentOfDeposite = (currentDeposite / currentPrice) * 100;
 
@@ -36,7 +36,7 @@ export function useAllInputs() {
     const monthPercentage = (calculatedPercent * 0.001) / 12;
     const monthPayment = Math.round(totalSum * (monthPercentage / (1 - Math.pow(1 + monthPercentage, -(currentRangeOfTime * 12)))));
 
-    return { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPercentage, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, goal, price, typedDeposite, rangeOfTime, isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage, setGoal, setPrice, setTypedDeposite,setRangeOfTime,  setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage,
+    return { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPercentage, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, goal, price, deposite, rangeOfTime, isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage, setGoal, setPrice, setDeposite,setRangeOfTime,  setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage,
     };
   }
 
@@ -57,6 +57,6 @@ export function useAllInputs() {
   const monthPercentage = (calculatedPercent * 0.001) / 12;
   const monthPayment = Math.round(currentPrice * (monthPercentage / (1 - Math.pow(1 + monthPercentage, -(currentRangeOfTime * 12)))));
 
-  return { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite,currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, goal, price, typedDeposite, rangeOfTime, isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage, setGoal, setPrice, setTypedDeposite, setRangeOfTime, setIsMotherCapital,setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage };
+  return { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite,currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, goal, price, deposite, rangeOfTime, isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage, setGoal, setPrice, setDeposite, setRangeOfTime, setIsMotherCapital,setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage };
 }
 
