@@ -40,9 +40,7 @@ export default function FirstDeposite({price, setDeposite, deposite, minPercent}
           if (/^\d+$/gi.test(target.value)) {
             if (+target.value <= currentPrice) {
               setDeposite(target.value);
-            }
-          }
-        }}
+            }}}}
       />
       {currentPrice > currentDeposite && (
         <>

@@ -22,6 +22,7 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
     setIsFormOpen(false);
     setIsSuccessMessage(true);
   };
+
   const handleSubmit = () => {
     if (!inStorage.length) {
       localStorage.setItem(
@@ -37,6 +38,7 @@ export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: Ap
       resetView();
     }
   };
+
   return (
     <form className="submit-form" onSubmit={handleSubmit}>
       <label className="submit-form__surname-label">

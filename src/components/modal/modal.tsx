@@ -1,7 +1,7 @@
 import {FocusOn} from 'react-focus-on';
 import { useEffect } from 'react';
 import { inputPatterns, inputTitles, storageKeys } from '../../utils/const';
-import { CloseIcon, IsVisible, LogoIcon } from '../svgs';
+import { CloseIcon, IsVisible, LogoIcon } from '../icons';
 import UseAuthForm from '../../hooks/use-auth-form';
 import './modal-styles.css';
 
@@ -38,9 +38,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
           >
             <div className="modal__logo">
               <div className="modal__logo--wrapper">
-                <span>
-                  <LogoIcon />
-                </span>
+                <span><LogoIcon /></span>
                 <span className="description-wrapper">
                   <span className="description-brand">ЛигаБанк</span>
                   <span className="description-text">Интернет-банк</span>

@@ -33,16 +33,14 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
             <>
               <h3>{monthPayment.toLocaleString()} рублей</h3>
               <span>Ежемесячный платеж</span>
-            </>
-          )}
+            </>)}
         </li>
         <li className="proposal-list__item">
           {!isError && isRightTime && (
             <>
               <h3>{Math.round(monthPayment * 2.1).toLocaleString()} рублей</h3>
               <span>Необходимый доход</span>
-            </>
-          )}
+            </>)}
         </li>
       </ul>
       <button
@@ -53,6 +51,5 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
       >
         Оформить заявку
       </button>
-    </>
-  );
+    </>);
 }

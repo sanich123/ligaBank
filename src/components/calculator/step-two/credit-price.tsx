@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { getCleanedNumber } from '../../../utils/utils';
-import { MinusIcon, PlusIcon } from '../../svgs';
+import { MinusIcon, PlusIcon } from '../../icons';
 import './inputs-styles.css';
 
 interface CreditPriceProps {
@@ -49,9 +49,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
         </label>
         <button
           className="price-input__btn minus"
-          onClick={() => {
-            setPrice(`${decrementedPrice} рублей`);
-          }}
+          onClick={() => setPrice(`${decrementedPrice} рублей`)}
           aria-label="Кнопка минус"
           type="button"
           disabled={currentPrice === 100000}
@@ -80,9 +78,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
           }}
         />
         <button
-          onClick={() => {
-            setPrice(`${incrementedPrice} рублей`);
-          }}
+          onClick={() => setPrice(`${incrementedPrice} рублей`)}
           type="button"
           aria-label="Кнопка плюс"
           className="price-input__btn plus"

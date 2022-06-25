@@ -1,6 +1,6 @@
 import { FocusOn } from 'react-focus-on';
 import { purposesOfCredit } from '../../utils/const';
-import { CloseIcon } from '../svgs';
+import { CloseIcon } from '../icons';
 import './modal-success-styles.css';
 
 interface ModalSuccessProps {

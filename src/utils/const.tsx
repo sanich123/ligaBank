@@ -1,4 +1,4 @@
-import { Credits, Deposites, FacebookIcon, InstagramIcon, Insurance, Online, TwitterIcon, YoutubeIcon } from '../components/svgs';
+import { Credits, Deposites, FacebookIcon, InstagramIcon, Insurance, Online, TwitterIcon, YoutubeIcon } from '../components/icons';
 
 export const MAX_MORTGAGE_PRICE = 25000000;
 export const MIN_MORTGAGE_PRICE = 1200000;
@@ -53,7 +53,7 @@ export const advantagesCredits = [
   'Потребительский кредит',
 ];
 
-export const advantageInsurances = [
+export const advantagesInsurances = [
   'Автомобильное страхование',
   'Страхование жизни и здоровья',
   'Страхование недвижимости',
@@ -127,3 +127,11 @@ export const inputTitles = {
 
 export const slidersNumbers = ['first','second','third'];
 
+export const phoneNumber = {
+  sms: '*0904',
+  phone: '8 800 111 22 33',
+} as const;
+
+export const footerText = {
+  address: '150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка России №1050 Ⓒ Лига Банк, 2019',
+};

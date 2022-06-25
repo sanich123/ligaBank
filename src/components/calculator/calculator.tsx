@@ -13,7 +13,6 @@ import StepThree from './step-three/step-three';
 import './calculator-styles.css';
 
 export default function Calculator() {
-
   const { isErrorProposal, totalSum, minSum, modificatorOne, calculatedPercent, monthPayment, modificatorTwo, modificatorThree, modificatorFour, currentPrice, currentDeposite, currentRangeOfTime, minTime, maxTime, minPrice, maxPrice, stepOfPrice, minPercent, setGoal, setPrice, setDeposite, setRangeOfTime,setIsMotherCapital, setIsNeedInsurance, setIsNeedKasko, setIsFormOpen, setIsSuccessMessage, goal, price, deposite, rangeOfTime,isMotherCapital, isNeedInsurance, isNeedKasko, isFormOpen, isSuccessMessage } = useAllInputs();
 
   const isCarOrMortgage = goal === purposesOfCredit.carCredit || goal === purposesOfCredit.mortgage;

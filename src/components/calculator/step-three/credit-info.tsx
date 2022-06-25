@@ -11,6 +11,8 @@ interface CreditInfoProps {
 
 
 export default function CreditInfo({numberOfApplication, type, modificatorThree, currentPrice, currentDeposite, currentRangeOfTime}: CreditInfoProps) {
+  const formattedPurpose = `${type[0].toUpperCase()}${type.slice(1)}`;
+
   return (
     <>
       <h3>Шаг 3. Оформление заявки</h3>
@@ -21,7 +23,7 @@ export default function CreditInfo({numberOfApplication, type, modificatorThree,
         </li>
         <li className="step3-description__item">
           <strong>Цель кредита</strong>
-          <span>{`${type[0].toUpperCase()}${type.slice(1)}`}</span>
+          <span>{formattedPurpose}</span>
         </li>
         <li className="step3-description__item">
           <strong>Стоимость {modificatorThree}</strong>

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { advantageInsurances, advantagesBtns, advantagesCredits, advantagesDeposites, advantagesOnline, advantagesTypes } from '../../utils/const';
-import { AcceptIcon } from '../svgs';
+import { advantagesInsurances, advantagesCredits, advantagesDeposites, advantagesOnline, advantagesTypes, advantagesBtns } from '../../utils/const';
+import { AcceptIcon } from '../icons';
 import './advantages-styles.css';
+import LearnMoreRef from './learn-more-ref';
 
 export default function Advantages() {
   const [activeBtn, setActiveBtn] = useState(advantagesTypes.deposites);
@@ -10,19 +11,22 @@ export default function Advantages() {
     <section className="advantages container">
       <h2 className="visually-hidden">Наши преимущества</h2>
       <div className="advantages__controls">
-        {Object.entries(advantagesBtns).map(([key, icon]) => (
+        {Object.entries(advantagesBtns).map(([description, icon]) => (
           <button
-            key={key}
+            key={description}
             className={`advantages__controls--btn ${
-              activeBtn === key ? 'advantages__controls--btn-active' : ''
+              activeBtn === description
+                ? 'advantages__controls--btn-active'
+                : ''
             }`}
             type="button"
-            onClick={() => setActiveBtn(key)}
+            onClick={() => setActiveBtn(description)}
             aria-label="Кнопка показывающая преимущества нашего банка"
           >
             {icon}
-            {key}
-          </button>))}
+            {description}
+          </button>
+        ))}
       </div>
       <ul className="advantages__slider">
         {activeBtn === advantagesTypes.deposites && (
@@ -39,22 +43,17 @@ export default function Advantages() {
                       <AcceptIcon />
                     </span>
                     {advantage}
-                  </li>))}
+                  </li>
+                ))}
               </ul>
-              <a
-                href="/"
-                className="advantages__slider--item-btn"
-                aria-labelledby="Узнать подробнее"
-                type="button"
-              >
-                Узнать подробнее
-              </a>
+              <LearnMoreRef />
             </div>
             <img
               alt="Промо картинка свинья с копилкой"
               src="./img/content/piggybank.png"
             />
-          </li>)}
+          </li>
+        )}
         {activeBtn === advantagesTypes.credits && (
           <li className="advantages__slider--item">
             <div className="advantage__slider--item-wrapper">
@@ -64,43 +63,41 @@ export default function Advantages() {
                   <li key={credit}>
                     <AcceptIcon />
                     {credit}
-                  </li>))}
+                  </li>
+                ))}
               </ul>
               <p>
                 Рассчитайте ежемесячный платеж и ставку по кредиту
-                воспользовавшись нашим <a href="/">кредитным калькулятором</a>
+                воспользовавшись нашим{' '}
+                <a href="#calculator">кредитным калькулятором</a>
               </p>
             </div>
             <img
               alt="Промо картинка кредит на машину"
               src="./img/content/car-credit.png"
             />
-          </li>)}
+          </li>
+        )}
         {activeBtn === advantagesTypes.insurance && (
           <li className="advantages__slider--item">
             <div className="advantage__slider--item-wrapper">
               <h3>Лига Страхование — застрахуем все что захотите</h3>
               <ul className="advantages__list">
-                {advantageInsurances.map((insurance) => (
+                {advantagesInsurances.map((insurance) => (
                   <li key={insurance}>
                     <AcceptIcon />
                     {insurance}
-                  </li>))}
+                  </li>
+                ))}
               </ul>
-              <a
-                href="/"
-                aria-label="Кнопка узнать подробнее"
-                className="advantages__slider--item-btn"
-                type="button"
-              >
-                Узнать подробнее
-              </a>
+              <LearnMoreRef />
             </div>
             <img
               alt="Промо картинка замок с сердечком"
               src="./img/content/secure-lock.png"
             />
-          </li>)}
+          </li>
+        )}
         {activeBtn === advantagesTypes.online && (
           <li className="advantages__slider--item">
             <div className="advantage__slider--item-wrapper">
@@ -113,22 +110,17 @@ export default function Advantages() {
                   <li key={online}>
                     <AcceptIcon />
                     {online}
-                  </li>))}
+                  </li>
+                ))}
               </ul>
-              <a
-                href="/"
-                aria-label="Кнопка узнать подробнее"
-                className="advantages__slider--item-btn"
-                type="button"
-              >
-                Узнать подробнее
-              </a>
+              <LearnMoreRef />
             </div>
             <img
               alt="Промо картинка замок с сердечком"
               src="./img/content/mobile.png"
             />
-          </li>)}
+          </li>
+        )}
       </ul>
     </section>
   );

@@ -19,11 +19,7 @@
   margin-top: 14px;
 }
 
-.footer-links, .footer-social {
-  list-style: none;
-}
-
-.footer-links {
+.footer__links {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -34,13 +30,14 @@
   line-height: 140%;
   color: #1F1E25;
   padding-left: 2px;
+  list-style: none;
 }
 
-.footer-links__item {
+.footer__links--item {
   margin-bottom: 8px;
 }
 
-.footer-links:last-child {
+.footer__links:last-child {
   margin-bottom: 0;
 }
 
@@ -93,10 +90,11 @@ margin-left: 8px;
   align-items: center;
 }
 
-.footer-social {
+.footer__social {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 15px;
   padding-left: 56px;
+  list-style: none;
 }
 
