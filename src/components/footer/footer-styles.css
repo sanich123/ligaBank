@@ -1,11 +1,22 @@
 .footer {
   display: grid;
-  grid-template-columns: 235px 215px 210px 1fr 1fr;
+  grid-template-columns: 255px 250px 250px 155px auto;
   justify-items: center;
-  align-items: center;
-  gap: 50px;
+  align-items: baseline;
+  gap: 25px;
   min-height: 224px;
   background-color: #F6F7FF;
+  padding-top: 43px;
+}
+
+.footer__logo address {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: #707C87;
+  margin-top: 14px;
 }
 
 .footer-links, .footer-social {
@@ -22,99 +33,70 @@
   font-size: 16px;
   line-height: 140%;
   color: #1F1E25;
+  padding-left: 2px;
 }
 
 .footer-links__item {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-links:last-child {
   margin-bottom: 0;
 }
 
-.footer-sms p,
-.footer-phone p {
-  font-family: 'Roboto';
-  font-style: normal;
+.footer__sms {
+  margin-left: -42px;
+}
+
+.footer__phone {
+margin-left: 8px;
+}
+.footer__sms p,
+.footer__phone p {
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
   color: #707C87;
+  padding-top: 0;
+  margin-top: 4px;
+  padding-left: 21px;
 }
 
-.footer-sms a::before {
+.footer__phone p {
+  padding-left: 25px
+}
+
+.footer__sms a,
+.footer__phone a {
   display: inline-flex;
-  content: '';
-  background-image: url('../../../public/img/svg/online-small.svg');
-  background-size: 10px 16px;
-  width: 10px;
-  height: 16px;
-  margin-right: 19px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 19px;
+  margin-left: -8px;
 }
 
-.footer-sms p {
-  padding-left: 30px;
+.footer__sms-text,
+.footer__phone-text {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: #1F1E25;
 }
 
-.footer-phone a::before {
-  display: inline-flex;
-  content: '';
-  background-image: url('../../../public/img/svg/phone.svg');
-  background-size: 16px 18px;
-  width: 16px;
-  height: 18px;
-  margin-right: 17px;
-}
-
-.footer-phone p {
-  padding-left: 33px;
-}
-
-.facebook a::before {
-  display: inline-flex;
-  content: '';
-  background-image: url('../../../public/img/svg/facebook.svg');
-  background-size: 9px 16px;
-  width: 9px;
-  height: 16px;
-}
-
-.instagram a::before {
-  display: inline-flex;
-  content: '';
-  background-image: url('../../../public/img/svg/instagram.svg');
-  background-size: 16px 16px;
-  width: 16px;
-  height: 16px;
-}
-
-.twitter a::before {
-  display: inline-flex;
-  content: '';
-  background-image: url('../../../public/img/svg/twitter.svg');
-  background-size: 16px 13px;
-  width: 16px;
-  height: 13px;
-}
-
-.youtube a::before {
-  display: inline-flex;
-  content: '';
-  background-image: url('../../../public/img/svg/youtube.svg');
-  background-size: 16px 13px;
-  width: 16px;
-  height: 13px;
+.footer__sms-svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-social {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 15px;
+  padding-left: 56px;
 }
 
-.footer-logo address {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 140%;
-  color: #707C87;
-}

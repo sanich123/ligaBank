@@ -1,4 +1,4 @@
-import { Credits, Deposites, Insurance, Online } from '../components/svgs';
+import { Credits, Deposites, FacebookIcon, InstagramIcon, Insurance, Online, TwitterIcon, YoutubeIcon } from '../components/svgs';
 
 export const MAX_MORTGAGE_PRICE = 25000000;
 export const MIN_MORTGAGE_PRICE = 1200000;
@@ -79,10 +79,22 @@ export const footerNavLinks = [
 ];
 
 export const socialLinks = {
-  facebook: 'http://facebook.com',
-  instagram: 'http://instagram.com',
-  twitter: 'http://twitter.com',
-  youtube: 'http://youtube.com',
+  facebook: {
+    address: 'http://facebook.com',
+    icon: <FacebookIcon/>,
+  },
+  instagram: {
+    address: 'http://instagram.com',
+    icon: <InstagramIcon/>,
+  },
+  twitter: {
+    address: 'http://twitter.com',
+    icon: <TwitterIcon/>,
+  },
+  youtube: {
+    address: 'http://youtube.com',
+    icon: <YoutubeIcon/>,
+  },
 };
 
 export const sliderTabs = [

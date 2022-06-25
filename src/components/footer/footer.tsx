@@ -1,13 +1,19 @@
 import { footerNavLinks, socialLinks } from '../../utils/const';
+import { Logo, Phone, SmallPhone } from '../svgs';
 import './footer-styles.css';
 
 export default function Footer() {
   return (
     <div className="wrapper">
       <footer className="footer container">
-        <div className="footer-logo">
-          <a href="/">
-            <span className="header-nav__logo">ЛИГА Банк</span>
+        <div className="footer__logo">
+          <a
+            aria-labelledby="Ссылка на главную страницу, логотип"
+            className="header-nav__logo"
+            href="/"
+          >
+            <Logo />
+            ЛИГА Банк
           </a>
           <address>
             150015, г. Москва, ул. Московская, д. 32 Генеральная лицензия Банка
@@ -21,24 +27,35 @@ export default function Footer() {
             </li>
           ))}
         </ul>
-        <div className="footer-sms">
-          <a href="tel:*0904">*0904</a>
-          <br />
-          <p>Бесплатно для абонентов МТС, Билайн, Мегафон, Теле2</p>
+        <div className="footer__sms">
+          <a href="tel:*0904">
+            <span className="footer__sms-svg">
+              <SmallPhone />
+            </span>
+            <span className="footer__sms-text">*0904</span>
+          </a>
+
+          <p>
+            Бесплатно для абонентов
+            <br /> МТС, Билайн, Мегафон, Теле2
+          </p>
         </div>
-        <div className="footer-phone">
-          <a href="tel: 800 111 22 33"> 800 111 22 33</a>
-          <br />
+        <div className="footer__phone">
+          <a href="tel: 800 111 22 33">
+            <span className="footer__phone-svg">
+              <Phone />
+            </span>
+            <span className="footer__phone-text">8 800 111 22 33</span>
+          </a>
           <p>Бесплатный для всех городов России</p>
         </div>
         <ul className="footer-social">
-          {Object.entries(socialLinks).map(([network, address]) => (
-            <li key={network} className={`footer-social__item ${network}`}>
-              <a href={address}>
-                <span className="visually-hidden">{network}</span>
+          {Object.entries(socialLinks).map(([network, {address, icon}]) => (
+            <li key={network} className="footer-social__item">
+              <a href={address} aria-label={`Ссылка на социальную сеть ${network}`}>
+                {icon}
               </a>
-            </li>
-          ))}
+            </li>))}
         </ul>
       </footer>
     </div>
