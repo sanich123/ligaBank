@@ -2,10 +2,10 @@
 .proposal {
   grid-area: proposal;
   margin-top: 22px;
-  background: #F6F7FF;
+  background:  var(--basic-white);
   border-radius: 4px;
   height: 389px;
-  padding-top: 55px;
+  padding-top: 40px;
   padding-left: 57px;
 }
 
@@ -15,7 +15,7 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
   padding: 0;
   margin: 0;
 }
@@ -27,43 +27,42 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  row-gap: 30px;
+  margin-top: 5px;
+  row-gap: 15px;
   column-gap: 10px;
-  margin-bottom: 40px;
-  margin-top: 21px;
 }
 
 .proposal-list__item h3 {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
   margin: 0;
   padding: 0;
 }
 
 .proposal-list__item span {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #394959;
+  color: var(--special-dark);
 }
 
 .long-btn {
-  margin-top: -5px;
+  margin-top: 30px;
   padding: 20px 124px;
   min-width: 382px;
   height: 51px;
-  background: #2C36F2;
+  background:  var(--basic-blue);
   border-radius: 4px;
   font-family: inherit;
   font-style: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
-  color: #F6F7FF;
+  color:  var(--basic-white);
 }

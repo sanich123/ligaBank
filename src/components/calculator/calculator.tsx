@@ -2,7 +2,7 @@ import { useAllInputs } from '../../hooks/use-all-inputs';
 import { purposesOfCredit } from '../../utils/const';
 import ModalSuccess from '../modal/modal-success';
 import AmountOfTime from './step-two/amount-of-time/amount-of-time';
-import CreditPrice from './step-two/credit-price';
+import CreditPrice from './step-two/credit-price/credit-price';
 import FirstDeposite from './step-two/first-deposite/first-deposite';
 import KaskoInsurance from './step-two/kasko-insurance/kasko-insurance';
 import MaternalCapital from './step-two/maternal-capital/maternal-capital';

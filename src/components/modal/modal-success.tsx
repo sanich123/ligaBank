@@ -33,9 +33,8 @@ export default function ModalSuccess({ setIsSuccessMessage, setGoal, setPrice, s
               <CloseIcon />
             </button>
             <h3>Спасибо за обращение в наш банк.</h3>
-            <p>
-              Наш менеджер скоро свяжется с вами по указанному номеру телефона.
-            </p>
+            <span>Наш менеджер скоро свяжется с вами</span>
+            <span>по указанному номеру телефона.</span>
           </div>
         </FocusOn>
       </div>

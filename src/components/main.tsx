@@ -5,6 +5,7 @@ import Header from './header/header';
 import Modal from './modal/modal';
 import Slider from './slider/slider';
 import Calculator from './calculator/calculator';
+import Map from './map/map';
 
 export default function Main() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,10 +24,7 @@ export default function Main() {
           <h2>Кредитный калькулятор</h2>
           <Calculator />
         </section>
-        <section id="offices" className="main-map container">
-          <h2>Отделения Лига Банка</h2>
-          <img alt="Карта с отделениями" src="./img/content/map.png" />
-        </section>
+        <Map />
       </main>
       <Footer />
     </>

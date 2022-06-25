@@ -5,7 +5,7 @@
   align-items: baseline;
   gap: 25px;
   min-height: 224px;
-  background-color: #F6F7FF;
+  background-color:  var(--basic-white);
   padding-top: 43px;
 }
 
@@ -15,7 +15,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
-  color: #707C87;
+  color: var(--special-lightGrey);
   margin-top: 14px;
 }
 
@@ -23,12 +23,12 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
   padding-left: 2px;
   list-style: none;
 }
@@ -48,6 +48,7 @@
 .footer__phone {
 margin-left: 8px;
 }
+
 .footer__sms p,
 .footer__phone p {
   font-family: inherit;
@@ -55,7 +56,7 @@ margin-left: 8px;
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
-  color: #707C87;
+  color: var(--special-lightGrey);
   padding-top: 0;
   margin-top: 4px;
   padding-left: 21px;
@@ -81,7 +82,7 @@ margin-left: 8px;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
 }
 
 .footer__sms-svg {

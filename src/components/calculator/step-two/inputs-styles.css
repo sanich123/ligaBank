@@ -10,9 +10,9 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 140%;
-  border: 1px solid #1F1E25;
+  border: 1px solid  var(--basic-black);
   border-radius: 4px;
-  color: #1F1E25;
+  color:  var(--basic-black);
 }
 
 .price-deposite {
@@ -52,7 +52,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #394959;
+  color: var(--special-dark);
   margin-bottom: 10px;
 }
 
@@ -89,7 +89,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: #707C87;
+  color: var(--special-lightGrey);
   padding-top: 5px;
 }
 
@@ -99,6 +99,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: #707C87;
+  color: var(--special-lightGrey);
   padding-top: 9px;
 }

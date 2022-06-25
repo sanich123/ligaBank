@@ -47,7 +47,7 @@
   gap: 15px;
   width: 544px;
   height: 493px;
-  background: #F6F7FF;
+  background:  var(--basic-white);
 }
 
 .modal__logo {
@@ -75,23 +75,23 @@
 
 .description-brand {
   font-family: 'Work Sans';
-  font-style: normal;
+  font-family: inherit;
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
-  color: #1F1E25;
+  color:  var(--basic-black);
   padding-top: -5px;
 }
 
 .description-text {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-family: inherit;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   display: flex;
   align-items: center;
-  color: #1F1E25;
+  color:  var(--basic-black);
   text-transform: lowercase;
   margin-top: -5px;
 }
@@ -119,21 +119,21 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-family: inherit;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #394959;
+  color: var(--special-dark);
 }
 
 .modal__label a {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-family: inherit;
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
-  color: #707C87;
+  color: var(--special-lightGrey);
   align-self: end;
   margin-top: 10px;
 }

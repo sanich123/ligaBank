@@ -409,6 +409,22 @@ summary {
   src: url("../fonts/work-sans-700.woff2") format("woff2"), url("../fonts/work-sans-700.woff") format("woff");
 }
 
+:root {
+  --basic-blue: #2C36F2;
+  --basic-black: #1F1E25;
+  --basic-white: #F6F7FF;
+  --basic-light: #E0E0E0;
+  --special-darkBlue: #0A1E32;
+  --special-grey: #C4C4C4;
+  --special-lightGrey: #707C87;
+  --special-dark: #394959;
+  --special-black: rgba(31, 30, 37, 1);
+  --special-lightest: #C1C2CA;
+  --special-darkest: #2B3C4F;
+  --special-almostWhite: #E0E1EA;
+  --special-blue: #2028B6
+}
+
 *,
 *::before,
 *::after {
@@ -431,7 +447,7 @@ img {
 
 a {
   text-decoration: none;
-  color: #1F1E25;
+  color:  var(--basic-black);
 }
 
 html,
@@ -465,7 +481,7 @@ body {
 .wrapper {
   margin: 0 auto;
   width: 100%;
-  background-color: #F6F7FF;
+  background-color:  var(--basic-white);
 }
 
 .main {
@@ -484,28 +500,10 @@ body {
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-  color: #F6F7FF;
+  color:  var(--basic-white);
   padding: 19px 48px 21px 48px;
-  background: #2C36F2;
+  background: var(--basic-blue);
   border-radius: 4px;
   z-index: 100;
   cursor: pointer;
 }
-
-/*Map section*/
-
-.main-map {
-
-  padding-bottom: 110px;
-}
-
-.main-map h2 {
-  font-family: inherit;
-  font-style: inherit;
-  font-weight: 700;
-  font-size: 41px;
-  line-height: 140%;
-  color: #1F1E25;
-  margin-bottom: 58px;
-}
-

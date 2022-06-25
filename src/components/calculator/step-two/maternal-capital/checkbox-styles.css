@@ -19,7 +19,7 @@
   display: inline-block;
   width: 16px;
   height: 16px;
-  border: 1px solid #1F1E25;
+  border: 1px solid  var(--basic-black);
   border-radius: 2px;
   margin-right: 0.5em;
   background-repeat: no-repeat;
@@ -29,6 +29,6 @@
 
 .custom-checkbox:checked+label::before {
   border: none;
-  background-color:  #2C36F2;
+  background-color:   var(--basic-blue);
   background-image: url('../../../../../public/img/svg/white-check.svg')
 }

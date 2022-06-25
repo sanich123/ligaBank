@@ -2,36 +2,44 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+
   width: 500px;
-  height: 193px;
-  background-color: rgba(246, 247, 255, 1);
-;
+  min-height: 193px;
+  background:  var(--basic-white);
   border-radius: 4px;
 }
 
 .modal__success--close-btn {
-  align-self: end;
+  position: absolute;
+  right: 25px;
+  top: 25px;
   border: none;
   outline: none;
   background: transparent;
   cursor: pointer;
-  margin-right: 20px;
 }
 
 .modal__success h3 {
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-style: inherit;
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
-  color: #1F1E25;
-margin-top: -25px;
+  color:  var(--basic-black);
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
-.modal__success p {
-  margin-top: -35px;
-  width: 293px;
+.modal__success span {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--special-dark);
 }
+
+

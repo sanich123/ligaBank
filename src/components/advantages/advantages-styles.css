@@ -20,7 +20,7 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
-  color: #1F1E25;
+  color:  var(--basic-black);
   cursor: pointer;
   border: none;
   outline: none;
@@ -32,7 +32,7 @@
 }
 
 .advantages__controls--btn-active {
-  background: #F6F7FF;
+  background:  var(--basic-white);
 }
 
 .advantages__slider,
@@ -47,7 +47,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   min-height: 410px;
-  background: #F6F7FF;
+  background:  var(--basic-white);
 }
 
 .advantages__slider--item-btn {
@@ -59,11 +59,11 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #F6F7FF;
+  color:  var(--basic-white);
   width: 198px;
   height: 51px;
   padding: 20px 30px;
-  background: #2C36F2;
+  background:  var(--basic-blue);
   border-radius: 4px;
   margin-top: 30px;
 }
@@ -84,7 +84,7 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
   margin: 0;
   padding: 0;
 }
@@ -111,6 +111,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
-  color: #1F1E25;
+  color:  var(--basic-black);
   width: 400px;
 }

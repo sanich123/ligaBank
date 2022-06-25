@@ -4,7 +4,7 @@
   padding: 45px 58px;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  background: #F6F7FF;
+  background:  var(--basic-white);
   border-radius: 4px;
   margin-top: 20px;
 }
@@ -17,7 +17,7 @@
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
 }
 
 .proposal__wrong p {
@@ -26,5 +26,5 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #394959;
+  color: var(--special-dark);
 }

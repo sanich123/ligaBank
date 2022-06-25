@@ -8,17 +8,17 @@
   font-weight: 700;
   font-size: 41px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
 }
 
 .calculator h3 {
   margin-top: 16px;
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-family: inherit;
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
 }
 
 .calculator__layout {
@@ -44,8 +44,6 @@
   margin-bottom: 16px;
 }
 
-
-
 .step3 {
   grid-area: step3;
   align-items: center;
@@ -54,7 +52,7 @@
   box-sizing: border-box;
   width: 770px;
   height: 722px;
-  background: #F6F7FF;
+  background:  var(--basic-white);
   border-radius: 4px;
   margin-top: -5px;
   padding-top: 49px;
@@ -81,31 +79,31 @@
   grid-template-columns: 1fr 1fr;
   width: 635px;
   height: 53px;
-  border-bottom: 1px solid #C4C4C4;
+  border-bottom: 1px solid var(--special-grey);
   padding-right: 5px;
 }
 
 .step3-description__item strong {
   display: flex;
   align-items: center;
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-family: inherit;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #394959;
+  color: var(--special-dark);
 }
 
 .step3-description__item span {
   display: flex;
   align-items: center;
   justify-self: end;
-  font-family: 'Roboto';
-  font-style: normal;
+  font-family: inherit;
+  font-family: inherit;
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
-  color: #1F1E25;
+  color:  var(--basic-black);
 }
 
 .submit-form {
@@ -127,7 +125,7 @@
 .submit-form__surname {
   width: 630px;
   height: 60px;
-  border: 1px solid #0A1E32;
+  border: 1px solid var(--special-darkBlue);
   border-radius: 4px;
   padding-left: 24px;
 }
@@ -135,7 +133,7 @@
 .submit-form__phone, .submit-form__mail {
   width: 300px;
   height: 60px;
-  border: 1px solid #0A1E32;
+  border: 1px solid var(--special-darkBlue);
   border-radius: 4px;
   padding-left: 24px;
 }
@@ -153,7 +151,7 @@ margin-left: 68px;
   font-size: 18px;
   line-height: 140%;
   letter-spacing: 0.03em;
-  color: #707C87;
+  color: var(--special-lightGrey);
 }
 
 .submit-form__btn {
@@ -168,6 +166,6 @@ margin-left: 68px;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #F6F7FF;
+  color:  var(--basic-white);
 }
 
