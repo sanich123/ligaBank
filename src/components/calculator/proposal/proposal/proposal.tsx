@@ -17,7 +17,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
   const formattedPercent = calculatedPercent.toFixed(2).replace('.', ',');
 
   return (
-    <>
+    <div className="proposal">
       <h3>Наше предложение</h3>
       <ul className="proposal-list">
         <li className="proposal-list__item">
@@ -51,5 +51,5 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
       >
         Оформить заявку
       </button>
-    </>);
+    </div>);
 }

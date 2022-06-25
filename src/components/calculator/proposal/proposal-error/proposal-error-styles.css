@@ -1,0 +1,30 @@
+.proposal__wrong {
+  width: 500px;
+  height: 225px;
+  padding: 45px 58px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  background: #F6F7FF;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.proposal__wrong h3 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 140%;
+  color: #1F1E25;
+}
+
+.proposal__wrong p {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #394959;
+}

@@ -6,8 +6,8 @@ import CreditPrice from './step-two/credit-price';
 import FirstDeposite from './step-two/first-deposite/first-deposite';
 import KaskoInsurance from './step-two/kasko-insurance/kasko-insurance';
 import MaternalCapital from './step-two/maternal-capital/maternal-capital';
-import Proposal from './proposal/proposal';
-import ProposalError from './proposal/proposal-error';
+import Proposal from './proposal/proposal/proposal';
+import ProposalError from './proposal/proposal-error/proposal-error';
 import StepOne from './step-one/step-one';
 import StepThree from './step-three/step-three';
 import './calculator-styles.css';
@@ -58,19 +58,24 @@ export default function Calculator() {
               <MaternalCapital
                 isMotherCapital={isMotherCapital}
                 setIsMotherCapital={setIsMotherCapital}
-              />)}
+              />
+            )}
             {isCarCredit && (
               <KaskoInsurance
                 isNeedInsurance={isNeedInsurance}
                 setIsNeedInsurance={setIsNeedInsurance}
                 isNeedKasko={isNeedKasko}
                 setIsNeedKasko={setIsNeedKasko}
-              />)}
-          </div>)}
+              />
+            )}
+          </div>
+        )}
       </div>
       {isCarOrMortgage && (
-        <div className="proposal">
-          {isErrorProposal && <ProposalError minSum={minSum} modificatorOne={modificatorOne} />}
+        <>
+          {isErrorProposal && (
+            <ProposalError minSum={minSum} modificatorOne={modificatorOne} />
+          )}
           {!isErrorProposal && (
             <Proposal
               minTime={minTime}
@@ -81,8 +86,11 @@ export default function Calculator() {
               calculatedPercent={calculatedPercent}
               monthPayment={monthPayment}
               setIsFormOpen={setIsFormOpen}
-            />)}
-        </div>)}
+            />
+          )}
+        </>
+      )}
+
       {isFormOpen && (
         <StepThree
           modificatorTwo={modificatorTwo}
@@ -92,13 +100,16 @@ export default function Calculator() {
           currentRangeOfTime={currentRangeOfTime}
           setIsSuccessMessage={setIsSuccessMessage}
           setIsFormOpen={setIsFormOpen}
-        />)}
+        />
+      )}
       {isSuccessMessage && (
         <ModalSuccess
           setGoal={setGoal}
           setIsFormOpen={setIsFormOpen}
           setPrice={setPrice}
           setIsSuccessMessage={setIsSuccessMessage}
-        />)}
-    </div>);
+        />
+      )}
+    </div>
+  );
 }

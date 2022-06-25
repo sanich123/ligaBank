@@ -7,6 +7,7 @@ import FooterSocial from './footer-social';
 import './footer-styles.css';
 
 export default function Footer() {
+
   return (
     <div className="wrapper">
       <footer className="footer container">
