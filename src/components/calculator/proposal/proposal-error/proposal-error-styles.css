@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
 
-  font-style: inherit;
+
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -22,7 +22,7 @@
 
 .proposal__wrong p {
 
-  font-style: inherit;
+
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;

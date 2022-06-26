@@ -11,7 +11,7 @@
 
 .footer__logo address {
 
-  font-style: inherit;
+
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
@@ -52,7 +52,7 @@ margin-left: 8px;
 .footer__sms p,
 .footer__phone p {
 
-  font-style: inherit;
+
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
@@ -78,7 +78,7 @@ margin-left: 8px;
 .footer__sms-text,
 .footer__phone-text {
 
-  font-style: inherit;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;

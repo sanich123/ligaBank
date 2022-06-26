@@ -93,8 +93,6 @@
 .slider__list--first-slide h2,
 .slider__list--second-slide h2,
 .slider__list--third-slide h2 {
-
-  font-style: inherit;
   font-weight: 700;
   font-size: 54px;
   line-height: 63px;
@@ -110,8 +108,6 @@
 .slider__list--first-slide p,
 .slider__list--second-slide p,
 .slider__list--third-slide p {
-
-  font-style: inherit;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
@@ -130,7 +126,7 @@
   justify-content: center;
   align-items: center;
 
-  font-style: inherit;
+
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;

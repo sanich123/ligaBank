@@ -16,10 +16,8 @@ export default function Main() {
       <Header setIsModalOpen={setIsModalOpen} />
       <main className="main">
         <h1 className="visually-hidden">Лига Банк, описание продуктов</h1>
-
         <Slider />
         <Advantages />
-
         <section className="calculator container">
           <h2>Кредитный калькулятор</h2>
           <Calculator />

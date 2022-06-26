@@ -409,6 +409,7 @@ summary {
   src: url("../fonts/work-sans-700.woff2") format("woff2"), url("../fonts/work-sans-700.woff") format("woff");
 }
 
+
 :root {
   --basic-blue: #2C36F2;
   --basic-black: #1F1E25;
@@ -495,8 +496,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-style: inherit;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
