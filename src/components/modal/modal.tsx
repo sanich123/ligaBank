@@ -1,7 +1,7 @@
 import {FocusOn} from 'react-focus-on';
 import { useEffect } from 'react';
 import { inputPatterns, inputTitles, storageKeys } from '../../utils/const';
-import { CloseIcon, IsVisible, LogoIcon } from '../icons';
+import { CloseIcon, IsVisibleIcon, LogoIcon } from '../icons';
 import UseAuthForm from '../../hooks/use-auth-form';
 import './modal-styles.css';
 
@@ -84,7 +84,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
                 onClick={() => setIsVisible(!isVisible)}
                 aria-label="Показать пароль"
               >
-                <IsVisible />
+                <IsVisibleIcon />
               </button>
               <a href="/" aria-label="Ссылка на страницу, где можно поменять пароль">Забыли пароль?</a>
             </label>

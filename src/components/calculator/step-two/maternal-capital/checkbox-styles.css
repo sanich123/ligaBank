@@ -30,5 +30,5 @@
 .custom-checkbox:checked+label::before {
   border: none;
   background-color:   var(--basic-blue);
-  background-image: url('../../../../../public/img/svg/white-check.svg')
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='8' height='6' viewBox='0 0 8 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 2.14286L3.5 5L7 1' stroke='%23F6F7FF'/%3e%3c/svg%3e");
 }

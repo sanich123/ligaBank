@@ -1,12 +1,12 @@
 import { phoneNumber } from '../../utils/const';
-import { SmallPhone } from '../icons';
+import { SmallPhoneIcon } from '../icons';
 
 export default function FooterSms() {
   return (
     <div className="footer__sms">
       <a href={`tel:${phoneNumber.sms}`}>
         <span className="footer__sms-svg">
-          <SmallPhone />
+          <SmallPhoneIcon />
         </span>
         <span className="footer__sms-text">{phoneNumber.sms}</span>
       </a>

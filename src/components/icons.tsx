@@ -1,4 +1,4 @@
-export function Deposites() {
+export function DepositesIcon() {
   return (
     <svg
       width="34"
@@ -19,7 +19,7 @@ export function Deposites() {
   );
 }
 
-export function Credits() {
+export function CreditsIcon() {
   return (
     <svg
       width="34"
@@ -44,7 +44,7 @@ export function Credits() {
   );
 }
 
-export function Insurance() {
+export function InsuranceIcon() {
   return (
     <svg
       width="28"
@@ -61,7 +61,7 @@ export function Insurance() {
   );
 }
 
-export function Online() {
+export function OnlineIcon() {
   return (
     <svg
       width="20"
@@ -146,7 +146,7 @@ export function PlusIcon() {
   );
 }
 
-export function IsVisible() {
+export function IsVisibleIcon() {
   return (
     <svg
       width="22"
@@ -197,7 +197,7 @@ export function LogoIcon() {
   );
 }
 
-export function UserCabinet() {
+export function UserCabinetIcon() {
   return (
     <svg
       width="20"
@@ -214,7 +214,7 @@ export function UserCabinet() {
   );
 }
 
-export function SmallPhone() {
+export function SmallPhoneIcon() {
   return (
     <svg
       width="10"
@@ -231,7 +231,7 @@ export function SmallPhone() {
   );
 }
 
-export function Phone() {
+export function PhoneIcon() {
   return (
     <svg
       width="16"

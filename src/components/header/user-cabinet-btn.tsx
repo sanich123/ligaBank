@@ -1,4 +1,4 @@
-import { UserCabinet } from '../icons';
+import { UserCabinetIcon } from '../icons';
 
 export default function UserCabinetBtn({setIsModalOpen}: {setIsModalOpen: (arg: boolean) => void}) {
 
@@ -9,7 +9,7 @@ export default function UserCabinetBtn({setIsModalOpen}: {setIsModalOpen: (arg: 
       onClick={() => setIsModalOpen(true)}
     >
       <span>
-        <UserCabinet />
+        <UserCabinetIcon />
       </span>
       <span className="header-nav__cabinet-text">Войти в Интернет-банк</span>
     </button>

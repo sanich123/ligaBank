@@ -1,4 +1,4 @@
-import { Credits, Deposites, FacebookIcon, InstagramIcon, Insurance, Online, TwitterIcon, YoutubeIcon } from '../components/icons';
+import { CreditsIcon, DepositesIcon, FacebookIcon, InstagramIcon, InsuranceIcon, OnlineIcon, TwitterIcon, YoutubeIcon } from '../components/icons';
 
 export const MAX_MORTGAGE_PRICE = 25000000;
 export const MIN_MORTGAGE_PRICE = 1200000;
@@ -35,10 +35,10 @@ export const advantagesTypes = {
 };
 
 export const advantagesBtns = {
-  'Вклады': <Deposites/>,
-  'Кредиты': <Credits/>,
-  'Страхование': <Insurance/>,
-  'Онлайн-сервисы': <Online/>,
+  'Вклады': <DepositesIcon/>,
+  'Кредиты': <CreditsIcon/>,
+  'Страхование': <InsuranceIcon/>,
+  'Онлайн-сервисы': <OnlineIcon/>,
 };
 
 export const advantagesDeposites = [

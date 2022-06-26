@@ -47,7 +47,7 @@
   content: "";
   width: 315px;
   height: 202px;
-  background-image: url('../../../public/img/content/black-card.png');
+  background-image: url('../../../public/img/black-card.png');
   bottom: 79px;
   left: 600px;
   z-index: 100;
@@ -59,17 +59,17 @@
   content: "";
   width: 315px;
   height: 202px;
-  background-image: url("../../../public/img/content/white-card.png");
+  background-image: url("../../../public/img/white-card.png");
   left: 709px;
   top: 61px;
 }
 
 .slider__list--second-slide {
-  background-image: url("../../../public/img/content/promo-man.png");
+  background-image: url("../../../public/img/promo-man.png");
 }
 
 .slider__list--third-slide {
-  background-image: url("../../../public/img/content/promo-girl.png");
+  background-image: url("../../../public/img/promo-girl.png");
 }
 
 .slider__list--first-slide h2,

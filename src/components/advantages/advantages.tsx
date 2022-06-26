@@ -50,7 +50,7 @@ export default function Advantages() {
             </div>
             <img
               alt="Промо картинка свинья с копилкой"
-              src="./img/content/piggybank.png"
+              src="./img/piggybank.png"
             />
           </li>
         )}
@@ -74,7 +74,7 @@ export default function Advantages() {
             </div>
             <img
               alt="Промо картинка кредит на машину"
-              src="./img/content/car-credit.png"
+              src="./img/car-credit.png"
             />
           </li>
         )}
@@ -94,7 +94,7 @@ export default function Advantages() {
             </div>
             <img
               alt="Промо картинка замок с сердечком"
-              src="./img/content/secure-lock.png"
+              src="./img/secure-lock.png"
             />
           </li>
         )}
@@ -117,7 +117,7 @@ export default function Advantages() {
             </div>
             <img
               alt="Промо картинка замок с сердечком"
-              src="./img/content/mobile.png"
+              src="./img/mobile.png"
             />
           </li>
         )}
