@@ -84,10 +84,14 @@
 
 .slider__list--second-slide {
   background-image: url("../../../public/img/promo-man.webp");
+  width: 1366px;
+  height: 400px;
 }
 
 .slider__list--third-slide {
   background-image: url("../../../public/img/promo-girl.webp");
+  width: 1366px;
+  height: 400px;
 }
 
 .slider__list--first-slide h2,
