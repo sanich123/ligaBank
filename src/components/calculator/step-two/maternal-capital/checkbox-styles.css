@@ -6,6 +6,7 @@
 
 .label-checkbox {
   margin-top: 6px;
+  cursor: pointer;
 }
 
 .custom-checkbox+label {

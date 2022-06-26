@@ -82,6 +82,10 @@
   padding: 0;
 }
 
+.advantages__slider--item img {
+  background: var(--basic-blue);
+}
+
 .advantages__slider--item ul {
   display: flex;
   flex-wrap: wrap;

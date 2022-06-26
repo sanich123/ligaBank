@@ -50,10 +50,11 @@ export default function Advantages() {
             </div>
             <img
               alt="Промо картинка свинья с копилкой"
-              src="./img/piggybank.png"
+              src="./img/piggybank.webp"
+              width="440px"
+              height="290px"
             />
-          </li>
-        )}
+          </li>)}
         {activeBtn === advantagesTypes.credits && (
           <li className="advantages__slider--item">
             <div className="advantage__slider--item-wrapper">
@@ -74,7 +75,7 @@ export default function Advantages() {
             </div>
             <img
               alt="Промо картинка кредит на машину"
-              src="./img/car-credit.png"
+              src="./img/car-credit.webp"
             />
           </li>
         )}
@@ -94,7 +95,7 @@ export default function Advantages() {
             </div>
             <img
               alt="Промо картинка замок с сердечком"
-              src="./img/secure-lock.png"
+              src="./img/secure-lock.webp"
             />
           </li>
         )}
@@ -116,8 +117,8 @@ export default function Advantages() {
               <LearnMoreRef />
             </div>
             <img
-              alt="Промо картинка замок с сердечком"
-              src="./img/mobile.png"
+              alt="Изображение мобильного телефона"
+              src="./img/mobile.webp"
             />
           </li>
         )}

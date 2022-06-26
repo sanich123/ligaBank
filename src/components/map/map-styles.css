@@ -2,9 +2,11 @@
   padding-bottom: 110px;
 }
 
+.main-map img {
+  background: var(--basic-blue);
+}
+
 .main-map h2 {
-
-
   font-weight: 700;
   font-size: 41px;
   line-height: 140%;
