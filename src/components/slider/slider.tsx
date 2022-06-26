@@ -39,6 +39,8 @@ export default function Slider() {
         <ul className="slider__list">
           {activeSlide === FIRST_SLIDE && (
             <li className="slider__list--first-slide">
+              <div className="slider__list--first-gradient"/>
+              <div className="slider__list--second-gradient"/>
               <h2>Лига Банк</h2>
               <p>Кредиты на любой случай</p>
               <a href="#calculator">Рассчитать кредит</a>

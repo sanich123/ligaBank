@@ -8,11 +8,11 @@
 }
 
 .wrapper-slider__second-slide {
-  background:rgba(221, 226, 236, 1)
+  background: linear-gradient(to right, rgba(221, 226, 236, 1), rgba(242, 248, 255, 1))
 }
 
 .wrapper-slider__third-slide {
-  background:rgba(230, 241, 254, 1)
+  background:linear-gradient(to right, rgba(230, 241, 254, 1), rgba(235, 243, 253, 1))
 }
 
 .slider {
@@ -36,9 +36,27 @@
 }
 
 .slider__list--first-slide {
+  position: relative;
   display: grid;
   grid-template-rows: min-content min-content min-content;
-  position: relative;
+}
+
+.slider__list--first-gradient {
+  position: absolute;
+  width: 150px;
+  height: 269px;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%);
+}
+
+.slider__list--second-gradient {
+  position: absolute;
+  width: 270px;
+  height: 269px;
+  right: 200px;
+  bottom: 0;
+  background: linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%);
 }
 
 .slider__list--first-slide::before {
