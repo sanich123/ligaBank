@@ -3,7 +3,7 @@
 }
 
 .calculator h2 {
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 700;
   font-size: 41px;
@@ -13,8 +13,8 @@
 
 .calculator h3 {
   margin-top: 16px;
-  font-family: inherit;
-  font-family: inherit;
+
+
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -86,8 +86,8 @@
 .step3-description__item strong {
   display: flex;
   align-items: center;
-  font-family: inherit;
-  font-family: inherit;
+
+
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -98,8 +98,8 @@
   display: flex;
   align-items: center;
   justify-self: end;
-  font-family: inherit;
-  font-family: inherit;
+
+
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -145,7 +145,7 @@ margin-left: 68px;
 .submit-form__surname placeholder,
 .submit-form__mail placeholder,
 .submit-form__phone placeholder {
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 400;
   font-size: 18px;
@@ -161,7 +161,7 @@ margin-left: 68px;
   justify-self: center;
   align-items: center;
   margin-top: 10px;
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 500;
   font-size: 16px;

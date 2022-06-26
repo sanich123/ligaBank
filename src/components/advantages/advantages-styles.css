@@ -14,9 +14,6 @@
   align-items: center;
   justify-content: center;
   column-gap: 10px;
-
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
@@ -54,8 +51,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
@@ -79,8 +74,6 @@
 }
 
 .advantage__slider--item-wrapper h3 {
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -106,8 +99,6 @@
   grid-template-columns: 11px 1fr;
   column-gap: 10px;
   margin-top: 12px;
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;

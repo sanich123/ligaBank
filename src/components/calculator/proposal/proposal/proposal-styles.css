@@ -10,8 +10,6 @@
 }
 
 .proposal h3 {
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -33,8 +31,6 @@
 }
 
 .proposal-list__item h3 {
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -44,8 +40,6 @@
 }
 
 .proposal-list__item span {
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -59,8 +53,6 @@
   height: 51px;
   background:  var(--basic-blue);
   border-radius: 4px;
-  font-family: inherit;
-  font-style: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;

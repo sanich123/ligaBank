@@ -93,7 +93,7 @@
 .slider__list--first-slide h2,
 .slider__list--second-slide h2,
 .slider__list--third-slide h2 {
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 700;
   font-size: 54px;
@@ -110,7 +110,7 @@
 .slider__list--first-slide p,
 .slider__list--second-slide p,
 .slider__list--third-slide p {
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 400;
   font-size: 22px;
@@ -129,7 +129,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 500;
   font-size: 18px;

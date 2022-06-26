@@ -5,7 +5,7 @@
   min-height: 60px;
   padding-left: 227px;
   border-radius: 5px;
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 500;
   font-size: 18px;
@@ -47,7 +47,7 @@
 }
 
 .price-label {
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 400;
   font-size: 16px;
@@ -84,7 +84,7 @@
 }
 
 .sub-input {
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 400;
   font-size: 14px;
@@ -94,7 +94,7 @@
 }
 
 .sub-range {
-  font-family: inherit;
+
   font-style: inherit;
   font-weight: 400;
   font-size: 14px;

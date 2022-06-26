@@ -75,7 +75,7 @@
 
 .description-brand {
   font-family: 'Work Sans';
-  font-family: inherit;
+
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
@@ -84,8 +84,8 @@
 }
 
 .description-text {
-  font-family: inherit;
-  font-family: inherit;
+
+
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;
@@ -119,8 +119,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  font-family: inherit;
-  font-family: inherit;
+
+
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -128,8 +128,8 @@
 }
 
 .modal__label a {
-  font-family: inherit;
-  font-family: inherit;
+
+
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;
