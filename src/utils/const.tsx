@@ -27,6 +27,8 @@ export const FIRST_SLIDE = 0;
 export const SECOND_SLIDE = 1;
 export const LAST_SLIDE = 2;
 
+export const localRus = 'ru-Ru';
+
 export const advantagesTypes = {
   deposites: 'Вклады',
   credits: 'Кредиты',

@@ -1,3 +1,4 @@
+import { localRus } from '../../../../utils/const';
 import { getCleanedNumber } from '../../../../utils/utils';
 import '../inputs-styles.css';
 import './range-styles.css';
@@ -16,8 +17,8 @@ export default function FirstDeposite({price, setDeposite, deposite, minPercent}
   const isError = (currentDeposite < smallestDeposite) || (currentDeposite >= currentPrice) || currentPrice === 0;
   const priceToDepositePercent = Math.round((currentDeposite / currentPrice) * 100);
   const smallestPercent = Math.round((smallestDeposite / currentPrice) * 100);
-  const formattedMinValue = Math.round(smallestDeposite).toLocaleString();
-  const formattedMaxValue = Math.round(currentPrice).toLocaleString();
+  const formattedMinValue = Math.round(smallestDeposite).toLocaleString(localRus);
+  const formattedMaxValue = Math.round(currentPrice).toLocaleString(localRus);
   const labelMessage = `Первоначальный взнос ${isError ? `не может быть < ${formattedMinValue} или >= ${formattedMaxValue}` : ''}`;
 
   return (
@@ -34,13 +35,17 @@ export default function FirstDeposite({price, setDeposite, deposite, minPercent}
         onFocus={() => setDeposite('')}
         onBlur={() =>
           isError
-            ? setDeposite(`${Math.round(smallestDeposite).toLocaleString()} рублей`)
-            : setDeposite(`${(Math.round(+deposite)).toLocaleString()} рублей`)}
+            ? setDeposite(`${formattedMinValue} рублей`)
+            : setDeposite(
+              `${Math.round(+deposite).toLocaleString(localRus)} рублей`,
+            )}
         onChange={({ target }) => {
           if (/^\d+$/gi.test(target.value)) {
             if (+target.value <= currentPrice) {
               setDeposite(target.value);
-            }}}}
+            }
+          }
+        }}
       />
       {currentPrice > currentDeposite && (
         <>
@@ -52,7 +57,12 @@ export default function FirstDeposite({price, setDeposite, deposite, minPercent}
             max="100"
             step="5"
             value={priceToDepositePercent}
-            onChange={({ target }) => setDeposite(`${Math.round((currentPrice * (+target.value / 100))).toLocaleString()} рублей`)}
+            onChange={({ target }) =>
+              setDeposite(
+                `${Math.round(
+                  currentPrice * (+target.value / 100),
+                ).toLocaleString(localRus)} рублей`,
+              )}
           />
           <span className="sub-range">
             {currentDeposite > smallestDeposite

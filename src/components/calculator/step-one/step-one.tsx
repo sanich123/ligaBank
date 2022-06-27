@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MIN_CARCREDIT_PRICE, MIN_CARCREDIT_TIME, MIN_MORTGAGE_PRICE, MIN_MORTGAGE_TIME, purposesOfCredit } from '../../../utils/const';
+import { localRus, MIN_CARCREDIT_PRICE, MIN_CARCREDIT_TIME, MIN_MORTGAGE_PRICE, MIN_MORTGAGE_TIME, purposesOfCredit } from '../../../utils/const';
 import { getFormattedValue } from '../../../utils/utils';
 import './step-one-styles.css';
 
@@ -16,16 +16,18 @@ export default function StepOne({setGoal, setPrice, setDeposite, setRangeOfTime,
 
   const initialCarCredit = () => {
     setGoal(purposesOfCredit.carCredit);
-    setPrice(`${MIN_CARCREDIT_PRICE.toLocaleString()} рублей`);
-    setDeposite(`${(MIN_CARCREDIT_PRICE * 0.2).toLocaleString()} рублей`);
+    setPrice(`${MIN_CARCREDIT_PRICE.toLocaleString(localRus)} рублей`);
+    setDeposite(
+      `${(MIN_CARCREDIT_PRICE * 0.2).toLocaleString(localRus)} рублей`,
+    );
     setRangeOfTime(getFormattedValue(`${MIN_CARCREDIT_TIME}`));
     setIsClick(!isClick);
   };
 
   const initialMortgage = () => {
     setGoal(purposesOfCredit.mortgage);
-    setPrice(`${MIN_MORTGAGE_PRICE.toLocaleString()} рублей`);
-    setDeposite(`${(MIN_MORTGAGE_PRICE * 0.1).toLocaleString()} рублей`);
+    setPrice(`${MIN_MORTGAGE_PRICE.toLocaleString(localRus)} рублей`);
+    setDeposite(`${(MIN_MORTGAGE_PRICE * 0.1).toLocaleString(localRus)} рублей`);
     setRangeOfTime(getFormattedValue(`${MIN_MORTGAGE_TIME}`));
     setIsClick(!isClick);
   };

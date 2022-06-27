@@ -1,3 +1,4 @@
+import { localRus } from '../../../utils/const';
 import { getFormattedValue, getRightZeroes } from '../../../utils/utils';
 
 interface CreditInfoProps {
@@ -27,11 +28,11 @@ export default function CreditInfo({numberOfApplication, type, modificatorThree,
         </li>
         <li className="step3-description__item">
           <strong>Стоимость {modificatorThree}</strong>
-          <span>{currentPrice.toLocaleString()} рублей</span>
+          <span>{currentPrice.toLocaleString(localRus)} рублей</span>
         </li>
         <li className="step3-description__item">
           <strong>Первоначальный взнос</strong>
-          <span>{currentDeposite.toLocaleString()} рублей</span>
+          <span>{currentDeposite.toLocaleString(localRus)} рублей</span>
         </li>
         <li className="step3-description__item">
           <strong>Срок кредитования</strong>

@@ -1,3 +1,4 @@
+import { localRus } from '../../../../utils/const';
 import './proposal-styles.css';
 
 interface ProposalProps {
@@ -21,7 +22,7 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
       <h3>Наше предложение</h3>
       <ul className="proposal-list">
         <li className="proposal-list__item">
-          <h3>{totalSum.toLocaleString()} рублей</h3>
+          <h3>{totalSum.toLocaleString(localRus)} рублей</h3>
           <span>Сумма {modificatorFour}</span>
         </li>
         <li className="proposal-list__item">
@@ -31,14 +32,14 @@ export default function Proposal({totalSum, calculatedPercent, monthPayment, mod
         <li className="proposal-list__item">
           {!isError && isRightTime && (
             <>
-              <h3>{monthPayment.toLocaleString()} рублей</h3>
+              <h3>{monthPayment.toLocaleString(localRus)} рублей</h3>
               <span>Ежемесячный платеж</span>
             </>)}
         </li>
         <li className="proposal-list__item">
           {!isError && isRightTime && (
             <>
-              <h3>{Math.round(monthPayment * 2.1).toLocaleString()} рублей</h3>
+              <h3>{Math.round(monthPayment * 2.1).toLocaleString(localRus)} рублей</h3>
               <span>Необходимый доход</span>
             </>)}
         </li>

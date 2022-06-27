@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { localRus } from '../../../../utils/const';
 import { getCleanedNumber } from '../../../../utils/utils';
 import { MinusIcon, PlusIcon } from '../../../icons';
 import './../inputs-styles.css';
@@ -20,17 +21,15 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
   const currentDeposite = getCleanedNumber(deposite);
   const minDeposite = currentPrice * (minPercent / 100);
   const isInvalidPrice =  currentPrice < minPrice || currentPrice > maxPrice;
-  const incrementedPrice = Math.abs((currentPrice + stepOfPrice)).toLocaleString();
-  const decrementedPrice = Math.abs((currentPrice - stepOfPrice)).toLocaleString();
-  const formattedMinPrice = minPrice.toLocaleString();
-  const formattedMaxPrice = maxPrice.toLocaleString();
+  const incrementedPrice = Math.abs((currentPrice + stepOfPrice)).toLocaleString(localRus);
+  const decrementedPrice = Math.abs(currentPrice - stepOfPrice).toLocaleString(localRus);
+  const formattedMinPrice = minPrice.toLocaleString(localRus);
+  const formattedMaxPrice = maxPrice.toLocaleString(localRus);
   const labelMessage = `Стоимость ${nameOfProduct} ${isInvalidPrice ? `должна быть от ${formattedMinPrice} до ${formattedMaxPrice}` : ''}`;
 
   useEffect(() => {
     if (minDeposite > currentDeposite && deposite.includes('рублей')) {
-      setDeposite(
-        `${Math.round(minDeposite).toLocaleString()} рублей`,
-      );
+      setDeposite(`${Math.round(minDeposite).toLocaleString(localRus)} рублей`);
     }
   }, [currentDeposite, minDeposite, setDeposite, deposite]);
 
@@ -64,10 +63,7 @@ export default function CreditPrice({price, setPrice, minPrice, maxPrice, nameOf
           type="text"
           value={price}
           onFocus={() => setPrice('')}
-          onBlur={() =>
-            setPrice(
-              `${getRightMinMaxPrice(currentPrice).toLocaleString()} рублей`,
-            )}
+          onBlur={() => setPrice(`${getRightMinMaxPrice(currentPrice).toLocaleString(localRus)} рублей`)}
           onChange={({ target }) => {
             if (!target.value) {
               setPrice('');
