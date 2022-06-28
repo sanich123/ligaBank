@@ -1,6 +1,7 @@
 import { LogoIcon } from '../components/icons';
 
 export default function Logo() {
+
   return (
     <a
       aria-labelledby="Ссылка на главную страницу, логотип"
