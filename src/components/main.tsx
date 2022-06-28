@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Advantages from './advantages/advantages';
+import Advantages from './advantages/advantages/advantages';
 import Footer from './footer/footer';
 import Header from './header/header';
 import Modal from './modal/modal';

@@ -1,0 +1,11 @@
+.advantages {
+  margin-top: 60px;
+}
+
+.advantages__controls {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 93px;
+}
+
+

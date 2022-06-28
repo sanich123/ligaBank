@@ -26,6 +26,7 @@ export const MIN_CARCREDIT_RANGE = 20;
 export const FIRST_SLIDE = 0;
 export const SECOND_SLIDE = 1;
 export const LAST_SLIDE = 2;
+export const SLIDER_DELAY = 4000;
 
 export const localRus = 'ru-Ru';
 

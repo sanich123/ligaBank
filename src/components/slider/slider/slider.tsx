@@ -1,16 +1,13 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
-import { FIRST_SLIDE, LAST_SLIDE, SECOND_SLIDE, slidersNumbers, sliderTabs } from '../../../utils/const';
+import { FIRST_SLIDE, LAST_SLIDE, SECOND_SLIDE, slidersNumbers, SLIDER_DELAY } from '../../../utils/const';
 import FirstSlideGradients from '../first-slide-gradients/first-slide-gradients';
 import SliderControls from '../slider-controls/slider-controls';
 import SliderList from '../slider-list/slider-list';
 import './slider-styles.css';
 
 export default function Slider() {
-  const DELAY = 4000;
   const [activeSlide, setActiveSlide] = useState(SECOND_SLIDE);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
   const currentSlide = slidersNumbers[activeSlide];
 
   function resetTimeout() {
@@ -21,7 +18,7 @@ export default function Slider() {
 
   useEffect(() => {
     resetTimeout();
-    timeoutRef.current = setTimeout(() => setActiveSlide(activeSlide === LAST_SLIDE ? FIRST_SLIDE : activeSlide + 1), DELAY);
+    timeoutRef.current = setTimeout(() => setActiveSlide(activeSlide === LAST_SLIDE ? FIRST_SLIDE : activeSlide + 1), SLIDER_DELAY);
     return () => {
       resetTimeout();
     };

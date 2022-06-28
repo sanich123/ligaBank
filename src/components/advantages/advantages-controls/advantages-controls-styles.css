@@ -1,0 +1,23 @@
+.advantages__controls--btn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color:  var(--basic-black);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 4px 4px 0px 0px;
+  width: 292px;
+  min-height: 93px;
+  padding-left: 8px;
+}
+
+.advantages__controls--btn-active {
+  background:  var(--basic-white);
+}
