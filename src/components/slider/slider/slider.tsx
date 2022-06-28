@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
 import { FIRST_SLIDE, LAST_SLIDE, SECOND_SLIDE, slidersNumbers, SLIDER_DELAY } from '../../../utils/const';
 import FirstSlideGradients from '../first-slide-gradients/first-slide-gradients';
@@ -6,7 +7,7 @@ import SliderList from '../slider-list/slider-list';
 import './slider-styles.css';
 
 export default function Slider() {
-  const [activeSlide, setActiveSlide] = useState(SECOND_SLIDE);
+  const [activeSlide, setActiveSlide] = useState(FIRST_SLIDE);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const currentSlide = slidersNumbers[activeSlide];
 

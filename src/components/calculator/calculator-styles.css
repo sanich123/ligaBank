@@ -1,10 +1,8 @@
 .calculator {
-  margin-top: 63px;
+  margin-top: 62px;
 }
 
 .calculator h2 {
-
-
   font-weight: 700;
   font-size: 41px;
   line-height: 140%;
@@ -13,8 +11,6 @@
 
 .calculator h3 {
   margin-top: 16px;
-
-
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -39,7 +35,6 @@
   margin-top: 33px;
 }
 
-
 .calculator__layout--steps h3 {
   margin-bottom: 16px;
 }
@@ -56,7 +51,7 @@
   border-radius: 4px;
   margin-top: -5px;
   padding-top: 49px;
-  margin-bottom: 62px;
+  margin-bottom: 71px;
 }
 
 .step3 h3 {
@@ -86,8 +81,6 @@
 .step3-description__item strong {
   display: flex;
   align-items: center;
-
-
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -98,8 +91,6 @@
   display: flex;
   align-items: center;
   justify-self: end;
-
-
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -145,8 +136,6 @@ margin-left: 68px;
 .submit-form__surname placeholder,
 .submit-form__mail placeholder,
 .submit-form__phone placeholder {
-
-
   font-weight: 400;
   font-size: 18px;
   line-height: 140%;
@@ -161,8 +150,6 @@ margin-left: 68px;
   justify-self: center;
   align-items: center;
   margin-top: 10px;
-
-
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;

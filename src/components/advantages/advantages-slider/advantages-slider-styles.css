@@ -15,15 +15,14 @@
 
 .advantages__slider--item-btn {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   color:  var(--basic-white);
   width: 198px;
   height: 51px;
-  padding: 20px 30px;
+  padding: 15px 30px;
   background:  var(--basic-blue);
   border-radius: 4px;
   margin-top: 30px;

@@ -79,22 +79,21 @@
 .slider__list--first-slide a,
 .slider__list--third-slide a {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  padding: 17px 36px 14px 36px;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
   border-radius: 4px;
   color:  var(--basic-white);
-  width: 234px;
-  height: 53px;
-  left: 268px;
-  top: 324px;
+  width: 243px;
+  min-height: 53px;
   background:  var(--basic-blue);
   margin-top: 12px;
 }
 
 .slider__list--first-slide a {
+  width: 234px;
   color:  var(--basic-black);
   background:  var(--basic-white);
 }

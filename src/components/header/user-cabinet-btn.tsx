@@ -11,7 +11,7 @@ export default function UserCabinetBtn({setIsModalOpen}: {setIsModalOpen: (arg: 
       <span>
         <UserCabinetIcon />
       </span>
-      <span className="header-nav__cabinet-text">Войти в Интернет-банк</span>
+      <span className="header-nav__cabinet-text">Войти в Интернет</span>
     </button>
   );
 }

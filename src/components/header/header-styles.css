@@ -3,7 +3,7 @@
   grid-template-columns: 145px 9fr 1fr;
   justify-items: center;
   align-items: center;
-  min-height: 90px;
+  min-height: 91px;
 }
 
 .header-nav__logo {
@@ -13,7 +13,7 @@
   align-items: baseline;
   column-gap: 8px;
   font-family: 'Work Sans', sans-serif;
-
+  font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;

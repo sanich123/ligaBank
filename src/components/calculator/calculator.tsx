@@ -58,24 +58,20 @@ export default function Calculator() {
               <MaternalCapital
                 isMotherCapital={isMotherCapital}
                 setIsMotherCapital={setIsMotherCapital}
-              />
-            )}
+              />)}
             {isCarCredit && (
               <KaskoInsurance
                 isNeedInsurance={isNeedInsurance}
                 setIsNeedInsurance={setIsNeedInsurance}
                 isNeedKasko={isNeedKasko}
                 setIsNeedKasko={setIsNeedKasko}
-              />
-            )}
-          </div>
-        )}
+              />)}
+          </div>)}
       </div>
       {isCarOrMortgage && (
         <>
           {isErrorProposal && (
-            <ProposalError minSum={minSum} modificatorOne={modificatorOne} />
-          )}
+            <ProposalError minSum={minSum} modificatorOne={modificatorOne} />)}
           {!isErrorProposal && (
             <Proposal
               minTime={minTime}
@@ -86,11 +82,8 @@ export default function Calculator() {
               calculatedPercent={calculatedPercent}
               monthPayment={monthPayment}
               setIsFormOpen={setIsFormOpen}
-            />
-          )}
-        </>
-      )}
-
+            />)}
+        </>)}
       {isFormOpen && (
         <StepThree
           modificatorTwo={modificatorTwo}
@@ -100,16 +93,13 @@ export default function Calculator() {
           currentRangeOfTime={currentRangeOfTime}
           setIsSuccessMessage={setIsSuccessMessage}
           setIsFormOpen={setIsFormOpen}
-        />
-      )}
+        />)}
       {isSuccessMessage && (
         <ModalSuccess
           setGoal={setGoal}
           setIsFormOpen={setIsFormOpen}
           setPrice={setPrice}
           setIsSuccessMessage={setIsSuccessMessage}
-        />
-      )}
-    </div>
-  );
+        />)}
+    </div>);
 }

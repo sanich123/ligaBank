@@ -8,8 +8,6 @@ export default function NavLinks() {
           <a href="/" aria-labelledby="Навигационная ссылка">
             {link}
           </a>
-        </li>
-      ))}
-    </ul>
-  );
+        </li>))}
+    </ul>);
 }

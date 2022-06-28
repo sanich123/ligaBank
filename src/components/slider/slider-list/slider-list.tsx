@@ -11,20 +11,17 @@ export default function SliderList({activeSlide}: {activeSlide: number}) {
           <h2>Лига Банк</h2>
           <p>Кредиты на любой случай</p>
           <a href="#calculator">Рассчитать кредит</a>
-        </li>
-      )}
+        </li>)}
       {activeSlide === SECOND_SLIDE && (
         <li className={`slider__list--${currentSlide}-slide`}>
           <h2>Лига Банк</h2>
           <p>Ваша уверенность в завтрашнем дне</p>
-        </li>
-      )}
+        </li>)}
       {activeSlide === LAST_SLIDE && (
         <li className={`slider__list--${currentSlide}-slide`}>
           <h2>Лига Банк</h2>
           <p>Всегда рядом</p>
           <a href="#offices">Найти отделение</a>
-        </li>
-      )}
+        </li>)}
     </ul>);
 }
