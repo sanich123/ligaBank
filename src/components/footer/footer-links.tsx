@@ -6,8 +6,6 @@ export default function FooterLinks() {
       {footerNavLinks.map((link) => (
         <li key={link} className="footer__links--item">
           <a href="/">{link}</a>
-        </li>
-      ))}
-    </ul>
-  );
+        </li>))}
+    </ul>);
 }

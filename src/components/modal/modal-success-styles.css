@@ -4,7 +4,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   width: 500px;
   min-height: 193px;
   background:  var(--basic-white);
@@ -22,8 +21,6 @@
 }
 
 .modal__success h3 {
-
-
   font-weight: 500;
   font-size: 22px;
   line-height: 140%;
@@ -34,8 +31,6 @@
 }
 
 .modal__success span {
-
-
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;

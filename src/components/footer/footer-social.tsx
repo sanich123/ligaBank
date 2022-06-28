@@ -8,8 +8,7 @@ export default function FooterSocial() {
           <a href={address} aria-label={`Ссылка на социальную сеть ${network}`}>
             {icon}
           </a>
-        </li>
-      ))}
+        </li>))}
     </ul>
   );
 }
