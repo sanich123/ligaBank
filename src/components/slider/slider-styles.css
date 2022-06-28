@@ -3,7 +3,7 @@
 .wrapper-slider {
   margin: 0 auto;
   width: 100%;
-
+  height: 400px;
 }
 
 .wrapper-slider__first-gradient {
@@ -23,6 +23,8 @@
   width: 1366px;
   height: 400px;
   margin: 0 auto;
+    /*не знаю, как сделать иначе*/
+  /* margin-top: -20px; */
 }
 
 .wrapper-slider__third-img {
@@ -30,6 +32,8 @@
   width: 1366px;
   height: 400px;
   margin: 0 auto;
+    /*не знаю, как сделать иначе*/
+  /* margin-top: -20px; */
 }
 
 .slider__list--first-slide {
@@ -58,11 +62,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  min-height: 400px;
+  height: 400px;
 }
 
-.slider__list--second-slide,
-.slider__list--third-slide {
+.slider__list li {
   padding-top: 102px;
   padding-left: 170px;
 }

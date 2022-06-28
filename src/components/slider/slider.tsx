@@ -8,19 +8,19 @@ export default function Slider() {
   const [activeSlide, setActiveSlide] = useState(SECOND_SLIDE);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // function resetTimeout() {
-  //   if (timeoutRef.current) {
-  //     clearTimeout(timeoutRef.current);
-  //   }
-  // }
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
 
-  // useEffect(() => {
-  //   resetTimeout();
-  //   timeoutRef.current = setTimeout(() => setActiveSlide(activeSlide === LAST_SLIDE ? FIRST_SLIDE : activeSlide + 1), DELAY);
-  //   return () => {
-  //     resetTimeout();
-  //   };
-  // }, [activeSlide, setActiveSlide]);
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(() => setActiveSlide(activeSlide === LAST_SLIDE ? FIRST_SLIDE : activeSlide + 1), DELAY);
+    return () => {
+      resetTimeout();
+    };
+  }, [activeSlide, setActiveSlide]);
 
   return (
     <div
