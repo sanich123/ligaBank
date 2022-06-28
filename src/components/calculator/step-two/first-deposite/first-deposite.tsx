@@ -47,7 +47,7 @@ export default function FirstDeposite({price, setDeposite, deposite, minPercent}
           }
         }}
       />
-      {currentPrice > currentDeposite && (
+      {currentPrice >= currentDeposite && (
         <>
           <input
             type="range"

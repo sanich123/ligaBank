@@ -1,22 +1,57 @@
+/*Layout*/
+
 .wrapper-slider {
   margin: 0 auto;
   width: 100%;
+
 }
 
-.wrapper-slider__first-slide {
-  background:  var(--basic-blue);
+.wrapper-slider__first-gradient {
+  background: var(--basic-blue);
 }
 
-.wrapper-slider__second-slide {
-  background: linear-gradient(to right, rgba(221, 226, 236, 1), rgba(242, 248, 255, 1))
+.wrapper-slider__second-gradient {
+  background: linear-gradient(to right, rgba(221, 226, 236, 1), rgba(246, 252, 255, 1));
 }
 
-.wrapper-slider__third-slide {
-  background:linear-gradient(to right, rgba(230, 241, 254, 1), rgba(235, 243, 253, 1))
+.wrapper-slider__third-gradient {
+  background: linear-gradient(to right, rgba(230, 241, 254, 1), rgba(235, 243, 253, 1));
+}
+
+.wrapper-slider__second-img {
+  background-image: url("../../../public/img/promo-man.webp");
+  width: 1366px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.wrapper-slider__third-img {
+  background-image: url("../../../public/img/promo-girl.webp");
+  width: 1366px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.slider__list--first-slide {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+  width: 1366px;
+  height: 400px;
+  margin: 0 auto;
 }
 
 .slider {
   position: relative;
+}
+
+.slider__controls {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  right: 565px;
+  top: 352px;
 }
 
 .slider__list {
@@ -26,11 +61,8 @@
   min-height: 400px;
 }
 
-.slider__list--first-slide,
 .slider__list--second-slide,
 .slider__list--third-slide {
-  min-width: 1170px;
-  min-height: 400px;
   padding-top: 102px;
   padding-left: 170px;
 }
@@ -56,7 +88,7 @@
   height: 269px;
   right: 200px;
   bottom: 0;
-  background: linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%);
+  background: linear-gradient(45deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%);
 }
 
 .slider__list--first-slide::before {
@@ -80,18 +112,6 @@
   background-image: url("../../../public/img/white-card.webp");
   left: 709px;
   top: 61px;
-}
-
-.slider__list--second-slide {
-  background-image: url("../../../public/img/promo-man.webp");
-  width: 1366px;
-  height: 400px;
-}
-
-.slider__list--third-slide {
-  background-image: url("../../../public/img/promo-girl.webp");
-  width: 1366px;
-  height: 400px;
 }
 
 .slider__list--first-slide h2,
@@ -129,8 +149,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
@@ -149,14 +167,7 @@
   background:  var(--basic-white);
 }
 
-.slider__controls {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 8px;
-  position: absolute;
-  right: 565px;
-  top: 352px;
-}
+
 
 .slider__controls button {
   border: none;
