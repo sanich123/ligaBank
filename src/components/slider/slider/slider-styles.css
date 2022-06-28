@@ -1,0 +1,48 @@
+/*Layout*/
+
+.wrapper-slider {
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+}
+
+.wrapper-slider__first-gradient {
+  background: var(--basic-blue);
+}
+
+.wrapper-slider__second-gradient {
+  background: linear-gradient(to right, rgba(221, 226, 236, 1), rgba(246, 252, 255, 1));
+}
+
+.wrapper-slider__third-gradient {
+  background: linear-gradient(to right, rgba(230, 241, 254, 1), rgba(235, 243, 253, 1));
+}
+
+.wrapper-slider__first-img,
+.wrapper-slider__second-img,
+.wrapper-slider__third-img {
+  width: 1366px;
+  min-height: 400px;
+  margin: 0 auto;
+}
+
+.wrapper-slider__first-img {
+  position: relative;
+}
+
+.wrapper-slider__second-img {
+  background-image: url("../../../../public/img/promo-man.webp");
+}
+
+.wrapper-slider__third-img {
+  background-image: url("../../../../public/img/promo-girl.webp");
+}
+
+
+
+
+
+
+
+
+

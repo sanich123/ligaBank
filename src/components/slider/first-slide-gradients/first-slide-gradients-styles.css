@@ -1,0 +1,36 @@
+.first-slide__first-gradient {
+  position: absolute;
+  width: 150px;
+  height: 400px;
+  background: linear-gradient(180.24deg, rgba(32, 39, 179, 0) 36.31%, #2027B3 99.79%);
+  left: 0;
+  bottom: 0;
+}
+
+.first-slide__second-gradient {
+  position: absolute;
+  width: 150px;
+  height: 269px;
+  left: 150px;
+  bottom: 0;
+  background: linear-gradient(183.47deg, rgba(56, 65, 255, 0) 66.3%, #3841FF 97.14%);
+}
+
+.first-slide__third-gradient {
+  position: absolute;
+  width: 270px;
+  height: 269px;
+  right: 200px;
+  bottom: 0;
+  right: 298px;
+  background: linear-gradient(183.47deg, rgba(56, 65, 255, 0) 27.26%, #3841FF 97.14%);
+}
+
+.first-slide__fourth-gradient {
+  position: absolute;
+  width: 298px;
+  height: 400px;
+  background: linear-gradient(180.24deg, rgba(32, 39, 179, 0) 32.89%, #2027B3 99.79%);
+  bottom: 0;
+  right: 0;
+}

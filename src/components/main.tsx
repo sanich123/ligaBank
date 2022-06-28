@@ -3,7 +3,7 @@ import Advantages from './advantages/advantages';
 import Footer from './footer/footer';
 import Header from './header/header';
 import Modal from './modal/modal';
-import Slider from './slider/slider';
+import Slider from './slider/slider/slider';
 import Calculator from './calculator/calculator';
 import Map from './map/map';
 

@@ -1,0 +1,33 @@
+.slider__controls {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  right: 565px;
+  top: 352px;
+}
+
+.slider__controls button {
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+  z-index: 100;
+  background: var(--special-blue);
+}
+
+.slider__controls button:active {
+  background: var(--basic-light);
+}
+
+.slider__controls button:focus {
+  background: var(--basic-light);
+}
+
+.slider__controls .active {
+  background: var(--basic-light);
+}

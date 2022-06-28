@@ -1,0 +1,100 @@
+.slider {
+  position: relative;
+}
+
+.slider__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 400px;
+}
+
+.slider__list li {
+  padding-top: 102px;
+  padding-left: 170px;
+}
+
+.slider__list--first-slide {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+  width: 1366px;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.slider__list--first-slide::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 315px;
+  height: 202px;
+  background-image: url('../../../../public/img/black-card.webp');
+  bottom: 79px;
+  left: 600px;
+  z-index: 100;
+}
+
+.slider__list--first-slide::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 315px;
+  height: 202px;
+  background-image: url("../../../../public/img/white-card.webp");
+  left: 709px;
+  top: 61px;
+}
+
+.slider__list--first-slide h2,
+.slider__list--second-slide h2,
+.slider__list--third-slide h2 {
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 63px;
+  color:  var(--basic-black);
+  margin: 0;
+  padding: 0;
+}
+
+.slider__list--first-slide h2 {
+  color:  var(--basic-white);
+}
+
+.slider__list--first-slide p,
+.slider__list--second-slide p,
+.slider__list--third-slide p {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  color: var(--special-darkest);
+  padding: 0;
+  margin-top: 8px;
+}
+
+.slider__list--first-slide p {
+  color: var(--special-almostWhite);
+}
+
+.slider__list--first-slide a,
+.slider__list--third-slide a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  border-radius: 4px;
+  color:  var(--basic-white);
+  width: 234px;
+  height: 53px;
+  left: 268px;
+  top: 324px;
+  background:  var(--basic-blue);
+  margin-top: 12px;
+}
+
+.slider__list--first-slide a {
+  color:  var(--basic-black);
+  background:  var(--basic-white);
+}
