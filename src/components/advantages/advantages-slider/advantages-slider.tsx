@@ -21,8 +21,7 @@ export default function AdvantagesSlider({activeBtn}: {activeBtn: string}) {
                     <AcceptIcon />
                   </span>
                   {advantage}
-                </li>
-              ))}
+                </li>))}
             </ul>
             <LearnMoreRef />
           </div>
@@ -42,8 +41,7 @@ export default function AdvantagesSlider({activeBtn}: {activeBtn: string}) {
                 <li key={credit}>
                   <AcceptIcon />
                   {credit}
-                </li>
-              ))}
+                </li>))}
             </ul>
             <p>
                 Рассчитайте ежемесячный платеж и ставку по кредиту
@@ -55,8 +53,7 @@ export default function AdvantagesSlider({activeBtn}: {activeBtn: string}) {
             alt="Промо картинка кредит на машину"
             src="./img/car-credit.webp"
           />
-        </li>
-      )}
+        </li>)}
       {activeBtn === advantagesTypes.insurance && (
         <li className="advantages__slider--item">
           <div className="advantage__slider--item-wrapper">
@@ -66,8 +63,7 @@ export default function AdvantagesSlider({activeBtn}: {activeBtn: string}) {
                 <li key={insurance}>
                   <AcceptIcon />
                   {insurance}
-                </li>
-              ))}
+                </li>))}
             </ul>
             <LearnMoreRef />
           </div>
@@ -75,8 +71,7 @@ export default function AdvantagesSlider({activeBtn}: {activeBtn: string}) {
             alt="Промо картинка замок с сердечком"
             src="./img/secure-lock.webp"
           />
-        </li>
-      )}
+        </li>)}
       {activeBtn === advantagesTypes.online && (
         <li className="advantages__slider--item">
           <div className="advantage__slider--item-wrapper">
@@ -89,8 +84,7 @@ export default function AdvantagesSlider({activeBtn}: {activeBtn: string}) {
                 <li key={online}>
                   <AcceptIcon />
                   {online}
-                </li>
-              ))}
+                </li>))}
             </ul>
             <LearnMoreRef />
           </div>
@@ -98,8 +92,6 @@ export default function AdvantagesSlider({activeBtn}: {activeBtn: string}) {
             alt="Изображение мобильного телефона"
             src="./img/mobile.webp"
           />
-        </li>
-      )}
-    </ul>
-  );
+        </li>)}
+    </ul>);
 }

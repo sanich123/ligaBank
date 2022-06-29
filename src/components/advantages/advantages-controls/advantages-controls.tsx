@@ -24,7 +24,6 @@ export default function AdvantagesControls({activeBtn, setActiveBtn}: Advantages
         >
           {icon}
           {description}
-        </button>
-      ))}
+        </button>))}
     </>);
 }
