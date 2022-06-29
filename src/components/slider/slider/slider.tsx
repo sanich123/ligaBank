@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useRef, useState } from 'react';
-import { FIRST_SLIDE, LAST_SLIDE, SECOND_SLIDE, slidersNumbers, SLIDER_DELAY } from '../../../utils/const';
+import { FIRST_SLIDE, LAST_SLIDE, slidersNumbers, SLIDER_DELAY } from '../../../utils/const';
 import FirstSlideGradients from '../first-slide-gradients/first-slide-gradients';
 import SliderControls from '../slider-controls/slider-controls';
 import SliderList from '../slider-list/slider-list';

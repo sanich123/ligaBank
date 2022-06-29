@@ -10,7 +10,6 @@ interface CreditInfoProps {
   currentRangeOfTime: number,
 }
 
-
 export default function CreditInfo({numberOfApplication, type, modificatorThree, currentPrice, currentDeposite, currentRangeOfTime}: CreditInfoProps) {
   const formattedPurpose = `${type[0].toUpperCase()}${type.slice(1)}`;
 

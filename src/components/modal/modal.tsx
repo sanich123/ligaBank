@@ -6,6 +6,7 @@ import UseAuthForm from '../../hooks/use-auth-form';
 import './modal-styles.css';
 
 export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) => void}) {
+  const ERROR_DELAY = 1500;
   const { login, password, isError, isVisible, isSwinging, isRedBorder, isEmptyLogin, isEmptyPassword, typeChanger, setLogin, setPassword,  setIsError, setIsVisible} = UseAuthForm();
 
   const handleClick = () => {
@@ -20,7 +21,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
 
   useEffect(() => {
     if (isError) {
-      const timeout = setTimeout(() => setIsError(false), 1500);
+      const timeout = setTimeout(() => setIsError(false), ERROR_DELAY);
       return () => clearTimeout(timeout);
     }
   }, [isError, setIsError]);

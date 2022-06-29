@@ -7,7 +7,6 @@ interface ApplicationFormProps {
   setIsFormOpen: (arg: boolean) => void;
 }
 
-
 export default function ApplicationForm({setIsSuccessMessage, setIsFormOpen}: ApplicationFormProps) {
   const [surname, setSurname] = useState('');
   const [phone, setPhone] = useState('');

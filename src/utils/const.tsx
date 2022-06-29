@@ -22,6 +22,8 @@ export const MIN_CARCREDIT_TIME = 1;
 export const MAX_CARCREDIT_TIME = 5;
 export const MIN_MORTGAGE_RANGE = 10;
 export const MIN_CARCREDIT_RANGE = 20;
+export const MIN_RANGE_CARCREDIT = 0.2;
+export const MIN_RANGE_MORTGAGE = 0.1;
 
 export const FIRST_SLIDE = 0;
 export const SECOND_SLIDE = 1;
