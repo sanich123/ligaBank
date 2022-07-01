@@ -41,7 +41,7 @@ export default function Modal({setIsModalOpen}: {setIsModalOpen: (arg: boolean) 
               <div className="modal__logo--wrapper">
                 <span><LogoIcon /></span>
                 <span className="description-wrapper">
-                  <span className="description-brand">ЛигаБанк</span>
+                  <span className="description-brand">ЛИГА Банк</span>
                   <span className="description-text">Интернет-банк</span>
                 </span>
               </div>

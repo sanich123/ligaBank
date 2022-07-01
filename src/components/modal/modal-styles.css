@@ -74,12 +74,13 @@
 }
 
 .description-brand {
-  font-family: 'Work Sans';
+  font-family: 'Work Sans', 'Arial', sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
   color:  var(--basic-black);
   padding-top: -5px;
+  min-width: 112px;
 }
 
 .description-text {
@@ -116,8 +117,6 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-
-
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
@@ -125,8 +124,6 @@
 }
 
 .modal__label a {
-
-
   font-weight: 400;
   font-size: 12px;
   line-height: 140%;

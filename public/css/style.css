@@ -373,7 +373,7 @@ summary {
 }
 
 
-@font-face {
+/* @font-face {
   font-family: "Roboto";
   src:
   local('Roboto'),
@@ -404,9 +404,9 @@ summary {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-}
+} */
 
-@font-face {
+/* @font-face {
   font-family: "Work Sans";
   src:
   url("../fonts/work-sans-700.woff2") format("woff2"),
@@ -414,7 +414,7 @@ summary {
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 
 :root {
