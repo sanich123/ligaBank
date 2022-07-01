@@ -1,7 +1,12 @@
 import { sliderTabs } from '../../../utils/const';
 import './slider-controls-styles.css';
 
-export default function SliderControls({activeSlide}: {activeSlide: number}) {
+interface SliderControlsProps {
+  activeSlide: number,
+  setActiveSlide: (arg: number) => void,
+}
+
+export default function SliderControls({activeSlide, setActiveSlide}: SliderControlsProps) {
 
   return (
     <div className="slider__controls">
@@ -10,7 +15,7 @@ export default function SliderControls({activeSlide}: {activeSlide: number}) {
           key={tab}
           type="button"
           className={activeSlide === index ? 'active' : ''}
-          disabled
+          onClick={() => setActiveSlide(index)}
           aria-label={tab}
         />))}
     </div>

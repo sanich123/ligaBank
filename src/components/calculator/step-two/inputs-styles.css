@@ -92,5 +92,5 @@
   font-size: 14px;
   line-height: 140%;
   color: var(--special-lightGrey);
-  padding-top: 9px;
+  margin-top: -2px;
 }

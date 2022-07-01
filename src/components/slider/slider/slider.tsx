@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FIRST_SLIDE, LAST_SLIDE, slidersNumbers, SLIDER_DELAY } from '../../../utils/const';
 import FirstSlideGradients from '../first-slide-gradients/first-slide-gradients';
 import SliderControls from '../slider-controls/slider-controls';
@@ -7,22 +7,14 @@ import './slider-styles.css';
 
 export default function Slider() {
   const [activeSlide, setActiveSlide] = useState(FIRST_SLIDE);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const currentSlide = slidersNumbers[activeSlide];
 
-  function resetTimeout() {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  }
-
   useEffect(() => {
-    resetTimeout();
-    timeoutRef.current = setTimeout(() => setActiveSlide(activeSlide === LAST_SLIDE ? FIRST_SLIDE : activeSlide + 1), SLIDER_DELAY);
-    return () => {
-      resetTimeout();
-    };
-  }, [activeSlide, setActiveSlide]);
+    const timeout = setTimeout(
+      () => setActiveSlide((prevSlide) => prevSlide === LAST_SLIDE ? FIRST_SLIDE : prevSlide + 1),
+      SLIDER_DELAY);
+    return () => clearTimeout(timeout);
+  }, [activeSlide]);
 
   return (
     <div className={`wrapper-slider wrapper-slider__${currentSlide}-gradient`}>
@@ -30,7 +22,7 @@ export default function Slider() {
         {activeSlide === FIRST_SLIDE && <FirstSlideGradients />}
 
         <section className="slider container">
-          <SliderControls activeSlide={activeSlide} />
+          <SliderControls activeSlide={activeSlide} setActiveSlide={setActiveSlide}/>
           <SliderList activeSlide={activeSlide} />
         </section>
       </div>
