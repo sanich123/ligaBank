@@ -56,18 +56,13 @@
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  padding-top: 12px;
-}
-
-.advantages__list:first-child {
-  margin-top: 0;
 }
 
 .advantages__list li {
   display: grid;
   grid-template-columns: 11px 1fr;
   column-gap: 10px;
-  margin-top: 12px;
+  margin-top: 16px;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
