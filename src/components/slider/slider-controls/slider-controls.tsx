@@ -11,13 +11,17 @@ export default function SliderControls({activeSlide, setActiveSlide}: SliderCont
   return (
     <div className="slider__controls">
       {sliderTabs.map((tab, index) => (
-        <button
+        <label
           key={tab}
-          type="button"
           className={activeSlide === index ? 'active' : ''}
-          onClick={() => setActiveSlide(index)}
           aria-label={tab}
-        />))}
+          onClick={() => setActiveSlide(index)}
+          onKeyDown={({code}) => code === 'Enter' ? setActiveSlide(index) : ''}
+          tabIndex={0}
+        >
+          <input className="visually-hidden" type="checkbox" />
+        </label>
+      ))}
     </div>
   );
 }

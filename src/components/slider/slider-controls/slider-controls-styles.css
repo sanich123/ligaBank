@@ -7,7 +7,7 @@
   top: 352px;
 }
 
-.slider__controls button {
+.slider__controls label {
   border: none;
   outline: none;
   margin: 0;
@@ -20,12 +20,12 @@
   background: var(--special-blue);
 }
 
-.slider__controls button:active {
+.slider__controls label:active {
   background: var(--basic-light);
 }
 
-.slider__controls button:focus {
-  background: var(--basic-light);
+.slider__controls label:focus {
+  background: yellow;
 }
 
 .slider__controls .active {

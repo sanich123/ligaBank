@@ -103,7 +103,7 @@ export const socialLinks = {
 };
 
 export const sliderTabs = [
-  'Кредиты', 'Уверенность', 'Всегда рядом',
+  'Слайд Кредиты', 'Слайд Уверенность', 'Слайд Всегда рядом',
 ];
 
 export const purposesOfCredit = {
