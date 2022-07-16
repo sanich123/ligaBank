@@ -1,3 +1,5 @@
+#Description#
+
 When you click on the "Login to Internet Banking" button, a modal window with a form appears.        
 -	closing the modal window by clicking on the cross or pressing the Esc key.
 -	when modal window is opened, focus in the "Login" field.
@@ -9,11 +11,11 @@ The "Calculate loan" button moves to the "Loan calculator" block. The "Find Bran
     
 Services block is tabs. When you click on the tab button, the active tab and the tab content change.
 
-	**Loan calculator**.
+**Loan calculator**.
   
 Two purposes of lending:
 
-  **Purpose of the loan "Mortgage Lending"**
+**Purpose of the loan "Mortgage Lending"**
     
 - The value of real estate in the field can only be entered numerical values from 1,200,000 rubles to 25,000,000 rubles. Data can be entered from the keyboard and using the "+" "-" buttons. When an incorrect value is entered, the field is highlighted in red and a message is displayed inside: "Incorrect value". Clicking on "+" and "-" changes the values. Step - 100,000 rubles.  
 - The minimum value of the down payment is automatically calculated depending on the value of the "Property value" field and is 10% of the property value.
