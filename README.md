@@ -1,4 +1,4 @@
-#Description#
+# Description #
 
 When you click on the "Login to Internet Banking" button, a modal window with a form appears.        
 -	closing the modal window by clicking on the cross or pressing the Esc key.
