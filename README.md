@@ -14,18 +14,18 @@ Two purposes of lending:
     Purpose of the loan "Mortgage Lending"
     3.1. The value of real estate in the field can only be entered numerical values from 1,200,000 rubles to 25,000,000 rubles. Data can be entered from the keyboard and using the "+" "-" buttons. When an incorrect value is entered, the field is highlighted in red and a message is displayed inside: "Incorrect value". Clicking on "+" and "-" changes the values. Step - 100,000 rubles.
         
-2. The minimum value of the down payment is automatically calculated depending on the value of the "Property value" field and **is 10% of the property value.**
+2. The minimum value of the down payment is automatically calculated depending on the value of the "Property value" field and is 10% of the property value.
         
-        After entering the value of the property, the **minimum value** of the down payment is automatically entered.
+        After entering the value of the property, the minimum value of the down payment is automatically entered.
         
         The value is entered both in the numeric field (in rubles) and in the "slider" value (in percent). The data entered in the field is linked to the "slider". You need to change the percentage depending on the value.
         
         The value of the down payment can be changed in the numeric field or using the "slider" (%).
         
-Step "slider" - 5%. If you enter a value less than (10%) in the field, it **automatically changes to the minimum possible.**
+Step "slider" - 5%. If you enter a value less than (10%) in the field, it automatically changes to the minimum possible.
         
         
-    3. The minimum amount of the down payment is 10%, the maximum amount of the down payment is any, ** but the amount of the mortgage loan must be at least 500,000 rubles ** (* the maximum amount is equal to the cost of the apartment minus the financial capital (if there is a tick in the checkbox ) minus 500,000 rubles*). If the loan amount is less than 500,000 rubles, a corresponding message is displayed *(see below).*
+    3. The minimum amount of the down payment is 10%, the maximum amount of the down payment is any,  but the amount of the mortgage loan must be at least 500,000 rubles  ( the maximum amount is equal to the cost of the apartment minus the financial capital (if there is a tick in the checkbox ) minus 500,000 rubles). If the loan amount is less than 500,000 rubles, a corresponding message is displayed (see below).
     
 	3.2. Loan term from 5 to 30 years. The value can be changed in the numeric field or using the “slider”. Slider step - 1 year. If you enter values less than 5 or greater than 30 in the field, the value automatically changes to the minimum or maximum possible, respectively. The word "years" must be conjugated.
         
@@ -53,7 +53,7 @@ Purpose of the car loan
     1. The cost of the car. In the field you can enter only numerical values from 500,000 rubles to 5,000,000 rubles. Data can be entered from the keyboard and using the "+" "-" buttons. When an incorrect value is entered, the field is highlighted in red and a message is displayed inside: "Incorrect value". Clicking on "+" and "-" changes the values. Step - 50,000 rubles.        
 2. The minimum value of the down payment is automatically calculated depending on the value of the "Car cost" field and is 20% of the car cost. After entering the cost of the car, the minimum value of the down payment is automatically entered. The value is entered both in the numeric field (in rubles) and in the "slider" value (in percent). The data entered in the field is linked to the "slider". You need to change the percentage depending on the value. The value of the down payment can be changed in the numeric field or using the "slider" (%). Step "slider" - 5%. If you enter a value less than (20%) in the field, it is automatically changed to the minimum possible.
 
-    3. The minimum amount of the down payment is 20%, the maximum amount of the down payment is any, but the amount of the car loan must be at least 200,000 rubles (the maximum amount is the cost of the car minus 200,000 rubles). If the loan amount is less than 200,000 rubles, a corresponding message is displayed *(see below).
+    3. The minimum amount of the down payment is 20%, the maximum amount of the down payment is any, but the amount of the car loan must be at least 200,000 rubles (the maximum amount is the cost of the car minus 200,000 rubles). If the loan amount is less than 200,000 rubles, a corresponding message is displayed (see below).
     4. Loan term from 1 to 5 years. The value can be changed in the numeric field or using the “slider”. The "slider" step is 1 year. When you enter values less than 1 or greater than 5 in the field, the value automatically changes to the minimum or maximum possible, respectively. The word "years" must be conjugated.        
         
 5. Two Checkboxes:
