@@ -69,7 +69,7 @@ Purpose of the car loan
         - When applying for CASCO and life insurance - 3.5%
     
     	4. Required income is calculated from the condition that the monthly payment should not exceed 45% of the required income. When you click on the "Submit Application" button, a window with a form will appear.    
-    The information is filled in from the calculation automatically, and is not edited. Replace selected fields (Mortgage → Car loan; Real estate value → Car cost).    
+    The information is filled in from the calculation automatically, and is not edited. Replace selected fields (Mortgage → Car loan; Real estate value → Car cost).     
 - Application number No. 0011 (The application number increases by one after each application is sent).
 •	Purpose of the loan
 •	The cost of the car
