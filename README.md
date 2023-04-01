@@ -4,18 +4,9 @@
 
 *or launch locally:*
 
-copy ssh link to the project
+`git clone git@github.com:sanich123/ligaBank.git project&&cd project&&npm i&&npm start`
 
 ![image](https://user-images.githubusercontent.com/70276651/227767402-71306cd3-6e7b-4b96-9ea7-40eec6f987dd.png)
-
-`git clone [ssh link] project`
-
-`cd project`
-
-`npm i`
-
-`npm start`
-
 
 ### Screenshots
 
@@ -24,7 +15,7 @@ copy ssh link to the project
 ### Done 06/2022
 
 ### Tech stack:
-Create React App, React, React Router, Redux(RTK), Jest, ReactTestingLibrary
+Create React App, React, Typescript
 
 ### Implemented:
 
