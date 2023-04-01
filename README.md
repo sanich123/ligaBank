@@ -6,8 +6,6 @@
 
 `git clone git@github.com:sanich123/ligaBank.git project&&cd project&&npm i&&npm start`
 
-![image](https://user-images.githubusercontent.com/70276651/227767402-71306cd3-6e7b-4b96-9ea7-40eec6f987dd.png)
-
 ### Screenshots
 
 ![merge_from_ofoct (3)](https://user-images.githubusercontent.com/70276651/227767590-73021d25-9a68-4182-bedb-c5ec989692c1.jpg)
